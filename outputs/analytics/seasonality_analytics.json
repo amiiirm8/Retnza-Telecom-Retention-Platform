@@ -1,0 +1,98 @@
+{
+  "Farvardin": {
+    "n": 574,
+    "share_of_base": 0.08149936106772682,
+    "mean_calibrated_risk": 0.28015226480836236,
+    "prepaid_ratio": 0.5644599303135889,
+    "mean_digital_engagement": 1.627177700348432,
+    "mean_arpu": 9385642.623311112
+  },
+  "Ordibehesht": {
+    "n": 589,
+    "share_of_base": 0.08362913531165696,
+    "mean_calibrated_risk": 0.2593359932088285,
+    "prepaid_ratio": 0.5466893039049237,
+    "mean_digital_engagement": 1.66723259762309,
+    "mean_arpu": 9540226.240764847
+  },
+  "Khordad": {
+    "n": 580,
+    "share_of_base": 0.08235127076529888,
+    "mean_calibrated_risk": 0.2693937931034483,
+    "prepaid_ratio": 0.5396551724137931,
+    "mean_digital_engagement": 1.6293103448275863,
+    "mean_arpu": 9692155.68711624
+  },
+  "Tir": {
+    "n": 586,
+    "share_of_base": 0.08320318046287094,
+    "mean_calibrated_risk": 0.2724634812286689,
+    "prepaid_ratio": 0.5426621160409556,
+    "mean_digital_engagement": 1.5921501706484642,
+    "mean_arpu": 9451135.312291203
+  },
+  "Mordad": {
+    "n": 582,
+    "share_of_base": 0.08263524066448956,
+    "mean_calibrated_risk": 0.23534020618556695,
+    "prepaid_ratio": 0.4965635738831615,
+    "mean_digital_engagement": 1.5876288659793814,
+    "mean_arpu": 9511480.45074142
+  },
+  "Shahrivar": {
+    "n": 596,
+    "share_of_base": 0.08462302995882437,
+    "mean_calibrated_risk": 0.2655117449664429,
+    "prepaid_ratio": 0.5369127516778524,
+    "mean_digital_engagement": 1.7181208053691275,
+    "mean_arpu": 9597980.811862567
+  },
+  "Mehr": {
+    "n": 582,
+    "share_of_base": 0.08263524066448956,
+    "mean_calibrated_risk": 0.27984415807560137,
+    "prepaid_ratio": 0.5773195876288659,
+    "mean_digital_engagement": 1.7096219931271477,
+    "mean_arpu": 9823376.715825753
+  },
+  "Aban": {
+    "n": 565,
+    "share_of_base": 0.08022149652136873,
+    "mean_calibrated_risk": 0.2923306194690266,
+    "prepaid_ratio": 0.5876106194690266,
+    "mean_digital_engagement": 1.6725663716814159,
+    "mean_arpu": 9614537.901839903
+  },
+  "Azar": {
+    "n": 601,
+    "share_of_base": 0.08533295470680108,
+    "mean_calibrated_risk": 0.26930915141430944,
+    "prepaid_ratio": 0.5540765391014975,
+    "mean_digital_engagement": 1.6772046589018303,
+    "mean_arpu": 10011086.205265874
+  },
+  "Dey": {
+    "n": 584,
+    "share_of_base": 0.08291921056368025,
+    "mean_calibrated_risk": 0.2769554794520548,
+    "prepaid_ratio": 0.5684931506849316,
+    "mean_digital_engagement": 1.696917808219178,
+    "mean_arpu": 10049342.3832184
+  },
+  "Bahman": {
+    "n": 640,
+    "share_of_base": 0.09087036774101945,
+    "mean_calibrated_risk": 0.26943593750000006,
+    "prepaid_ratio": 0.55,
+    "mean_digital_engagement": 1.6828125,
+    "mean_arpu": 10081171.669327617
+  },
+  "Esfand": {
+    "n": 564,
+    "share_of_base": 0.0800795115717734,
+    "mean_calibrated_risk": 0.2598987588652482,
+    "prepaid_ratio": 0.5390070921985816,
+    "mean_digital_engagement": 1.5886524822695036,
+    "mean_arpu": 9647408.268913656
+  }
+}

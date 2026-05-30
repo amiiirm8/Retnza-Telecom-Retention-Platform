@@ -1,0 +1,87 @@
+{
+  "column_display_fa": {
+    "subscriber_id": "شناسه_مشترک",
+    "gender": "جنسیت",
+    "age": "سن",
+    "birth_month_persian": "ماه_تولد",
+    "sim_tenure_months": "سابقه_سیم‌کارت_ماه",
+    "mobile_data_generation": "نسل_اینترنت_همراه",
+    "intl_roaming_package": "بسته_رومینگ_بین‌الملل",
+    "operator_cloud_storage": "فضای_ابری_اپراتور",
+    "night_data_package": "بسته_اینترنت_شبانه",
+    "volte_service": "سرویس_تماس_VoLTE",
+    "superapp_social": "سوپراپ_شبکه اجتماعی",
+    "superapp_financial": "سوپراپ_خدمات_مالی",
+    "sim_card_type": "نوع_سیم‌کارت",
+    "operator_app_usage": "استفاده_اپلیکیشن_اپراتور",
+    "monthly_spend_toman": "هزینه_ماهیانه_تومان",
+    "cumulative_spend_toman": "هزینه_کل_تومان",
+    "churn_label": "ریزش",
+    "churn_binary": "ریزش (کد شده)",
+    "tenure_zero_flag": "پرچم سابقه صفر",
+    "billing_definition_ambiguous_flag": "پرچم ابهام هزینه",
+    "is_data_capable": "قابلیت سرویس دیتا"
+  },
+  "value_display_en_to_fa": {
+    "gender": {
+      "male": "مرد",
+      "female": "زن"
+    },
+    "sim_card_type": {
+      "prepaid": "اعتباری",
+      "postpaid": "دائمی"
+    },
+    "churn_binary": {
+      "0": "خیر",
+      "1": "بله"
+    },
+    "operator_app_usage": {
+      "no": "خیر",
+      "yes": "بله"
+    },
+    "intl_roaming_package": {
+      "no": "خیر",
+      "yes": "بله",
+      "no_data_service": "فاقد سرویس دیتا"
+    },
+    "operator_cloud_storage": {
+      "no": "خیر",
+      "yes": "بله",
+      "no_data_service": "فاقد سرویس دیتا"
+    },
+    "night_data_package": {
+      "no": "خیر",
+      "yes": "بله",
+      "no_data_service": "فاقد سرویس دیتا"
+    },
+    "volte_service": {
+      "no": "خیر",
+      "yes": "بله",
+      "no_data_service": "فاقد سرویس دیتا"
+    },
+    "superapp_social": {
+      "no": "خیر",
+      "yes": "بله",
+      "no_data_service": "فاقد سرویس دیتا"
+    },
+    "superapp_financial": {
+      "no": "خیر",
+      "yes": "بله",
+      "no_data_service": "فاقد سرویس دیتا"
+    },
+    "mobile_data_generation": {
+      "2G": "2G",
+      "3G": "3G",
+      "4G": "4G",
+      "5G": "5G"
+    }
+  },
+  "column_business_description_en": {
+    "operator_app_usage": "MCI operator app (همراه من) usage",
+    "superapp_social": "Rubika social superapp (روبیکا)",
+    "superapp_financial": "Ewano financial superapp (اَوانو / EWANO)",
+    "volte_service": "VoLTE voice service",
+    "mobile_data_generation": "Mobile data network generation (2G–5G)"
+  },
+  "note": "Canonical parquet uses English tokens; apply these maps only at presentation time."
+}

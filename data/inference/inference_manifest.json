@@ -1,0 +1,106 @@
+{
+  "schema_version": "inference-export-v1",
+  "generated_at_utc": "2026-05-19T13:21:52.619598+00:00",
+  "purpose": "INFERENCE_AND_BI_EXPORT_ONLY",
+  "not_for": [
+    "held_out_evaluation",
+    "test_metric_reporting",
+    "hyperparameter_tuning"
+  ],
+  "fitted_on": "full_population_all_rows",
+  "n_rows": 7043,
+  "feature_names_out": [
+    "age",
+    "sim_tenure_months",
+    "monthly_spend_toman",
+    "cumulative_spend_toman",
+    "tenure_zero_flag",
+    "billing_definition_ambiguous_flag",
+    "is_data_capable",
+    "operator_app_user",
+    "mobile_data_generation",
+    "birth_month_ordinal",
+    "gender_female",
+    "gender_male",
+    "sim_card_type_postpaid",
+    "sim_card_type_prepaid",
+    "intl_roaming_package_no",
+    "intl_roaming_package_no_data_service",
+    "intl_roaming_package_yes",
+    "operator_cloud_storage_no",
+    "operator_cloud_storage_no_data_service",
+    "operator_cloud_storage_yes",
+    "night_data_package_no",
+    "night_data_package_no_data_service",
+    "night_data_package_yes",
+    "volte_service_no",
+    "volte_service_no_data_service",
+    "volte_service_yes",
+    "superapp_social_no",
+    "superapp_social_no_data_service",
+    "superapp_social_yes",
+    "superapp_financial_no",
+    "superapp_financial_no_data_service",
+    "superapp_financial_yes"
+  ],
+  "model_input_columns": [
+    "age",
+    "sim_tenure_months",
+    "monthly_spend_toman",
+    "cumulative_spend_toman",
+    "tenure_zero_flag",
+    "billing_definition_ambiguous_flag",
+    "is_data_capable",
+    "operator_app_user",
+    "mobile_data_generation",
+    "birth_month_ordinal",
+    "gender",
+    "sim_card_type",
+    "intl_roaming_package",
+    "operator_cloud_storage",
+    "night_data_package",
+    "volte_service",
+    "superapp_social",
+    "superapp_financial"
+  ],
+  "expected_transform_groups": {
+    "numeric_scaled": [
+      "age",
+      "sim_tenure_months",
+      "monthly_spend_toman",
+      "cumulative_spend_toman",
+      "tenure_zero_flag",
+      "billing_definition_ambiguous_flag",
+      "is_data_capable",
+      "operator_app_user"
+    ],
+    "ordinal": [
+      "mobile_data_generation",
+      "birth_month_ordinal"
+    ],
+    "one_hot": [
+      "gender",
+      "sim_card_type",
+      "intl_roaming_package",
+      "operator_cloud_storage",
+      "night_data_package",
+      "volte_service",
+      "superapp_social",
+      "superapp_financial"
+    ]
+  },
+  "winsorization": {
+    "monthly_spend_toman": {
+      "low_q": 0.01,
+      "high_q": 0.99,
+      "lo": 2880000.0,
+      "hi": 17209350.0
+    },
+    "cumulative_spend_toman": {
+      "low_q": 0.01,
+      "high_q": 0.99,
+      "lo": 2962500.0,
+      "hi": 1205888400.0
+    }
+  }
+}

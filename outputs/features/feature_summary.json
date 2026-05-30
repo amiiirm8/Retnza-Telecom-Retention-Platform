@@ -1,0 +1,336 @@
+{
+  "generated_at_utc": "2026-05-28T20:04:37.995961+00:00",
+  "n_rows": 7043,
+  "n_model_features": 47,
+  "numeric_features": {
+    "lifetime_arpu_toman": {
+      "mean": 9704732.636,
+      "std": 4540600.4313,
+      "min": 0.0,
+      "max": 18210000.0,
+      "null_count": 0
+    },
+    "monthly_to_lifetime_arpu_ratio": {
+      "mean": 9704.2522,
+      "std": 279900.615,
+      "min": 0.6355446355446356,
+      "max": 12127500.0,
+      "null_count": 0
+    },
+    "log_monthly_spend_toman": {
+      "mean": 15.9403,
+      "std": 0.5944,
+      "min": 14.822556018403631,
+      "max": 16.695411072133492,
+      "null_count": 0
+    },
+    "spend_intensity_score": {
+      "mean": 31.8554,
+      "std": 1.3539,
+      "min": 14.899009547231755,
+      "max": 33.40625324847727,
+      "null_count": 0
+    },
+    "tenure_bucket": {
+      "mean": 2.2233,
+      "std": 1.4266,
+      "min": 0.0,
+      "max": 4.0,
+      "null_count": 0
+    },
+    "early_lifecycle_flag": {
+      "mean": 0.3104,
+      "std": 0.4627,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "is_data_capable": {
+      "mean": 0.7833,
+      "std": 0.412,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "mobile_gen_ordinal": {
+      "mean": 1.9032,
+      "std": 1.1833,
+      "min": 0.0,
+      "max": 3.0,
+      "null_count": 0
+    },
+    "vas_adoption_count": {
+      "mean": 1.8212,
+      "std": 2.1135,
+      "min": -1.0,
+      "max": 6.0,
+      "null_count": 0
+    },
+    "zero_vas_capable_flag": {
+      "mean": 0.0984,
+      "std": 0.2979,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "volte_non_adopter_capable": {
+      "mean": 0.4931,
+      "std": 0.5,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "is_prepaid": {
+      "mean": 0.5502,
+      "std": 0.4975,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "rubika_user_flag": {
+      "mean": 0.1677,
+      "std": 0.757,
+      "min": -1.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "ewano_user_flag": {
+      "mean": 0.1712,
+      "std": 0.7585,
+      "min": -1.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "hamrahman_user_flag": {
+      "mean": 0.5922,
+      "std": 0.4915,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "volte_user_flag": {
+      "mean": 0.0735,
+      "std": 0.7082,
+      "min": -1.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "roaming_user_flag": {
+      "mean": 0.07,
+      "std": 0.7061,
+      "min": -1.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "cloud_storage_user_flag": {
+      "mean": 0.1282,
+      "std": 0.7384,
+      "min": -1.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "night_package_user_flag": {
+      "mean": 0.1272,
+      "std": 0.7379,
+      "min": -1.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "digital_engagement_score": {
+      "mean": 1.6547,
+      "std": 1.283,
+      "min": 0.0,
+      "max": 4.0,
+      "null_count": 0
+    },
+    "ecosystem_service_count": {
+      "mean": 1.0845,
+      "std": 1.4199,
+      "min": -1.0,
+      "max": 3.0,
+      "null_count": 0
+    },
+    "communication_service_count": {
+      "mean": 1.049,
+      "std": 1.5409,
+      "min": -1.0,
+      "max": 4.0,
+      "null_count": 0
+    },
+    "financial_engagement_flag": {
+      "mean": 0.3879,
+      "std": 0.4873,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "entertainment_social_engagement_flag": {
+      "mean": 0.3844,
+      "std": 0.4865,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "advanced_service_adopter_flag": {
+      "mean": 0.3802,
+      "std": 0.4855,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "prepaid_5g_risk_flag": {
+      "mean": 0.3021,
+      "std": 0.4592,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "prepaid_low_tenure_flag": {
+      "mean": 0.2006,
+      "std": 0.4005,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "prepaid_high_spend_flag": {
+      "mean": 0.1214,
+      "std": 0.3266,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "app_and_volte_user": {
+      "mean": 0.1803,
+      "std": 0.3845,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_value_low_engagement_flag": {
+      "mean": 0.0108,
+      "std": 0.1033,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "advanced_network_low_engagement_flag": {
+      "mean": 0.3,
+      "std": 0.4583,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "young_prepaid_user_flag": {
+      "mean": 0.1181,
+      "std": 0.3228,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_spend_postpaid_flag": {
+      "mean": 0.1255,
+      "std": 0.3313,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "birth_month_ordinal": {
+      "mean": 6.5275,
+      "std": 3.4509,
+      "min": 1.0,
+      "max": 12.0,
+      "null_count": 0
+    },
+    "age_bucket": {
+      "mean": 1.6256,
+      "std": 0.812,
+      "min": 0.0,
+      "max": 3.0,
+      "null_count": 0
+    },
+    "young_user_flag": {
+      "mean": 0.2178,
+      "std": 0.4128,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "senior_user_flag": {
+      "mean": 0.0968,
+      "std": 0.2958,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "gender_female": {
+      "mean": 0.4952,
+      "std": 0.5,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "gender_male": {
+      "mean": 0.5048,
+      "std": 0.5,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_monthly_spend_flag": {
+      "mean": 0.2469,
+      "std": 0.4312,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "possible_bill_shock_flag": {
+      "mean": 0.0016,
+      "std": 0.0395,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_value_customer_flag": {
+      "mean": 0.2448,
+      "std": 0.43,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "low_spend_low_engagement_flag": {
+      "mean": 0.2681,
+      "std": 0.443,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "revenue_risk_segment": {
+      "mean": 1.1904,
+      "std": 1.0888,
+      "min": 0.0,
+      "max": 3.0,
+      "null_count": 0
+    },
+    "operator_app_user": {
+      "mean": 0.5922,
+      "std": 0.4915,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "age": {
+      "mean": 40.074,
+      "std": 11.6549,
+      "min": 18.0,
+      "max": 75.0,
+      "null_count": 0
+    },
+    "sim_tenure_months": {
+      "mean": 32.3711,
+      "std": 24.5595,
+      "min": 0.0,
+      "max": 72.0,
+      "null_count": 0
+    }
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "schema_version": "task8-recommendations-v4",
+  "recommendation_engine_version": "1.0.0",
+  "generated_at_utc": "2026-05-28T20:06:52.064374+00:00",
+  "compatible_champion_schema": "champion-bundle-v4",
+  "compatible_feature_schema": "task4-v2",
+  "compatible_modeling_schema": "modeling-v4",
+  "compatible_shap_schema": "task7-shap-v4",
+  "engine_type": "rule_based_retention_decisioning",
+  "not_uplift_modeling": true,
+  "not_causal_inference": true,
+  "not_treatment_effect_estimation": true,
+  "pipeline_order": "raw score (ranking) \u2192 calibrated score (CRM) \u2192 risk tier \u2192 business rules \u2192 ecosystem fields \u2192 optional SHAP narrative overlay",
+  "scores": {
+    "churn_probability": "calibrated \u2014 CRM thresholds, risk bands, operating policy",
+    "churn_probability_raw": "base model \u2014 ranking, top-k, queue prioritization"
+  },
+  "explanation_traceability": {
+    "rule_top_driver": "From matched business rule only",
+    "shap_top_driver": "From model SHAP when merge valid",
+    "final_top_driver": "rule_top_driver OR shap overlay (Very High / High only)",
+    "final_top_driver_source": "rule | shap_overlay",
+    "shap_does_not_select_actions": true
+  },
+  "risk_tier_thresholds": {
+    "Very High": 0.65,
+    "High": 0.3,
+    "Medium": 0.15,
+    "Low": 0.0
+  },
+  "threshold_source": "champion_model.joblib risk_band_thresholds",
+  "threshold_warnings": [],
+  "operating_threshold_from_champion": 0.17999999999999997,
+  "cost_tier_definitions": {
+    "C0": "No offer spend (monitoring / health SMS only)",
+    "C1": "Low (automated SMS / app push, no agent)",
+    "C2": "Medium (USSD / digital bundle / auto-credit)",
+    "C3": "Medium-high (optional outbound call queue)",
+    "C4": "High (retention desk call + ARPU-capped save offer)"
+  },
+  "rule_precedence_order": [
+    "R01_PREPAID_INFANT",
+    "R02_PREPAID_5G",
+    "R12_ECOSYSTEM_POWER_USER",
+    "R05_BILL_SHOCK",
+    "R09_RUBIKA_INACTIVE",
+    "R10_EWANO_NON_ADOPTER",
+    "R11_HAMRAHMAN_LOW_ENGAGEMENT",
+    "R03_VOLTE_ENABLE",
+    "R04_VAS_ZERO",
+    "R06_VAS_PARTIAL",
+    "R08_POSTPAID_EARLY",
+    "R07_LEGACY_2G"
+  ],
+  "ecosystem_rules": [
+    "R09_RUBIKA_INACTIVE",
+    "R10_EWANO_NON_ADOPTER",
+    "R11_HAMRAHMAN_LOW_ENGAGEMENT",
+    "R12_ECOSYSTEM_POWER_USER"
+  ],
+  "intervention_policy": "recommended_action and rule_id are always rule-driven. SHAP enriches narrative for high tiers only.",
+  "shap_merge_validation": {
+    "path": "/Users/amirmahdi/hacketon/outputs/explainability/subscriber_shap_values.parquet",
+    "compatible": true,
+    "warnings": [],
+    "errors": [],
+    "expected_shap_schema": "task7-shap-v4",
+    "shap_overlay_rows": 2490,
+    "shap_overlay_policy": "SHAP may replace final_top_driver narrative for Very High / High only; rule_id and recommended_action remain rule-driven.",
+    "merged": true
+  },
+  "production_cautions": [
+    "Re-tune thresholds when calibration or prevalence drifts.",
+    "Ecosystem metrics are associative \u2014 not causal product effects.",
+    "Monitor R99 fallback_share; should stay minority of book."
+  ],
+  "fallback_rule_share": 0.0,
+  "n_subscribers": 7043,
+  "risk_tier_counts": {
+    "Low": 2889,
+    "High": 1826,
+    "Medium": 1664,
+    "Very High": 664
+  },
+  "campaign_priority_counts": {
+    "P1": 2962,
+    "P4": 2892,
+    "P2": 1189
+  },
+  "rule_id_counts": {
+    "R02_PREPAID_5G": 1509,
+    "R01_PREPAID_INFANT": 1413,
+    "R07_LEGACY_2G": 1101,
+    "R05_BILL_SHOCK": 582,
+    "R00_MONITOR": 552,
+    "R12_ECOSYSTEM_POWER_USER": 525,
+    "R03_VOLTE_ENABLE": 491,
+    "R09_RUBIKA_INACTIVE": 487,
+    "R08_POSTPAID_EARLY": 132,
+    "R06_VAS_PARTIAL": 124,
+    "R10_EWANO_NON_ADOPTER": 90,
+    "R11_HAMRAHMAN_LOW_ENGAGEMENT": 37
+  },
+  "ecosystem_segment_counts": {
+    "partial_ecosystem": 2045,
+    "legacy_voice_only": 1526,
+    "digitally_embedded": 1247,
+    "content_only": 767,
+    "fully_embedded": 656,
+    "non_ecosystem_prepaid": 444,
+    "wallet_only": 260,
+    "non_ecosystem_capable": 98
+  },
+  "ecosystem_analytics": {
+    "disclaimer": "Metrics describe observed associations in this snapshot. They do not establish causal effects of ecosystem products on churn.",
+    "book_mean_calibrated_risk": 0.26910920062473376,
+    "rubika_usage": {
+      "label": "Rubika",
+      "active_n": 2707,
+      "inactive_capable_n": 2810,
+      "mean_calibrated_risk_active": 0.3006531954192833,
+      "mean_calibrated_risk_inactive_capable": 0.3434442348754448,
+      "observed_association": "Rubika active subscribers show mean calibrated risk 0.301 vs inactive capable 0.343 (associative; not causal)."
+    },
+    "ewano_usage": {
+      "label": "EWANO",
+      "active_n": 2732,
+      "inactive_capable_n": 2785,
+      "mean_calibrated_risk_active": 0.29849487554904836,
+      "mean_calibrated_risk_inactive_capable": 0.3459456014362657,
+      "observed_association": "EWANO active subscribers show mean calibrated risk 0.298 vs inactive capable 0.346 (associative; not causal)."
+    },
+    "hamrahman_usage": {
+      "label": "Hamrah Man",
+      "active_n": 4171,
+      "inactive_capable_n": 2872,
+      "mean_calibrated_risk_active": 0.33037391512826664,
+      "mean_calibrated_risk_inactive_capable": 0.24605825892857142,
+      "observed_association": "Hamrah Man active subscribers show mean calibrated risk 0.330 vs inactive capable 0.246 (associative; not causal)."
+    },
+    "volte_usage": {
+      "label": "VoLTE",
+      "active_n": 2044,
+      "inactive_capable_n": 3473,
+      "mean_calibrated_risk_active": 0.17178194716242662,
+      "mean_calibrated_risk_inactive_capable": 0.4111212784336309,
+      "observed_association": "VoLTE active subscribers show mean calibrated risk 0.172 vs inactive capable 0.411 (associative; not causal)."
+    },
+    "ecosystem_segment_summary": [
+      {
+        "ecosystem_segment": "content_only",
+        "n": 767,
+        "mean_calibrated_risk": 0.32494810951760106,
+        "churn_rate_vs_book": 1.207495354165662,
+        "share_of_base": 0.108902456339628
+      },
+      {
+        "ecosystem_segment": "digitally_embedded",
+        "n": 1247,
+        "mean_calibrated_risk": 0.32674434643143546,
+        "churn_rate_vs_book": 1.2141701051948517,
+        "share_of_base": 0.1770552321453926
+      },
+      {
+        "ecosystem_segment": "fully_embedded",
+        "n": 656,
+        "mean_calibrated_risk": 0.19143780487804876,
+        "churn_rate_vs_book": 0.711375918896969,
+        "share_of_base": 0.09314212693454493
+      },
+      {
+        "ecosystem_segment": "legacy_voice_only",
+        "n": 1526,
+        "mean_calibrated_risk": 0.07627103538663171,
+        "churn_rate_vs_book": 0.28342039294669014,
+        "share_of_base": 0.21666903308249325
+      },
+      {
+        "ecosystem_segment": "non_ecosystem_capable",
+        "n": 98,
+        "mean_calibrated_risk": 0.07019591836734693,
+        "churn_rate_vs_book": 0.26084547910063255,
+        "share_of_base": 0.013914525060343604
+      },
+      {
+        "ecosystem_segment": "non_ecosystem_prepaid",
+        "n": 444,
+        "mean_calibrated_risk": 0.413747072072072,
+        "churn_rate_vs_book": 1.5374690687332992,
+        "share_of_base": 0.06304131762033224
+      },
+      {
+        "ecosystem_segment": "partial_ecosystem",
+        "n": 2045,
+        "mean_calibrated_risk": 0.36509129584352074,
+        "churn_rate_vs_book": 1.3566659742437854,
+        "share_of_base": 0.2903592219224762
+      },
+      {
+        "ecosystem_segment": "wallet_only",
+        "n": 260,
+        "mean_calibrated_risk": 0.22878192307692305,
+        "churn_rate_vs_book": 0.8501453036381089,
+        "share_of_base": 0.03691608689478915
+      }
+    ],
+    "risk_tier_ecosystem_adoption": {
+      "High": {
+        "n": 1826,
+        "rubika_adoption_rate": 0.3433734939759036,
+        "ewano_adoption_rate": 0.34994523548740414
+      },
+      "Low": {
+        "n": 2889,
+        "rubika_adoption_rate": 0.32017999307718936,
+        "ewano_adoption_rate": 0.321564555209415
+      },
+      "Medium": {
+        "n": 1664,
+        "rubika_adoption_rate": 0.47716346153846156,
+        "ewano_adoption_rate": 0.4891826923076923
+      },
+      "Very High": {
+        "n": 664,
+        "rubika_adoption_rate": 0.5436746987951807,
+        "ewano_adoption_rate": 0.5271084337349398
+      }
+    },
+    "high_risk_non_ecosystem_subscribers": 316,
+    "ecosystem_power_user_count": 656,
+    "prepaid_ecosystem_penetration": 0.7643870967741936,
+    "retention_action_distribution_by_segment": {
+      "content_only": {
+        "R02_PREPAID_5G": 239,
+        "R01_PREPAID_INFANT": 143,
+        "R00_MONITOR": 127,
+        "R10_EWANO_NON_ADOPTER": 90,
+        "R05_BILL_SHOCK": 84
+      },
+      "digitally_embedded": {
+        "R02_PREPAID_5G": 410,
+        "R05_BILL_SHOCK": 340,
+        "R00_MONITOR": 205,
+        "R03_VOLTE_ENABLE": 133,
+        "R01_PREPAID_INFANT": 112
+      },
+      "fully_embedded": {
+        "R12_ECOSYSTEM_POWER_USER": 525,
+        "R02_PREPAID_5G": 115,
+        "R01_PREPAID_INFANT": 16
+      },
+      "legacy_voice_only": {
+        "R07_LEGACY_2G": 1101,
+        "R01_PREPAID_INFANT": 299,
+        "R08_POSTPAID_EARLY": 113,
+        "R05_BILL_SHOCK": 13
+      },
+      "non_ecosystem_capable": {
+        "R03_VOLTE_ENABLE": 95,
+        "R09_RUBIKA_INACTIVE": 2,
+        "R05_BILL_SHOCK": 1
+      },
+      "non_ecosystem_prepaid": {
+        "R01_PREPAID_INFANT": 228,
+        "R09_RUBIKA_INACTIVE": 113,
+        "R02_PREPAID_5G": 98,
+        "R03_VOLTE_ENABLE": 5
+      },
+      "partial_ecosystem": {
+        "R02_PREPAID_5G": 596,
+        "R01_PREPAID_INFANT": 576,
+        "R09_RUBIKA_INACTIVE": 323,
+        "R00_MONITOR": 164,
+        "R03_VOLTE_ENABLE": 146
+      },
+      "wallet_only": {
+        "R00_MONITOR": 56,
+        "R02_PREPAID_5G": 51,
+        "R03_VOLTE_ENABLE": 40,
+        "R01_PREPAID_INFANT": 39,
+        "R05_BILL_SHOCK": 35
+      }
+    },
+    "narrative_bullets": [
+      "Subscribers embedded across multiple operator ecosystem products show lower mean calibrated risk (0.191) than non-ecosystem prepaid (0.414) in this snapshot (associated, not causal).",
+      "EWANO adoption is associated with mean calibrated risk 0.298 vs 0.346 among capable non-adopters (observed relationship).",
+      "Rubika participation is associated with mean calibrated risk 0.301 vs 0.343 for capable non-users (correlated with engagement; not causal).",
+      "Power users of Rubika, EWANO, Hamrah Man, and VoLTE represent a high-value retention cohort \u2014 prioritize loyalty preservation over acquisition-style offers."
+    ]
+  },
+  "high_risk_without_monitor": 2490,
+  "business_rules": [
+    {
+      "rule_id": "R01_PREPAID_INFANT",
+      "trigger_condition": "is_prepaid=1 AND sim_tenure_months<=6",
+      "top_driver": "Prepaid SIM + very short tenure",
+      "business_rationale": "Infant prepaid accounts show the highest observed churn; early recharge and onboarding friction drive exit before habit formation.",
+      "recommended_action": "Prepaid Welcome Save: 30-day onboarding SMS journey + 20% bonus credit on the next two recharges completed within 45 days (auto-applied on recharge).",
+      "expected_impact": "Reduce first-90-day prepaid churn; target +15\u201325% recharge retention in cohort.",
+      "rule_priority": "P1",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R02_PREPAID_5G",
+      "trigger_condition": "prepaid_5g_risk_flag=1",
+      "top_driver": "Prepaid on 5G",
+      "business_rationale": "Prepaid 5G subscribers combine high-speed product expectations with prepaid volatility; model and EDA both flag this segment as elevated risk.",
+      "recommended_action": "5G Retention Pack: 3-month discounted 5G night-unlimited add-on + outbound migration assessment for postpaid plan with waived SIM swap fee.",
+      "expected_impact": "Stabilize prepaid 5G base; improve stickiness via bundled data and postpaid path.",
+      "rule_priority": "P1",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R12_ECOSYSTEM_POWER_USER",
+      "trigger_condition": "Rubika+EWANO+HamrahMan+VoLTE active",
+      "top_driver": "Multi-product ecosystem power user",
+      "business_rationale": "Multi-product ecosystem users often show lower churn; preserve with loyalty programs rather than acquisition-style discounting.",
+      "recommended_action": "VIP Loyalty Preservation: premium bundle retention, priority support queue, cross-product rewards (Rubika + EWANO + Hamrah Man), no aggressive discounting.",
+      "expected_impact": "Preserve high-value ecosystem customers; prevent premium erosion.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "True"
+    },
+    {
+      "rule_id": "R05_BILL_SHOCK",
+      "trigger_condition": "high_monthly_spend_flag=1 OR monthly_to_lifetime_arpu_ratio>=1.25",
+      "top_driver": "High monthly spend or bill spike vs history",
+      "business_rationale": "Elevated monthly spend or spend spike vs lifetime average suggests bill shock or plan mismatch\u2014associated with higher churn in the model.",
+      "recommended_action": "Bill Shock Prevention: proactive SMS with itemized spend + optional plan downgrade or 15% discount on next monthly invoice for 6-month stay commitment (digital accept).",
+      "expected_impact": "Lower involuntary churn from bill disputes; protect ARPU on high-value lines.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R09_RUBIKA_INACTIVE",
+      "trigger_condition": "rubika_user_flag=0 AND is_data_capable=1 AND medium+ risk",
+      "top_driver": "Rubika non-adopter (data-capable)",
+      "business_rationale": "Lack of Rubika engagement may indicate weak platform stickiness and low embeddedness in the operator social ecosystem.",
+      "recommended_action": "Rubika Onboarding: discounted in-app traffic, exclusive content bundle, social engagement incentives via app push + SMS deep link.",
+      "expected_impact": "Improve ecosystem attachment and digital engagement; reduce switching likelihood.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "True"
+    },
+    {
+      "rule_id": "R10_EWANO_NON_ADOPTER",
+      "trigger_condition": "ewano_user_flag=0 AND (prepaid OR early tenure) AND data capable",
+      "top_driver": "EWANO non-adopter",
+      "business_rationale": "Financial ecosystem participation is associated with recharge retention through payment habit formation and wallet dependency.",
+      "recommended_action": "EWANO Activation: cashback on first bill payment, recharge bonus via EWANO wallet, targeted app journey for prepaid and early-tenure segments.",
+      "expected_impact": "Increase wallet adoption and ecosystem switching costs.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "True"
+    },
+    {
+      "rule_id": "R11_HAMRAHMAN_LOW_ENGAGEMENT",
+      "trigger_condition": "hamrahman_user_flag=0 OR low digital_engagement_score",
+      "top_driver": "Low Hamrah Man / digital ecosystem engagement",
+      "business_rationale": "Low self-service and app adoption often correlates with weaker engagement and higher friction in digital servicing.",
+      "recommended_action": "Hamrah Man Onboarding: app-only retention offers, usage rewards, guided self-service setup journey (SMS + app push).",
+      "expected_impact": "Increase app engagement and digital servicing stickiness.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "True"
+    },
+    {
+      "rule_id": "R03_VOLTE_ENABLE",
+      "trigger_condition": "volte_non_adopter_capable=1 AND is_data_capable=1",
+      "top_driver": "VoLTE not adopted (data-capable)",
+      "business_rationale": "Non-adoption of VoLTE among data-capable users correlates with higher churn; often indicates handset/settings friction or under-provisioned experience.",
+      "recommended_action": "VoLTE Activation Push: one-tap provisioning SMS + 5GB bonus data after first successful VoLTE call within 14 days (tracked via network provisioning).",
+      "expected_impact": "Increase VoLTE attach rate; expected churn reduction among capable non-adopters.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R04_VAS_ZERO",
+      "trigger_condition": "zero_vas_capable_flag=1",
+      "top_driver": "Data-capable with no active VAS",
+      "business_rationale": "Zero VAS among data-capable customers signals low product embedding; EDA shows steep churn gradient as VAS count increases.",
+      "recommended_action": "VAS Starter Bundle: 60-day trial of operator cloud (5GB) + night internet at 50% off; single opt-in via USSD *code* or app banner.",
+      "expected_impact": "Lift VAS adoption and switching costs; improve 90-day retention in zero-VAS cohort.",
+      "rule_priority": "P2",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R06_VAS_PARTIAL",
+      "trigger_condition": "is_data_capable=1 AND vas_adoption_count IN (1,2)",
+      "top_driver": "Low VAS penetration (1\u20132 products)",
+      "business_rationale": "Partial VAS adoption leaves uplift room; expanding to 3+ VAS products is associated with materially lower churn in EDA.",
+      "recommended_action": "Stickiness Cross-sell: 7-day international roaming pass + super-app financial wallet activation with 50,000 Toman cashback on first bill payment via wallet.",
+      "expected_impact": "Increase multi-product attach; move customers up VAS adoption ladder.",
+      "rule_priority": "P3",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R08_POSTPAID_EARLY",
+      "trigger_condition": "is_prepaid=0 AND early_lifecycle_flag=1",
+      "top_driver": "First-year postpaid subscriber",
+      "business_rationale": "Postpaid early lifecycle still shows elevated churn risk vs tenured base; loyalty lock before month-12 decision window.",
+      "recommended_action": "Postpaid Loyalty Lock: 10% loyalty discount on months 7\u201312 when customer accepts e-bill + auto-pay setup within 14 days (contract amendment digital).",
+      "expected_impact": "Extend postpaid tenure through first contract year; reduce early postpaid churn.",
+      "rule_priority": "P3",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R07_LEGACY_2G",
+      "trigger_condition": "is_data_capable=0 (2G)",
+      "top_driver": "Legacy 2G / voice-centric line",
+      "business_rationale": "2G subscribers lack data service context; upsell path is migration to 3G/4G rather than data VAS campaigns.",
+      "recommended_action": "Legacy Migration Offer: free SIM swap + 3-month introductory 4G data pack (5GB/month) at 40% discount when upgrading network generation in-store or app.",
+      "expected_impact": "Migrate voice-only users to data-capable plans; reduce segment churn via modern plan fit.",
+      "rule_priority": "P3",
+      "ecosystem_rule": "False"
+    },
+    {
+      "rule_id": "R99_HIGH_RISK_SAVE",
+      "trigger_condition": "churn_probability>=High tier AND no_other_rule_matched",
+      "top_driver": "Elevated model churn score (composite)",
+      "business_rationale": "Safety-net only: fires when calibrated risk >= High tier and no product rule matched. Not a preferred campaign\u2014use sparingly vs targeted plays.",
+      "recommended_action": "Retention Desk Save Call: specialist callback within 48h with personalized offer (credit up to 1\u00d7 monthly ARPU cap or equivalent free data for 30 days).",
+      "expected_impact": "Catch-all for high-risk saves; prevent unactioned high-score customers.",
+      "rule_priority": "P1",
+      "ecosystem_rule": "False"
+    }
+  ],
+  "sample_subscribers": [
+    {
+      "example_label": "rubika_inactive_ecosystem",
+      "resolution_note": "Ecosystem rule for capable Rubika non-adopters at medium+ risk.",
+      "subscriber_id": "1052",
+      "churn_probability": 0.4825,
+      "churn_probability_raw": 0.2323,
+      "risk_tier": "High",
+      "rule_id": "R09_RUBIKA_INACTIVE",
+      "rule_top_driver": "Rubika non-adopter (data-capable)",
+      "final_top_driver": "Prepaid SIM",
+      "final_top_driver_source": "shap_overlay",
+      "ecosystem_segment": "partial_ecosystem",
+      "recommended_action": "Rubika Onboarding: discounted in-app traffic, exclusive content bundle, social engagement incentives via app push + SMS deep link.",
+      "campaign_priority": "P1",
+      "crm_queue": "outbound_sms_call_p1"
+    },
+    {
+      "example_label": "ecosystem_power_user_loyalty",
+      "resolution_note": "Multi-product ecosystem user \u2014 loyalty preservation not acquisition discount.",
+      "subscriber_id": "1226",
+      "churn_probability": 0.3333,
+      "churn_probability_raw": 0.5659,
+      "risk_tier": "High",
+      "rule_id": "R12_ECOSYSTEM_POWER_USER",
+      "rule_top_driver": "Multi-product ecosystem power user",
+      "final_top_driver": "Prepaid SIM",
+      "final_top_driver_source": "shap_overlay",
+      "ecosystem_segment": "fully_embedded",
+      "recommended_action": "VIP Loyalty Preservation: premium bundle retention, priority support queue, cross-product rewards (Rubika + EWANO + Hamrah Man), no aggressive discounting.",
+      "campaign_priority": "P1",
+      "crm_queue": "outbound_sms_call_p1"
+    }
+  ],
+  "output_path": "/Users/amirmahdi/hacketon/outputs/recommendations/subscriber_recommendations.parquet"
+}

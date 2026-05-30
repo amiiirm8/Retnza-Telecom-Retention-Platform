@@ -1,0 +1,67 @@
+{
+  "generated_at_utc": "2026-05-28T20:06:34.025800+00:00",
+  "schema_version": "modeling-v4",
+  "model_family": "random_forest",
+  "calibration_method": "isotonic",
+  "n_features": 47,
+  "churn_rate_reference": {
+    "train": 0.26536822884966527,
+    "validation": 0.26584673604541154,
+    "test": 0.26490066225165565
+  },
+  "baseline_metrics_holdout": {
+    "test_ranking_raw": {
+      "roc_auc": 0.8442406692406692,
+      "pr_auc": 0.6571077696236859,
+      "brier_score": 0.15889006984430343,
+      "ece": 0.13438138495147753
+    },
+    "test_at_operating": {
+      "threshold": 0.17999999999999997,
+      "roc_auc": 0.843151314579886,
+      "pr_auc": 0.6334146945516894,
+      "brier_score": 0.13630672201683208,
+      "ece": 0.025323852543336495,
+      "precision": 0.46285714285714286,
+      "recall": 0.8678571428571429,
+      "f1": 0.6037267080745342,
+      "false_negative_rate": 0.13214285714285715,
+      "base_rate": 0.26490066225165565,
+      "lift_at_threshold": 1.747285714285714,
+      "confusion_matrix": {
+        "tn": 495,
+        "fp": 282,
+        "fn": 37,
+        "tp": 243
+      },
+      "calibration_curve": {
+        "mean_predicted": [
+          0.03789463079274578,
+          0.13696868398747308,
+          0.24166168543613642,
+          0.3388536201590244,
+          0.4787400320201588,
+          0.5857727790894541,
+          0.7,
+          0.7812121062827363
+        ],
+        "fraction_positive": [
+          0.015723270440251572,
+          0.1527777777777778,
+          0.24161073825503357,
+          0.25,
+          0.4858757062146893,
+          0.6129032258064516,
+          0.6923076923076923,
+          0.7682926829268293
+        ]
+      }
+    }
+  },
+  "monitoring_notes": [
+    "Compare production score histograms to score_distribution.raw_*",
+    "PSI on raw ranking scores recommended monthly",
+    "Feature drift: compare production quantiles to feature_distribution_train",
+    "Recalibrate if ECE degrades >2x vs baseline_metrics_holdout"
+  ]
+}

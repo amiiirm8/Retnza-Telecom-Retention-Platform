@@ -1,0 +1,36 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:32:01.507388+00:00",
+  "n_total_subscribers": 7043,
+  "queue_breakdown": {
+    "monitor_health_p4": 2889,
+    "outbound_sms_call_p1": 1826,
+    "digital_nurture_p2": 1664,
+    "retention_desk_p1": 664
+  },
+  "total_queued": 7043,
+  "p1_count": 2962,
+  "p1_concentration": 0.4206,
+  "fallback_count": 0,
+  "fallback_concentration": 0.0,
+  "channel_breakdown": {
+    "SMS": 5648,
+    "app_push": 1395
+  },
+  "sms_volume_pct": 0.8019,
+  "outbound_call_volume_pct": 0.0,
+  "app_push_volume_pct": 0.1981,
+  "digital_only_pct": 1.0,
+  "human_touch_pct": 0.0,
+  "overload_risks": [
+    {
+      "risk_area": "sms_channel_saturation",
+      "metric": "sms_share",
+      "value": 0.8019,
+      "threshold": 0.6,
+      "detail": "SMS channel used for 80.2% of actions; risk of SMS fatigue and campaign blindness."
+    }
+  ],
+  "n_overload_risks": 1,
+  "saturation_disclaimer": "Saturation thresholds are advisory. Actual operational capacity depends on contact centre staffing, campaign schedule, and channel throughput."
+}

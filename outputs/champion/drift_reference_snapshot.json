@@ -1,0 +1,607 @@
+{
+  "generated_at_utc": "2026-05-28T20:06:34.025800+00:00",
+  "schema_version": "modeling-v4",
+  "model_family": "random_forest",
+  "calibration_method": "isotonic",
+  "n_features": 47,
+  "feature_columns_hash": 5484875998548053360,
+  "feature_column_version": [
+    "lifetime_arpu_toman",
+    "monthly_to_lifetime_arpu_ratio",
+    "log_monthly_spend_toman",
+    "spend_intensity_score",
+    "tenure_bucket",
+    "early_lifecycle_flag",
+    "is_data_capable",
+    "mobile_gen_ordinal",
+    "vas_adoption_count",
+    "zero_vas_capable_flag",
+    "volte_non_adopter_capable",
+    "is_prepaid",
+    "rubika_user_flag",
+    "ewano_user_flag",
+    "hamrahman_user_flag",
+    "volte_user_flag",
+    "roaming_user_flag",
+    "cloud_storage_user_flag",
+    "night_package_user_flag",
+    "digital_engagement_score",
+    "ecosystem_service_count",
+    "communication_service_count",
+    "financial_engagement_flag",
+    "entertainment_social_engagement_flag",
+    "advanced_service_adopter_flag",
+    "prepaid_5g_risk_flag",
+    "prepaid_low_tenure_flag",
+    "prepaid_high_spend_flag",
+    "app_and_volte_user",
+    "high_value_low_engagement_flag",
+    "advanced_network_low_engagement_flag",
+    "young_prepaid_user_flag",
+    "high_spend_postpaid_flag",
+    "birth_month_ordinal",
+    "age_bucket",
+    "young_user_flag",
+    "senior_user_flag",
+    "gender_female",
+    "gender_male",
+    "high_monthly_spend_flag",
+    "possible_bill_shock_flag",
+    "high_value_customer_flag",
+    "low_spend_low_engagement_flag",
+    "revenue_risk_segment",
+    "operator_app_user",
+    "age",
+    "sim_tenure_months"
+  ],
+  "feature_distribution_train": {
+    "lifetime_arpu_toman": {
+      "mean": 9700665.874185504,
+      "std": 4567387.664551939,
+      "p25": 5196982.75862069,
+      "p50": 10568437.5,
+      "p75": 13582500.0,
+      "min": 0.0,
+      "max": 18210000.0,
+      "n": 4929
+    },
+    "monthly_to_lifetime_arpu_ratio": {
+      "mean": 10789.192369463104,
+      "std": 283289.95725589804,
+      "p25": 0.9809849881485383,
+      "p50": 1.0,
+      "p75": 1.0206921905362114,
+      "min": 0.6689303904923599,
+      "max": 11002500.0,
+      "n": 4929
+    },
+    "log_monthly_spend_toman": {
+      "mean": 15.938364755373929,
+      "std": 0.5965660635758654,
+      "p25": 15.473738825043979,
+      "p50": 16.172583930939354,
+      "p75": 16.4187557187333,
+      "min": 14.830741600012107,
+      "max": 16.695411072133492,
+      "n": 4929
+    },
+    "spend_intensity_score": {
+      "mean": 31.847862375379258,
+      "std": 1.3837079543741497,
+      "p25": 30.92957808939564,
+      "p50": 32.3495731045071,
+      "p75": 32.844229170540146,
+      "min": 14.899009547231755,
+      "max": 33.40504219502055,
+      "n": 4929
+    },
+    "tenure_bucket": {
+      "mean": 2.220125786163522,
+      "std": 1.4334650826809627,
+      "p25": 1.0,
+      "p50": 3.0,
+      "p75": 3.0,
+      "min": 0.0,
+      "max": 4.0,
+      "n": 4929
+    },
+    "early_lifecycle_flag": {
+      "mean": 0.31284236153377964,
+      "std": 0.46369779051922283,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "is_data_capable": {
+      "mean": 0.7821059038344492,
+      "std": 0.4128569246641515,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "mobile_gen_ordinal": {
+      "mean": 1.8999797119091093,
+      "std": 1.1832579733120296,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 3.0,
+      "min": 0.0,
+      "max": 3.0,
+      "n": 4929
+    },
+    "vas_adoption_count": {
+      "mean": 1.8312030837898154,
+      "std": 2.127126560352421,
+      "p25": 0.0,
+      "p50": 2.0,
+      "p75": 3.0,
+      "min": -1.0,
+      "max": 6.0,
+      "n": 4929
+    },
+    "zero_vas_capable_flag": {
+      "mean": 0.09799147900182593,
+      "std": 0.2973332896845736,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "volte_non_adopter_capable": {
+      "mean": 0.48914587137350374,
+      "std": 0.4999328900008102,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "is_prepaid": {
+      "mean": 0.5494015013187259,
+      "std": 0.49760398607116724,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "rubika_user_flag": {
+      "mean": 0.1681882734834652,
+      "std": 0.7588188127082305,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "ewano_user_flag": {
+      "mean": 0.173260296206127,
+      "std": 0.7610169880734312,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "hamrahman_user_flag": {
+      "mean": 0.5938324203692432,
+      "std": 0.4911663880753701,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "min": 0.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "volte_user_flag": {
+      "mean": 0.0750659362953946,
+      "std": 0.7108598694337218,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "roaming_user_flag": {
+      "mean": 0.06796510448366809,
+      "std": 0.7065658686238203,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "cloud_storage_user_flag": {
+      "mean": 0.13045242442686142,
+      "std": 0.7411708515229304,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "night_package_user_flag": {
+      "mean": 0.12680056806654494,
+      "std": 0.7393384038157494,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "n": 4929
+    },
+    "digital_engagement_score": {
+      "mean": 1.6640292148508826,
+      "std": 1.2856627273499721,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 3.0,
+      "min": 0.0,
+      "max": 4.0,
+      "n": 4929
+    }
+  },
+  "score_distribution": {
+    "raw_train": {
+      "bin_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "counts": [
+        1132,
+        606,
+        516,
+        387,
+        386,
+        387,
+        427,
+        515,
+        361,
+        212
+      ],
+      "n": 4929
+    },
+    "raw_validation": {
+      "bin_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "counts": [
+        242,
+        128,
+        125,
+        79,
+        80,
+        92,
+        102,
+        91,
+        81,
+        37
+      ],
+      "n": 1057
+    },
+    "raw_test": {
+      "bin_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "counts": [
+        242,
+        116,
+        123,
+        82,
+        84,
+        83,
+        89,
+        125,
+        65,
+        48
+      ],
+      "n": 1057
+    },
+    "calibrated_validation": {
+      "bin_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "counts": [
+        317,
+        236,
+        136,
+        53,
+        148,
+        69,
+        9,
+        61,
+        25,
+        3
+      ],
+      "n": 1057
+    },
+    "calibrated_test": {
+      "bin_edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "counts": [
+        318,
+        216,
+        149,
+        40,
+        161,
+        78,
+        13,
+        42,
+        40,
+        0
+      ],
+      "n": 1057
+    }
+  },
+  "psi_ready_score_raw": {
+    "validation_vs_train": [
+      {
+        "bin": 1,
+        "lo": 0.0,
+        "hi": 0.1,
+        "reference_pct": 0.2296611888821262,
+        "current_pct": 0.22894985808893092
+      },
+      {
+        "bin": 2,
+        "lo": 0.1,
+        "hi": 0.2,
+        "reference_pct": 0.12294583079732198,
+        "current_pct": 0.12109744560075686
+      },
+      {
+        "bin": 3,
+        "lo": 0.2,
+        "hi": 0.30000000000000004,
+        "reference_pct": 0.1046865489957395,
+        "current_pct": 0.11825922421948912
+      },
+      {
+        "bin": 4,
+        "lo": 0.30000000000000004,
+        "hi": 0.4,
+        "reference_pct": 0.07851491174680462,
+        "current_pct": 0.07473982970671712
+      },
+      {
+        "bin": 5,
+        "lo": 0.4,
+        "hi": 0.5,
+        "reference_pct": 0.07831203083789816,
+        "current_pct": 0.07568590350047304
+      },
+      {
+        "bin": 6,
+        "lo": 0.5,
+        "hi": 0.6000000000000001,
+        "reference_pct": 0.07851491174680462,
+        "current_pct": 0.08703878902554399
+      },
+      {
+        "bin": 7,
+        "lo": 0.6000000000000001,
+        "hi": 0.7000000000000001,
+        "reference_pct": 0.0866301481030635,
+        "current_pct": 0.09649952696310313
+      },
+      {
+        "bin": 8,
+        "lo": 0.7000000000000001,
+        "hi": 0.8,
+        "reference_pct": 0.10448366808683303,
+        "current_pct": 0.08609271523178808
+      },
+      {
+        "bin": 9,
+        "lo": 0.8,
+        "hi": 0.9,
+        "reference_pct": 0.07324000811523636,
+        "current_pct": 0.07663197729422895
+      },
+      {
+        "bin": 10,
+        "lo": 0.9,
+        "hi": 1.0,
+        "reference_pct": 0.043010752688172046,
+        "current_pct": 0.03500473036896878
+      }
+    ],
+    "test_vs_train": [
+      {
+        "bin": 1,
+        "lo": 0.0,
+        "hi": 0.1,
+        "reference_pct": 0.2296611888821262,
+        "current_pct": 0.22894985808893092
+      },
+      {
+        "bin": 2,
+        "lo": 0.1,
+        "hi": 0.2,
+        "reference_pct": 0.12294583079732198,
+        "current_pct": 0.1097445600756859
+      },
+      {
+        "bin": 3,
+        "lo": 0.2,
+        "hi": 0.30000000000000004,
+        "reference_pct": 0.1046865489957395,
+        "current_pct": 0.11636707663197729
+      },
+      {
+        "bin": 4,
+        "lo": 0.30000000000000004,
+        "hi": 0.4,
+        "reference_pct": 0.07851491174680462,
+        "current_pct": 0.07757805108798486
+      },
+      {
+        "bin": 5,
+        "lo": 0.4,
+        "hi": 0.5,
+        "reference_pct": 0.07831203083789816,
+        "current_pct": 0.07947019867549669
+      },
+      {
+        "bin": 6,
+        "lo": 0.5,
+        "hi": 0.6000000000000001,
+        "reference_pct": 0.07851491174680462,
+        "current_pct": 0.07852412488174078
+      },
+      {
+        "bin": 7,
+        "lo": 0.6000000000000001,
+        "hi": 0.7000000000000001,
+        "reference_pct": 0.0866301481030635,
+        "current_pct": 0.08420056764427625
+      },
+      {
+        "bin": 8,
+        "lo": 0.7000000000000001,
+        "hi": 0.8,
+        "reference_pct": 0.10448366808683303,
+        "current_pct": 0.11825922421948912
+      },
+      {
+        "bin": 9,
+        "lo": 0.8,
+        "hi": 0.9,
+        "reference_pct": 0.07324000811523636,
+        "current_pct": 0.06149479659413434
+      },
+      {
+        "bin": 10,
+        "lo": 0.9,
+        "hi": 1.0,
+        "reference_pct": 0.043010752688172046,
+        "current_pct": 0.04541154210028382
+      }
+    ]
+  },
+  "baseline_metrics_holdout": {
+    "test_ranking_raw": {
+      "roc_auc": 0.8442406692406692,
+      "pr_auc": 0.6571077696236859,
+      "brier_score": 0.15889006984430343,
+      "ece": 0.13438138495147753
+    },
+    "test_at_operating": {
+      "threshold": 0.17999999999999997,
+      "roc_auc": 0.843151314579886,
+      "pr_auc": 0.6334146945516894,
+      "brier_score": 0.13630672201683208,
+      "ece": 0.025323852543336495,
+      "precision": 0.46285714285714286,
+      "recall": 0.8678571428571429,
+      "f1": 0.6037267080745342,
+      "false_negative_rate": 0.13214285714285715,
+      "base_rate": 0.26490066225165565,
+      "lift_at_threshold": 1.747285714285714,
+      "confusion_matrix": {
+        "tn": 495,
+        "fp": 282,
+        "fn": 37,
+        "tp": 243
+      },
+      "calibration_curve": {
+        "mean_predicted": [
+          0.03789463079274578,
+          0.13696868398747308,
+          0.24166168543613642,
+          0.3388536201590244,
+          0.4787400320201588,
+          0.5857727790894541,
+          0.7,
+          0.7812121062827363
+        ],
+        "fraction_positive": [
+          0.015723270440251572,
+          0.1527777777777778,
+          0.24161073825503357,
+          0.25,
+          0.4858757062146893,
+          0.6129032258064516,
+          0.6923076923076923,
+          0.7682926829268293
+        ]
+      }
+    }
+  },
+  "churn_rate_reference": {
+    "train": 0.26536822884966527,
+    "validation": 0.26584673604541154,
+    "test": 0.26490066225165565
+  },
+  "monitoring_notes": [
+    "Compare production score histograms to score_distribution.raw_*",
+    "PSI on raw ranking scores recommended monthly",
+    "Feature drift: compare production quantiles to feature_distribution_train",
+    "Recalibrate if ECE degrades >2x vs baseline_metrics_holdout"
+  ]
+}

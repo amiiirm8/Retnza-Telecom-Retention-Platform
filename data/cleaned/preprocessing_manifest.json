@@ -1,0 +1,182 @@
+{
+  "schema_version": "task2-v4",
+  "generated_at_utc": "2026-05-28T20:04:24.400460+00:00",
+  "scope": "canonical_cleaned_only",
+  "validation_policy": {
+    "duplicate_subscriber_id": "fail_fast",
+    "null_handling": "strict_fail",
+    "null_allowed_columns": [],
+    "float_as_int_policy": "fail",
+    "validation_version": "validators-v2"
+  },
+  "duplicate_subscriber_id_policy": "fail_fast",
+  "null_handling_policy": "strict_fail",
+  "explicitly_not_included": [
+    "winsorization",
+    "robust scaling",
+    "sklearn ColumnTransformer fit",
+    "modeling_ready matrix",
+    "feature_engineering interaction flags",
+    "cumulative_spend imputation for tenure_zero rows",
+    "collapsing no_data_service into no"
+  ],
+  "tri_state_policy": {
+    "english_tokens": [
+      "yes",
+      "no",
+      "no_data_service"
+    ],
+    "rule": "2G rows must be no_data_service on six VAS/data columns; non-2G must be yes or no only"
+  },
+  "dtype_contract": {
+    "subscriber_id": "int64",
+    "age": "int64",
+    "sim_tenure_months": "int64",
+    "monthly_spend_toman": "int64",
+    "cumulative_spend_toman": "int64",
+    "churn_binary": "int8",
+    "tenure_zero_flag": "int8",
+    "billing_definition_ambiguous_flag": "int8",
+    "is_data_capable": "int8"
+  },
+  "spend_policy": {
+    "imputation": "none",
+    "ambiguous_billing_rows": 11,
+    "tenure_zero_rows": 11
+  },
+  "row_counts": {
+    "raw": 7043,
+    "cleaned": 7043
+  },
+  "duplicate_resolution": {
+    "duplicate_subscriber_ids": 0
+  },
+  "segment_counts": {
+    "n_2g": 1526,
+    "n_data_capable": 5517,
+    "churn_rate": 0.2654
+  },
+  "unknown_token_summary": {
+    "total_unknown_rows": 0,
+    "columns": {}
+  },
+  "cleaned_column_schema": [
+    {
+      "name": "subscriber_id",
+      "role": "id",
+      "dtype": "int64"
+    },
+    {
+      "name": "gender",
+      "role": "feature",
+      "dtype": "string",
+      "values": "male|female"
+    },
+    {
+      "name": "age",
+      "role": "feature",
+      "dtype": "int64"
+    },
+    {
+      "name": "birth_month_persian",
+      "role": "feature",
+      "dtype": "string",
+      "note": "Persian month retained for BI; ordinal only in modeling"
+    },
+    {
+      "name": "sim_tenure_months",
+      "role": "feature",
+      "dtype": "int64"
+    },
+    {
+      "name": "mobile_data_generation",
+      "role": "feature",
+      "dtype": "string",
+      "values": "2G|3G|4G|5G"
+    },
+    {
+      "name": "intl_roaming_package",
+      "role": "feature",
+      "dtype": "tri_state"
+    },
+    {
+      "name": "operator_cloud_storage",
+      "role": "feature",
+      "dtype": "tri_state"
+    },
+    {
+      "name": "night_data_package",
+      "role": "feature",
+      "dtype": "tri_state"
+    },
+    {
+      "name": "volte_service",
+      "role": "feature",
+      "dtype": "tri_state"
+    },
+    {
+      "name": "superapp_social",
+      "role": "feature",
+      "dtype": "tri_state"
+    },
+    {
+      "name": "superapp_financial",
+      "role": "feature",
+      "dtype": "tri_state"
+    },
+    {
+      "name": "sim_card_type",
+      "role": "feature",
+      "dtype": "string",
+      "values": "prepaid|postpaid"
+    },
+    {
+      "name": "operator_app_usage",
+      "role": "feature",
+      "dtype": "string",
+      "values": "yes|no"
+    },
+    {
+      "name": "monthly_spend_toman",
+      "role": "feature",
+      "dtype": "int64"
+    },
+    {
+      "name": "cumulative_spend_toman",
+      "role": "feature",
+      "dtype": "int64"
+    },
+    {
+      "name": "tenure_zero_flag",
+      "role": "qc_flag",
+      "dtype": "int8"
+    },
+    {
+      "name": "billing_definition_ambiguous_flag",
+      "role": "qc_flag",
+      "dtype": "int8"
+    },
+    {
+      "name": "is_data_capable",
+      "role": "operational_flag",
+      "dtype": "int8"
+    },
+    {
+      "name": "churn_binary",
+      "role": "target",
+      "dtype": "int8"
+    }
+  ],
+  "paths": {
+    "raw_snapshot": "/Users/amirmahdi/hacketon/data/raw/MCI_Challenge_FinalDataset.csv",
+    "cleaned": "/Users/amirmahdi/hacketon/data/cleaned/subscribers_cleaned.parquet",
+    "display_labels": "/Users/amirmahdi/hacketon/data/cleaned/display_labels.json",
+    "qc_dir": "/Users/amirmahdi/hacketon/outputs/preprocessing",
+    "qc_summary": "/Users/amirmahdi/hacketon/outputs/preprocessing/qc_summary.json",
+    "qc_index": "/Users/amirmahdi/hacketon/outputs/preprocessing/qc_index.json"
+  },
+  "bilingual_labels": {
+    "canonical_language": "english",
+    "display_bundle": "/Users/amirmahdi/hacketon/data/cleaned/display_labels.json"
+  }
+}

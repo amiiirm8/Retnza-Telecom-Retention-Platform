@@ -1,0 +1,182 @@
+{
+  "generated_at_utc": "2026-05-28T20:04:24.399471+00:00",
+  "output_dir": "/Users/amirmahdi/hacketon/outputs/preprocessing",
+  "artifacts": [
+    {
+      "name": "sample_01_raw_head",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/sample_01_raw_head.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": "first 8 rows"
+    },
+    {
+      "name": "validation_raw_schema",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/validation_raw_schema.json",
+      "kind": "json",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "sample_02_renamed_head",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/sample_02_renamed_head.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": "first 8 rows"
+    },
+    {
+      "name": "validation_mapped",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/validation_mapped.json",
+      "kind": "json",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_gender",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_gender.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_sim_card_type",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_sim_card_type.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_mobile_data_generation",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_mobile_data_generation.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_operator_app_usage",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_operator_app_usage.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_intl_roaming_package",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_intl_roaming_package.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_operator_cloud_storage",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_operator_cloud_storage.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_night_data_package",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_night_data_package.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_volte_service",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_volte_service.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_superapp_social",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_superapp_social.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "value_counts_mapped_superapp_financial",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/value_counts_mapped_superapp_financial.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "unknown_tokens",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/unknown_tokens.csv",
+      "kind": "csv",
+      "status": "skipped",
+      "detail": "No unknown tokens"
+    },
+    {
+      "name": "validation_cleaned_final",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/validation_cleaned_final.json",
+      "kind": "json",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "sample_05_cleaned_head",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/sample_05_cleaned_head.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": "first 8 rows"
+    },
+    {
+      "name": "null_counts_cleaned",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/null_counts_cleaned.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "churn_distribution",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/churn_distribution.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "churn_overall_metrics",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/churn_overall_metrics.json",
+      "kind": "json",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "qc_flag_counts",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/qc_flag_counts.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "plot_churn_distribution",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/plot_churn_distribution.png",
+      "kind": "png",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "plot_mobile_generation",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/plot_mobile_generation.png",
+      "kind": "png",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "plot_churn_by_sim_type",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/plot_churn_by_sim_type.png",
+      "kind": "png",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "row_count_progression",
+      "path": "/Users/amirmahdi/hacketon/outputs/preprocessing/row_count_progression.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    }
+  ],
+  "n_artifacts": 25
+}

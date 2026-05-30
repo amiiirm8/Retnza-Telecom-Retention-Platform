@@ -1,0 +1,1 @@
+"""Retnza backend API package — FastAPI application for the retention intelligence platform."""

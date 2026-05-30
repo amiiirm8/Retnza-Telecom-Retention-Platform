@@ -1,0 +1,9 @@
+subscriber_id,gender,age,birth_month_persian,sim_tenure_months,mobile_data_generation,intl_roaming_package,operator_cloud_storage,night_data_package,volte_service,superapp_social,superapp_financial,sim_card_type,operator_app_usage,monthly_spend_toman,cumulative_spend_toman,churn_binary,tenure_zero_flag,billing_definition_ambiguous_flag,is_data_capable
+1,female,46,آذر,1,4G,no,yes,no,no,no,no,prepaid,yes,4477500,4477500,0,0,0,1
+2,male,38,آذر,34,4G,yes,no,yes,no,no,no,postpaid,no,8542500,283425000,0,0,0,1
+3,male,48,تیر,2,4G,yes,yes,no,no,no,no,prepaid,yes,8077500,16222500,1,0,0,1
+4,male,58,آبان,45,4G,yes,no,yes,yes,no,no,postpaid,no,6345000,276112500,0,0,0,1
+5,female,37,آبان,2,5G,no,no,no,no,no,no,prepaid,yes,10605000,22747500,1,0,0,1
+6,female,37,فروردین,8,5G,no,no,yes,no,yes,yes,prepaid,yes,14947500,123075000,1,0,0,1
+7,male,59,بهمن,22,5G,no,yes,no,no,yes,no,prepaid,yes,13365000,292410000,0,0,0,1
+8,female,49,مرداد,10,4G,yes,no,no,no,no,no,prepaid,no,4462500,45285000,0,0,0,1

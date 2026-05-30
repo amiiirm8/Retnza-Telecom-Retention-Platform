@@ -1,0 +1,41 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:32:43.514930+00:00",
+  "compatible": true,
+  "errors": [],
+  "warnings": [
+    "[feature_alignment] Extra non-contract columns: 17"
+  ],
+  "stale_artifacts": [],
+  "n_checks": 5,
+  "checks": {
+    "shap_schema": {
+      "compatible": true,
+      "errors": [],
+      "warnings": []
+    },
+    "recommendation_schema": {
+      "compatible": true,
+      "errors": [],
+      "warnings": []
+    },
+    "demographic_fields": {
+      "compatible": true,
+      "errors": [],
+      "warnings": []
+    },
+    "ecosystem_compatibility": {
+      "compatible": true,
+      "errors": [],
+      "warnings": []
+    },
+    "feature_alignment": {
+      "compatible": true,
+      "errors": [],
+      "warnings": [
+        "Extra non-contract columns: 17"
+      ]
+    }
+  },
+  "disclaimer": "Governance validations check artifact compatibility and data quality. They do not evaluate model performance or business rule effectiveness."
+}

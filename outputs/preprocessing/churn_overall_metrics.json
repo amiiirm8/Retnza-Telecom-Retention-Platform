@@ -1,0 +1,7 @@
+{
+  "n_rows": 7043,
+  "n_churned": 1869,
+  "n_retained": 5174,
+  "churn_rate": 0.26537,
+  "churn_rate_pct": 26.537
+}

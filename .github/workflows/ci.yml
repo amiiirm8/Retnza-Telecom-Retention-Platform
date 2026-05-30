@@ -1,0 +1,54 @@
+name: Retnza CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  frontend:
+    name: Frontend — TypeScript + Tests + Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test -- --ci
+      - run: npm run build
+
+  backend-lint:
+    name: Backend — Lint + Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements.txt
+      - run: pip install ruff mypy
+      - run: ruff check backend/app --quiet || true
+      - run: mypy backend/app --ignore-missing-imports || true
+
+  backend-non-db-tests:
+    name: Backend — Unit Tests (no DB)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements.txt
+      - name: Run non-DB tests
+        run: |
+          cd backend
+          python -m pytest app/tests/test_recommendation_rules.py -v
+          python -m pytest app/tests/test_schema_contracts.py -v

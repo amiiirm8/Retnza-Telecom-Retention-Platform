@@ -1,0 +1,7 @@
+step,n_rows,n_columns
+01_raw_loaded,7043,17
+01b_raw_validated,7043,17
+02_renamed,7043,17
+03_mapped,7043,17
+04_target_encoded,7043,17
+05_cleaned_final,7043,20

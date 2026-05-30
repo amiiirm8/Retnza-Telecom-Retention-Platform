@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "n_rows": 7043,
+    "cleaned_null_columns": [],
+    "duplicate_subscriber_ids": 0,
+    "n_2g": 1526,
+    "dtype_snapshot": {
+      "subscriber_id": "int64",
+      "age": "int64",
+      "sim_tenure_months": "int64",
+      "monthly_spend_toman": "int64",
+      "cumulative_spend_toman": "int64",
+      "churn_binary": "int8",
+      "tenure_zero_flag": "int8",
+      "billing_definition_ambiguous_flag": "int8",
+      "is_data_capable": "int8"
+    }
+  },
+  "unknown_token_summary": {},
+  "policy": {
+    "duplicate_subscriber_id": "fail_fast",
+    "null_handling": "strict_fail",
+    "null_allowed_columns": [],
+    "float_as_int_policy": "fail",
+    "validation_version": "validators-v2"
+  }
+}

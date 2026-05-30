@@ -1,0 +1,104 @@
+{
+  "generated_at_utc": "2026-05-28T20:04:38.845472+00:00",
+  "output_dir": "/Users/amirmahdi/hacketon/outputs/features",
+  "artifacts": [
+    {
+      "name": "feature_summary",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_summary.json",
+      "kind": "json",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_group_registry",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_group_registry.json",
+      "kind": "json",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_rubika_user_flag",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_rubika_user_flag.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_ewano_user_flag",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_ewano_user_flag.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_digital_engagement_score",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_digital_engagement_score.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_revenue_risk_segment",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_revenue_risk_segment.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_prepaid_5g_risk_flag",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_prepaid_5g_risk_flag.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_is_prepaid",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_is_prepaid.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "feature_value_counts_mobile_gen_ordinal",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/feature_value_counts_mobile_gen_ordinal.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "churn_rate_by_sim_card_type",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/churn_rate_by_sim_card_type.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "churn_rate_by_mobile_data_generation",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/churn_rate_by_mobile_data_generation.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "churn_rate_by_revenue_risk_segment",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/churn_rate_by_revenue_risk_segment.csv",
+      "kind": "csv",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "plot_dist_digital_engagement_score",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/plot_dist_digital_engagement_score.png",
+      "kind": "png",
+      "status": "written",
+      "detail": null
+    },
+    {
+      "name": "plot_dist_is_prepaid",
+      "path": "/Users/amirmahdi/hacketon/outputs/features/plot_dist_is_prepaid.png",
+      "kind": "png",
+      "status": "written",
+      "detail": null
+    }
+  ]
+}

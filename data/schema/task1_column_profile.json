@@ -1,0 +1,421 @@
+{
+  "n_rows": 7043,
+  "n_cols": 17,
+  "columns": {
+    "شناسه_مشترک": {
+      "pandas_dtype": "int64",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 7043,
+      "role": "id",
+      "min": 1.0,
+      "max": 7043.0,
+      "mean": 3522.0,
+      "median": 3522.0
+    },
+    "جنسیت": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 2,
+      "top_values": {
+        "مرد": 3555,
+        "زن": 3488
+      },
+      "all_unique_count": 2,
+      "all_values": [
+        "زن",
+        "مرد"
+      ]
+    },
+    "سن": {
+      "pandas_dtype": "int64",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 58,
+      "role": "numeric_feature",
+      "min": 18.0,
+      "max": 75.0,
+      "mean": 40.074,
+      "median": 40.0
+    },
+    "ماه_تولد": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 12,
+      "top_values": {
+        "بهمن": 640,
+        "آذر": 601,
+        "شهریور": 596,
+        "اردیبهشت": 589,
+        "تیر": 586,
+        "دی": 584,
+        "مرداد": 582,
+        "مهر": 582,
+        "خرداد": 580,
+        "فروردین": 574,
+        "آبان": 565,
+        "اسفند": 564
+      },
+      "all_unique_count": 12,
+      "all_values": [
+        "آبان",
+        "آذر",
+        "اردیبهشت",
+        "اسفند",
+        "بهمن",
+        "تیر",
+        "خرداد",
+        "دی",
+        "شهریور",
+        "فروردین",
+        "مرداد",
+        "مهر"
+      ]
+    },
+    "سابقه_سیمکارت_ماه": {
+      "pandas_dtype": "int64",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 73,
+      "role": "numeric_feature",
+      "min": 0.0,
+      "max": 72.0,
+      "mean": 32.3711,
+      "median": 29.0
+    },
+    "نسل_اینترنت_همراه": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 4,
+      "top_values": {
+        "5G": 3096,
+        "4G": 1695,
+        "2G": 1526,
+        "3G": 726
+      },
+      "all_unique_count": 4,
+      "all_values": [
+        "2G",
+        "3G",
+        "4G",
+        "5G"
+      ]
+    },
+    "بسته_رومینگ_بینالملل": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 3,
+      "top_values": {
+        "خیر": 3498,
+        "بله": 2019,
+        "فاقد سرویس دیتا": 1526
+      },
+      "all_unique_count": 3,
+      "all_values": [
+        "بله",
+        "خیر",
+        "فاقد سرویس دیتا"
+      ]
+    },
+    "فضای_ابری_اپراتور": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 3,
+      "top_values": {
+        "خیر": 3088,
+        "بله": 2429,
+        "فاقد سرویس دیتا": 1526
+      },
+      "all_unique_count": 3,
+      "all_values": [
+        "بله",
+        "خیر",
+        "فاقد سرویس دیتا"
+      ]
+    },
+    "بسته_اینترنت_شبانه": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 3,
+      "top_values": {
+        "خیر": 3095,
+        "بله": 2422,
+        "فاقد سرویس دیتا": 1526
+      },
+      "all_unique_count": 3,
+      "all_values": [
+        "بله",
+        "خیر",
+        "فاقد سرویس دیتا"
+      ]
+    },
+    "سرویس_تماس_VoLTE": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 3,
+      "top_values": {
+        "خیر": 3473,
+        "بله": 2044,
+        "فاقد سرویس دیتا": 1526
+      },
+      "all_unique_count": 3,
+      "all_values": [
+        "بله",
+        "خیر",
+        "فاقد سرویس دیتا"
+      ]
+    },
+    "سوپراپ_شبکه اجتماعی": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 3,
+      "top_values": {
+        "خیر": 2810,
+        "بله": 2707,
+        "فاقد سرویس دیتا": 1526
+      },
+      "all_unique_count": 3,
+      "all_values": [
+        "بله",
+        "خیر",
+        "فاقد سرویس دیتا"
+      ]
+    },
+    "سوپراپ_خدمات_مالی": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 3,
+      "top_values": {
+        "خیر": 2785,
+        "بله": 2732,
+        "فاقد سرویس دیتا": 1526
+      },
+      "all_unique_count": 3,
+      "all_values": [
+        "بله",
+        "خیر",
+        "فاقد سرویس دیتا"
+      ]
+    },
+    "نوع_سیمکارت": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 2,
+      "top_values": {
+        "اعتباری": 3875,
+        "دائمی": 3168
+      },
+      "all_unique_count": 2,
+      "all_values": [
+        "اعتباری",
+        "دائمی"
+      ]
+    },
+    "استفاده_اپلیکیشن_اپراتور": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 2,
+      "top_values": {
+        "بله": 4171,
+        "خیر": 2872
+      },
+      "all_unique_count": 2,
+      "all_values": [
+        "بله",
+        "خیر"
+      ]
+    },
+    "هزینه_ماهیانه_تومان": {
+      "pandas_dtype": "int64",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 1585,
+      "role": "numeric_feature",
+      "min": 2737500.0,
+      "max": 17812500.0,
+      "mean": 9714253.8691,
+      "median": 10552500.0
+    },
+    "هزینه_کل_تومان": {
+      "pandas_dtype": "int64",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 6531,
+      "role": "numeric_feature",
+      "min": 0.0,
+      "max": 1302720000.0,
+      "mean": 341960145.5346,
+      "median": 209182500.0
+    },
+    "ریزش": {
+      "pandas_dtype": "str",
+      "missing_nan": 0,
+      "missing_nan_pct": 0.0,
+      "string_quality_issues": [],
+      "n_unique": 2,
+      "top_values": {
+        "خیر": 5174,
+        "بله": 1869
+      },
+      "all_unique_count": 2,
+      "all_values": [
+        "بله",
+        "خیر"
+      ]
+    }
+  },
+  "tenure_zero_analysis": {
+    "count": 11,
+    "rows": [
+      {
+        "شناسه_مشترک": 489,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 7882500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 754,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 3037500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 937,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 12127500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 1083,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 3862500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 1341,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 8407500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 3332,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 2977500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 3827,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 3802500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 4381,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 3000000,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 5219,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 2955000,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 6671,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 11002500,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      },
+      {
+        "شناسه_مشترک": 6755,
+        "سابقه_سیمکارت_ماه": 0,
+        "هزینه_ماهیانه_تومان": 9285000,
+        "هزینه_کل_تومان": 0,
+        "ریزش": "خیر"
+      }
+    ],
+    "monthly_gt_0_and_cum_0": 11
+  },
+  "spend_identity_check": {
+    "exact_equal_monthly_times_tenure": 625,
+    "pct_exact": 8.87,
+    "note": "Low exact-match rate implies different business definitions; do not assume identity."
+  },
+  "2g_structural_missingness": {
+    "n_2g": 1526,
+    "service_column_values": {
+      "بسته_رومینگ_بینالملل": {
+        "فاقد سرویس دیتا": 1526
+      },
+      "فضای_ابری_اپراتور": {
+        "فاقد سرویس دیتا": 1526
+      },
+      "بسته_اینترنت_شبانه": {
+        "فاقد سرویس دیتا": 1526
+      },
+      "سرویس_تماس_VoLTE": {
+        "فاقد سرویس دیتا": 1526
+      },
+      "سوپراپ_شبکه اجتماعی": {
+        "فاقد سرویس دیتا": 1526
+      },
+      "سوپراپ_خدمات_مالی": {
+        "فاقد سرویس دیتا": 1526
+      },
+      "نوع_سیمکارت": {
+        "دائمی": 1002,
+        "اعتباری": 524
+      }
+    }
+  },
+  "duplicates": {
+    "full_row": 0,
+    "id_dup": 0
+  },
+  "target": {
+    "column": "ریزش",
+    "values": {
+      "خیر": 5174,
+      "بله": 1869
+    },
+    "churn_rate_bale": 0.2654
+  }
+}

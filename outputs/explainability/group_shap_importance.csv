@@ -1,0 +1,6 @@
+feature_group,mean_abs_shap,n_features
+predictive_core,0.0196840358885123,14
+interactions,0.010376451479274854,8
+ecosystem_semantic,0.0037023179937795444,14
+demographic,0.0011875435414853866,6
+spend_revenue,0.00043539910861618457,5

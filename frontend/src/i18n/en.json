@@ -1,0 +1,977 @@
+{
+  "app": {
+    "name": "Retnza",
+    "description": "Telecom retention intelligence platform",
+    "tagline": "Enterprise retention intelligence"
+  },
+  "sidebar": {
+    "executive": "Executive",
+    "actionQueue": "Action Queue",
+    "subscribers": "Subscribers",
+    "ecosystem": "Ecosystem",
+    "behavioralSegments": "Behavioral Segments",
+    "evidence": "Evidence & Insights",
+    "campaigns": "Retention Playbook",
+    "modelHealth": "Operations Health",
+    "governance": "Governance",
+    "dashboard": "Dashboard",
+    "signOut": "Sign out"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "An error occurred",
+    "noData": "No data",
+    "notFound": "Not found",
+    "backToQueue": "← Back to queue",
+    "yes": "Yes",
+    "no": "No",
+    "unknown": "—",
+    "subscribers": "Subscribers",
+    "riskLevel": "Risk Level",
+    "dimensions": "dimensions"
+  },
+  "login": {
+    "title": "Retnza",
+    "subtitle": "Telecom churn retention platform",
+    "email": "Email",
+    "emailPlaceholder": "admin@retnza.local",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "error": "Invalid credentials or API unavailable"
+  },
+  "riskTier": {
+    "critical": "Critical",
+    "atRisk": "At Risk",
+    "watchlist": "Watchlist",
+    "stable": "Stable",
+    "veryHigh": "Critical",
+    "high": "At Risk",
+    "medium": "Watchlist",
+    "low": "Stable",
+    "criticalDesc": "High probability of churn — immediate retention action required",
+    "atRiskDesc": "Elevated churn risk — prioritize for intervention",
+    "watchlistDesc": "Moderate risk indicators — monitor closely",
+    "stableDesc": "Low observed churn risk — standard engagement sufficient"
+  },
+  "ruleLabels": {
+    "R00_MONITOR": "Monitor Emerging Risk",
+    "R01_PREPAID_INFANT": "New Prepaid User Risk",
+    "R02_PREPAID_5G": "5G Prepaid Churn Exposure",
+    "R03_POSTPAID_INFANT": "New Postpaid User Risk",
+    "R03_VOLTE_ENABLE": "VoLTE Migration Opportunity",
+    "R04_POSTPAID_5G": "5G Postpaid Churn Exposure",
+    "R05_BILL_SHOCK": "Bill Shock Vulnerability",
+    "R06_VOLTE_INACTIVE": "VoLTE Non-Adoption",
+    "R06_VAS_PARTIAL": "Low Service Engagement",
+    "R07_LEGACY_2G": "Legacy Network Dependency",
+    "R08_LEGACY_3G": "Legacy Network Dependency",
+    "R08_POSTPAID_EARLY": "Early Lifecycle Postpaid Risk",
+    "R09_RUBIKA_INACTIVE": "Low Rubika Engagement",
+    "R10_EWANO_NON_ADOPTER": "EWANO Non-Adoption",
+    "R11_HAMRAHMAN_LOW_ENGAGEMENT": "Low Hamrah Man Engagement",
+    "R12_ECOSYSTEM_POWER_USER": "High Loyalty Ecosystem Users",
+    "R13_LEGACY_2G_ECO_DISENGAGED": "Legacy User — Ecosystem Disengaged"
+  },
+  "dashboard": {
+    "title": "Executive Dashboard",
+    "totalSubscribers": "Total Subscribers",
+    "churnRate": "Churn Rate",
+    "highRisk": "High-Risk",
+    "highRiskSubtitle": "Critical + At Risk tiers",
+    "highRiskTrendLabel": "% of base",
+    "p1Queue": "P1 Queue",
+    "p1QueueSubtitle": "Priority 1 actions",
+    "riskDistribution": "Customer Risk Distribution",
+    "riskDistributionSubtitle": "How churn risk is spread across the subscriber base",
+    "riskDistributionExplain": "The distribution shows how many subscribers fall into each risk tier. A concentration of Critical or At Risk subscribers means the CRM team should prepare for increased retention workload. The Stable tier represents subscribers who need standard engagement only.",
+    "riskDistributionTakeaway": "How to read: Each bar shows how many subscribers fall into each risk tier. Focus on Critical and At Risk — these are your retention priorities. A healthy portfolio has a long tail of Stable subscribers and a small Critical peak.",
+    "topRules": "Top Retention Plays",
+    "topRulesSubtitle": "Most frequently triggered retention recommendations across the subscriber base",
+    "topRulesExplain": "This chart shows which retention plays are triggered most often. The dominant play reveals the most common churn pattern in the book — if prepaid plays dominate, retention strategy should prioritise prepaid intervention channels and offers.",
+    "topRulesTakeaway": "How to read: Each bar represents subscribers assigned to a specific retention play. Longer bars = higher operational workload. Cross-reference with the catalog to identify which rules need more resources or automation.",
+    "model": "Intelligence Engine",
+    "prAuc": "Churn Ranking Accuracy (PR-AUC)",
+    "avgRisk": "Avg Calibrated Risk",
+    "exec": {
+      "totalSubscribers": "Total Subscribers",
+      "criticalRetention": "Critical Retention Cases",
+      "prioritySaves": "Priority Save Opportunities",
+      "ecosystemPenetration": "Ecosystem Penetration",
+      "revenueExposure": "Estimated Revenue Exposure",
+      "campaignCoverage": "Campaign Coverage",
+      "churnRate": "Observed Churn Rate"
+    },
+    "kpiWhy": {
+      "totalSubscribers": "Total subscriber base size. Determines the scale of retention operations and CRM outreach capacity needed.",
+      "criticalRetention": "Subscribers at critical churn risk requiring immediate retention intervention. Each case represents potential revenue loss if not actioned.",
+      "churnRate": "The observed churn rate in the current snapshot. Compare against industry benchmarks to assess whether retention programmes are performing adequately.",
+      "ecosystemPenetration": "Share of subscribers actively using ecosystem products. Higher penetration correlates with lower churn risk — a key strategic lever for retention.",
+      "prioritySaves": "Subscribers queued at highest priority for retention action. These are the most urgent cases requiring immediate operational attention.",
+      "revenueExposure": "Illustrative estimate of monthly recurring revenue at risk from high-probability churners. Guides retention budget allocation and campaign ROI targets.",
+      "campaignCoverage": "Number of active retention plays in the current campaign cycle. Broader coverage means more churn patterns are being addressed."
+    },
+    "summary": {
+      "title": "Current Situation",
+      "criticalAttention": "{count} subscribers require immediate attention",
+      "atRisk": "{count} subscribers show elevated churn risk",
+      "ecosystemGap": "{count} high-risk subscribers are outside the ecosystem",
+      "dominantPattern": "Dominant risk pattern: {pattern}",
+      "recommendedFocus": "Recommended focus: {focus}",
+      "ecosystemAdoptionAssociated": "Ecosystem adoption is associated with {delta} lower observed risk",
+      "noSummary": "Loading current situation…"
+    },
+    "section": {
+      "businessKpis": "Business Overview",
+      "riskLandscape": "Customer Risk Landscape",
+      "retentionPlays": "Recommended Retention Plays",
+      "keyRisks": "Key Risks Today",
+      "urgentOpportunities": "Urgent Retention Opportunities",
+      "operationalFocus": "Operational Focus Areas",
+      "revenueProtection": "Revenue Protection Focus",
+      "operationalWorkload": "Operational Workload",
+      "governanceSummary": "Model & Governance Summary",
+      "actionItems": "Recommended Actions"
+    },
+    "edaTitle": "EDA Churn Landscape",
+    "edaDesc": "Observed churn rates from exploratory data analysis — the raw numbers behind the model's predictions",
+    "edaItems": {
+      "i1": "Base churn rate: 26.5% across 7,043 subscribers",
+      "i2": "Prepaid: 42.7% (1.61× lift) — strongest single churn signal",
+      "i3": "Postpaid: 6.8% (0.25× lift) — 6.3× gap with prepaid",
+      "i4": "Early tenure (0–6 months): 52.9% (2.0× lift)",
+      "i5": "VoLTE adopters: −13.7% lower mean calibrated risk",
+      "i6": "Prepaid-on-5G: 54.6% churn — highest-risk combination"
+    },
+    "freshness": {
+      "title": "Model Generation",
+      "label": "Last updated: upon page load"
+    },
+    "actionItems": {
+      "openQueue": "Review Action Queue →",
+      "viewEcosystem": "Explore Ecosystem Analytics →",
+      "viewHealth": "Check Model Health →",
+      "viewCampaigns": "View Retention Playbook →"
+    },
+    "kpi": {
+      "attention": "Subscribers Requiring Attention",
+      "attentionDetail": "{critical} critical + {p1} P1 priority",
+      "criticalPlay": "Critical Retention Play",
+      "humanIntervention": "Human Intervention Required",
+      "digitalOpportunity": "Digital Campaign Opportunity",
+      "humanWorkload": "subscribers require human-touch or hybrid intervention — agent capacity planning recommended",
+      "digitalDesc": "subscribers eligible for automated digital outreach — lower operational cost per touch",
+      "highRiskOutside": "{count} high-risk subscribers are outside ecosystem coverage",
+      "topPlayDetail": "Top Retention Play Detail",
+      "topRiskDrivers": "Top Risk Drivers Across Population",
+      "riskDescription": "Risk patterns derived from model output across all active recommendations.",
+      "needsAttention": "Needs attention",
+      "prioritySaveDesc": "{count} subscribers are queued at P1 priority — review in the CRM action queue.",
+      "focusSaveDesc": "Priority save opportunities are concentrated in the {count} subscribers flagged for critical retention."
+    }
+  },
+  "queue": {
+    "title": "CRM Action Queue",
+    "description": "Operational retention workflow — triage, prioritise, and act on subscribers needing retention intervention",
+    "whyThisMatters": "This queue is your frontline retention tool. Every subscriber listed here has been flagged for intervention by the intelligence engine. The queue rank determines urgency — higher-ranked subscribers need action first. Use the filters and quick chips to segment by intervention type and risk level.",
+    "exportCsv": "Export CSV",
+    "all": "All",
+    "highRisk": "At Risk & Critical",
+    "p1": "P1 Priority",
+    "digitalOnly": "Digital-Only",
+    "humanTouch": "Human Touch",
+    "queueInfo": "This queue is pre-filtered. {count} subscribers match this view.",
+    "queueHighRisk": "Critical + At Risk tiers",
+    "queueP1": "P1 Priority",
+    "queueDigitalOnly": "Digital-Only Interventions",
+    "queueHumanTouch": "Human-Touch Required",
+    "empty": "No recommendations match the current filters.",
+    "whySurfaced": "Why Surfaced",
+    "ruleTrigger": "Rule trigger",
+    "chipEscalation": "Escalation Required",
+    "chipHumanTouch": "Human Touch",
+    "chipDigitalOnly": "Digital Only",
+    "chipActiveEscalation": "escalation required",
+    "chipActiveHumanTouch": "human touch",
+    "chipActiveDigitalOnly": "digital only",
+    "chipActiveLabel": "Showing {count} of {total} subscribers",
+    "chipEmpty": "No subscribers match the selected quick filters",
+    "technicalDrawerTitle": "Technical Details — Subscriber #{id}",
+    "total": "{count} total — page {page} of {pages}",
+    "prev": "Prev",
+    "next": "Next",
+    "filter": {
+      "allTiers": "All risk tiers",
+      "allPriorities": "All priorities",
+      "allChannels": "All channels",
+      "allSegments": "All segments",
+      "critical": "Critical",
+      "atRisk": "At Risk",
+      "watchlist": "Watchlist",
+      "stable": "Stable"
+    },
+    "columns": {
+      "id": "ID",
+      "risk": "Risk Score",
+      "tier": "Risk Level",
+      "priority": "Priority",
+      "rule": "Retention Play",
+      "driver": "Primary Driver",
+      "action": "Recommended Action",
+      "channel": "Channel",
+      "segment": "Segment"
+    }
+  },
+  "subscribers": {
+    "title": "Subscribers",
+    "description": "Browse all subscribers with recommendations",
+    "searchPlaceholder": "Search by subscriber ID…",
+    "empty": "No subscribers found.",
+    "columns": {
+      "id": "ID",
+      "risk": "Risk Score",
+      "rawScore": "Raw Score",
+      "tier": "Risk Level",
+      "priority": "Priority",
+      "rule": "Retention Play",
+      "driver": "Primary Driver",
+      "action": "Recommended Action",
+      "segment": "Segment"
+    },
+    "profileCard": "Subscriber Profile",
+    "viewProfile": "View Profile"
+  },
+  "subscriber": {
+    "title": "Subscriber #{id}",
+    "notFound": "Subscriber not found",
+    "summary": {
+      "calibratedRisk": "Calibrated churn risk",
+      "play": "Play",
+      "queueRank": "Queue rank",
+      "loading": "Loading profile data"
+    },
+    "backToQueue": "← Back to queue",
+    "tabs": {
+      "overview": "Overview",
+      "shap": "Risk Drivers",
+      "campaign": "Campaign",
+      "governance": "Governance"
+    },
+    "calibratedRisk": "Calibrated Churn Risk",
+    "calibratedRiskMethod": "Method: {method}",
+    "calibratedRiskWhy": "This is the reliable churn probability for CRM decisioning. A 70% calibrated risk means approximately 70 out of 100 similar subscribers will churn without intervention — use this to prioritise retention actions and allocate offers.",
+    "rawScore": "Raw Score",
+    "rawScoreSubtitle": "Used for ranking only (technical)",
+    "rawScoreWhy": "Uncalibrated model score shown for technical reference. Do not use for operational decisions — refer to the calibrated risk above.",
+    "riskBand": "Risk Level",
+    "intervention": "Intervention: {type}",
+    "actualChurn": "Actual Churn (Snapshot)",
+    "snapshotLabel": "Historical record (snapshot label)",
+    "recommendation": "Recommended Action",
+    "action": "Action",
+    "rule": "Retention Play",
+    "policy": "Policy",
+    "driverLineage": "Decision Drivers",
+    "ruleDriver": "Rule driver",
+    "shapDriver": "Model driver",
+    "finalDriver": "Primary driver",
+    "source": "Source",
+    "ecosystemProfile": "Ecosystem Profile",
+    "segment": "Segment",
+    "products": "Products",
+    "engagement": "Engagement",
+    "retentionStrategy": "Retention strategy",
+    "shap": {
+      "narrative": "Why This Customer Is At Risk",
+      "narrativePlaceholder": "No driver analysis available.",
+      "narrativeDisclaimer": "This analysis provides narrative support only and does not determine the retention action.",
+      "riskIncreasing": "Key Risk Drivers",
+      "shapImpact": "Driver impact",
+      "topUpDrivers": "Top Factors Increasing Risk",
+      "topDownDrivers": "Top Factors Reducing Risk",
+      "riskSummary": "Risk Driver Summary",
+      "primaryDriver": "Primary risk driver",
+      "riskUp": "Risk-increasing factors",
+      "riskDown": "Risk-reducing factors"
+    },
+    "campaign": {
+      "assignment": "Campaign Assignment",
+      "priority": "Priority",
+      "queueRank": "Queue rank",
+      "channelConfig": "Channel Configuration",
+      "primary": "Primary",
+      "secondary": "Secondary",
+      "channelGroup": "Channel group",
+      "urgency": "Urgency",
+      "urgencyDays": "{days} days",
+      "flags": "Flags",
+      "digitalOnly": "Digital only",
+      "escalation": "Escalation required",
+      "humanTouch": "Human touch"
+    },
+    "governance": {
+      "title": "Governance & Version Reference",
+      "schema": "Pipeline Specification",
+      "bundle": "Intelligence Engine Version",
+      "featureContract": "Customer Signal Framework",
+      "recommendationSchema": "Retention Decision Specification",
+    "shapSchema": "Risk Driver Specification",
+    "compatibility": "System Alignment",
+    "championFamily": "Architecture Family",
+      "subtitle": "System version identifiers for audit traceability. These technical references ensure all components are aligned and can be traced back to specific training cycles."
+    }
+  },
+  "profile": {
+    "customerIntelligence": "Customer Intelligence",
+    "whyThisCustomer": "Why This Subscriber Matters",
+    "whyThisCustomerDesc": "This subscriber's risk profile, ecosystem engagement, and churn drivers determine the recommended retention approach. Understanding these factors helps the CRM team decide the right intervention and offer level.",
+    "whyThisPlayFits": "Why This Play Fits This Subscriber",
+    "whyThisPlayFitsDesc": "The retention play is selected based on the subscriber's specific risk pattern and ecosystem profile. Each play targets a known churn scenario with a proven intervention strategy.",
+    "preferredChannel": "Preferred Channel",
+    "costTier": "Cost Tier",
+    "crmQueue": "CRM Queue",
+    "primaryDriver": "Primary driver",
+    "driverSource": "Driver Source",
+    "interventionType": "Intervention Type",
+    "retentionStrategy": "Retention Strategy",
+    "engagementLevel": "Engagement Level"
+  },
+  "behavioralSegments": {
+    "title": "Behavioral Segments",
+    "subtitle": "Data-driven subscriber segments discovered from usage, engagement, and lifecycle patterns.",
+    "segmentDistribution": "Segment Distribution",
+    "riskComparison": "Risk Comparison",
+    "clusterSize": "Subscribers",
+    "meanRisk": "Mean Risk",
+    "posture": "Retention Posture",
+    "noData": "No segment data available. Please run the analytics pipeline.",
+    "features": "Feature Profile",
+    "highRiskPct": "High Risk (%)",
+    "metrics": "Model Metrics",
+    "silhouette": "Silhouette Score",
+    "daviesBouldin": "Davies-Bouldin Index",
+    "calinskiHarabasz": "Calinski-Harabasz Score",
+    "churnRate": "Observed Churn Rate",
+    "riskVsAverage": "Risk vs Average",
+    "aboveAverage": "above average",
+    "belowAverage": "below average",
+    "priorityLevel": "Priority Level",
+    "primaryChannel": "Recommended Channel",
+    "treatment": "Recommended Treatment",
+    "topFeatures": "Key Distinguishing Features",
+    "whatThisMeans": "What This Segment Means",
+    "featureDirection": "{direction} than average",
+    "methodology": "Methodology",
+    "methodologyDesc": "Segments were discovered using {method} clustering on {n_features} standardized behavioral features. The optimal number of clusters (k={k}) was selected by silhouette score after evaluating k={min_k}–{max_k}. Cluster stability was assessed across {n_seeds} random seeds (mean ARI: {ari}).",
+    "stability": "Cluster Stability",
+    "meanAri": "Mean Adjusted Rand Index",
+    "methodComparison": "Method Comparison",
+    "selectedMethod": "Selected Method",
+    "narrative": "How These Segments Were Discovered",
+    "segmentSummary": "Segment Overview",
+    "featureRadar": "Feature Profile Comparison",
+    "pcaSection": "Principal Component Analysis",
+    "pcaDesc": "PCA projection of the {n_features}-dimensional feature space. Shows how segments cluster in the top 3 principal components.",
+    "distinguishingFeatures": "Distinguishing Features",
+    "highestRisk": "Highest Risk Segment",
+    "lowestRisk": "Lowest Risk Segment",
+    "overallAvg": "Overall Average",
+    "meanCalibratedRisk": "Mean calibrated risk",
+    "churnRiskRatio": "Churn Risk Ratio",
+    "baseAverage": "base average",
+    "methodSelection": "Method Selection Rationale",
+    "limitations": "Limitations"
+  },
+  "ecosystem": {
+    "title": "Ecosystem Analytics",
+    "rubika": "Rubika",
+    "ewano": "EWANO",
+    "hamrahMan": "Hamrah Man",
+    "volte": "VoLTE",
+    "adoption": "{rate}%",
+    "activeInactive": "{active} active / {inactive} inactive",
+    "riskActive": "Risk (active): {risk}%",
+    "riskInactive": "Risk (inactive): {risk}%",
+    "segments": {
+      "title": "Ecosystem Segments",
+      "subtitle": "Subscriber distribution by segment — understanding where your base sits in the ecosystem maturity spectrum",
+      "segmentsWhy": "Segment distribution reveals how deeply your subscriber base is embedded in the ecosystem. Subscribers outside the ecosystem represent both a retention risk and an opportunity: they have higher churn probability but can be retained through adoption programmes. Focus expansion efforts on segments where the risk gap is widest.",
+      "riskBySegment": "Churn Risk by Ecosystem Segment",
+      "riskBySegmentSubtitle": "Mean predicted churn risk per ecosystem segment — identifies which segments need the most urgent retention attention",
+      "riskBySegmentExplain": "Segments with higher bars are associated with higher churn risk. Non-ecosystem subscribers typically show the highest risk, while fully embedded users show the lowest — a pattern consistent across the book. This supports the business case for ecosystem adoption initiatives as a retention lever. Action: prioritise non-ecosystem and single-product segments for adoption campaigns.",
+      "segmentDistributionExplain": "The largest bars represent the most common ecosystem profiles. A large 'Non-Ecosystem' segment indicates significant retention uplift opportunity through adoption programmes. If most subscribers are already embedded, focus on deepening engagement rather than broad adoption."
+    },
+    "meanRisk": "Mean risk: {risk}%",
+    "noRiskData": "No risk data",
+    "noData": "No data",
+    "methodology": "Methodology Note",
+    "methodologyText": "Segment differences are associated with observed risk patterns and should not be interpreted as causal effects. Adoption metrics describe observed relationships between product adoption and churn risk in the current snapshot.",
+    "funnel": {
+      "title": "Ecosystem Adoption Funnel",
+      "subtitle": "Capable → Single-Product → Multi-Product → Fully Embedded",
+      "capable": "Capable Users"
+    },
+    "opportunity": {
+      "title": "Retention Opportunity",
+      "subtitle": "Largest gaps in ecosystem adoption by risk segment",
+      "highRiskNonEcosystem": "High-Risk Subscribers Outside Ecosystem",
+      "count": "{count} subscribers — mean risk {risk}%",
+      "gapDescription": "These subscribers are not reached by ecosystem retention levers and require alternative intervention",
+      "focusArea": "Focus area: {area}"
+    },
+    "story": {
+      "ecosystemRiskDelta": "Ecosystem adoption is associated with {delta} lower observed churn risk on average",
+      "segmentContrast": "Fully embedded users show {delta} lower risk than non-ecosystem users",
+      "adoptionGap": "{product} has {count} inactive capable users — a potential retention opportunity"
+    }
+  },
+  "campaigns": {
+    "title": "Retention Playbook",
+    "description": "Retention play distribution and priority coverage across the subscriber base — assess campaign readiness and workload",
+    "rulesVolume": "Retention Plays by Volume",
+    "rulesVolumeSubtitle": "Most frequently triggered retention plays across the subscriber base — identifies the dominant churn patterns driving campaign workload",
+    "rulesVolumeExplain": "The tallest bars represent the most common churn patterns in your subscriber base. If prepaid plays dominate, allocate more campaign resources to prepaid channels and offers. This chart tells you which retention plays need the most operational capacity.",
+    "priorityMix": "Campaign Priority Mix",
+    "priorityMixSubtitle": "Distribution of P1–P4 priorities across all active retention plays — reveals urgency concentration in the campaign workload",
+    "priorityMixExplain": "A high concentration of P1 (Critical Priority) plays means many subscribers require immediate attention. CRM teams should assess whether current staffing levels can handle the urgent workload. A balanced distribution across priorities suggests manageable campaign operations.",
+    "playbookTitle": "Retention Playbook",
+    "readinessUnknown": "Unknown",
+    "readinessNeedsAttention": "Needs Attention",
+    "readinessReady": "Ready",
+    "readinessMonitor": "Monitor",
+    "targetSegment": "Target",
+    "channels": "Channels",
+    "expectedOutcome": "Expected outcome",
+    "summary": "Summary",
+    "telecomOffers": "Telecom Offers",
+    "guidance": "Guidance",
+    "technicalId": "Technical ID",
+    "totalRules": "Active Retention Plays",
+    "topRule": "Top Retention Play",
+    "highestPriority": "Highest Priority",
+    "prioritiesUsed": "Priorities in Play",
+    "subscribers": "{count} subscribers",
+    "ruleAsSecondary": "Rule ID: {id}",
+    "recommendedOffer": "Recommended offer",
+    "successSignal": "Success signal: {signal}",
+    "channelLabel": "Channel"
+  },
+  "health": {
+    "title": "Operations Health",
+    "description": "Production retention intelligence operations center — all metrics reflect the active deployment",
+    "prAuc": "PR-AUC",
+    "prAucSubtitle": "Churn ranking performance",
+    "prAucWhy": "Measures the retention engine's ability to rank churn-risk subscribers above stable ones. A higher PR-AUC means the CRM team can trust that high-risk flags are genuine — reducing wasted outreach on false positives while catching true churners.",
+    "rocAuc": "ROC-AUC",
+    "rocAucSubtitle": "Overall ranking quality",
+    "brier": "Brier Score",
+    "brierSubtitle": "Probability reliability",
+    "brierWhy": "Measures how close predicted churn probabilities are to actual outcomes. A low Brier score means the risk percentages you see on the dashboard are trustworthy for campaign planning and budget allocation.",
+    "ece": "ECE",
+    "eceSubtitle": "Calibration accuracy",
+    "eceWhy": "Indicates whether a predicted 70% churn risk actually means 70 out of 100 such subscribers churn. Low ECE gives confidence that risk thresholds map to real operational outcomes.",
+    "championFamily": "Active Intelligence Architecture",
+    "championFamilySubtitle": "The selected architecture variant after systematic comparison across candidates. Chosen for strong churn ranking accuracy and reliable probability estimates. This architecture determines how subscriber signals are evaluated for retention risk.",
+    "calibration": "Probability Reliability",
+    "calibrationSubtitle": "Converts raw scores into reliable churn probabilities. A predicted risk of 70% means approximately 70% of those subscribers will churn — essential for CRM campaign planning and retention budget allocation.",
+    "operatingThreshold": "Operating Threshold",
+    "operatingThresholdSubtitle": "The risk score cutoff that determines which subscribers are flagged for intervention. A lower threshold catches more churners but increases CRM outreach volume and false positives.",
+    "policy": "Retention Strategy",
+    "policySubtitle": "Defines the operational retention strategy — balancing the priority of catching churners against managing CRM workload and outreach costs.",
+    "configCallout": {
+      "title": "Why This Configuration Matters",
+      "body": "The intelligence architecture, probability reliability method, operating threshold, and retention strategy collectively define how churn risk is assessed and acted upon. Each choice represents a deliberate business tradeoff: a lower threshold catches more churners but increases CRM workload; isotonic calibration improves probability reliability at a small cost to ranking performance. Understanding these settings is essential for evaluating whether the system is producing the right outcomes for your subscriber base."
+    },
+    "riskTiers": "Risk Tier Thresholds",
+    "riskTiersDescription": "Threshold values define risk tier boundaries used for triage and prioritization",
+    "riskTiersExplain": "Each tier defines a risk band used to segment subscribers for retention intervention. Higher tiers indicate elevated churn risk and demand more immediate action or higher-value retention offers.",
+    "section": {
+      "performance": "Performance Overview",
+      "configuration": "System Configuration"
+    },
+    "scoreDistribution": "Risk Score Distribution",
+    "scoreDistributionSubtitle": "How predicted churn risk scores are spread across your subscriber base — use this to plan intervention capacity",
+    "scoreDistributionExplain": "A right-skewed distribution (more subscribers with higher scores) means a larger proportion of the base is at elevated churn risk — CRM teams should expect higher outreach volume. A left-skewed distribution suggests most subscribers have low predicted risk, and retention resources can be focused on a smaller segment. Use this chart to plan intervention capacity and understand how aggressively the scoring engine evaluates your customer base.",
+    "scoreDistributionTakeaway": "Business takeaway: A right-skewed distribution (most subscribers at low probabilities) is healthy — it means the model is confidently identifying a smaller high-risk group. A flat distribution suggests the model cannot distinguish risk tiers effectively.",
+    "cvStability": "Performance Consistency Across Training Rounds",
+    "cvStabilitySubtitle": "How reliably each architecture variant performed during development — cross-validation stability assessment",
+    "cvStabilityExplain": "Lower variation (σ) across validation rounds means more consistent, reproducible performance. A stable architecture (σ < 0.02) is likely to generalize well to new subscriber data. Higher variation suggests the system may behave differently in production and warrants ongoing monitoring.",
+    "cvStabilityTakeaway": "Business takeaway: The champion (random_forest) should show the highest PR-AUC with low variance across folds. Larger error bars mean the model's performance depends heavily on which data it was trained on — a stability risk for production deployment.",
+    "cvFamily": "Architecture Variant",
+    "cvPrAuc": "PR-AUC Mean",
+    "cvPrAucSigma": "PR-AUC Variation",
+    "cvRocAuc": "ROC-AUC Mean",
+    "cvRocAucSigma": "ROC-AUC Variation",
+    "cvBrierMean": "Brier Mean",
+    "cvBrierSigma": "Brier Variation",
+    "cvMethod": "Method: {method}",
+    "cvGenerated": "Generated: {date}",
+    "artifactFreshness": "Operational Intelligence Freshness",
+    "monitoringNotes": "Monitoring Notes",
+    "warnings": "Warnings",
+    "versionTag": "System Version",
+    "trustSummary": {
+      "title": "Trust & Readiness Summary",
+      "body": "Calibrated probabilities ensure reliable churn predictions for CRM planning. Governance validates system alignment and intelligence freshness on every check. Explainability is active — every risk score includes driver analysis and rule-based reasoning. Drift monitoring detects population shifts before they affect accuracy. All operational checks pass."
+    },
+    "scoreInterpretation": {
+      "title": "Performance Metrics — Business Meaning",
+      "subtitle": "What each metric means for your telecom retention operations and what action it suggests",
+      "healthy": "Healthy",
+      "warning": "Monitor",
+      "critical": "Attention Needed",
+      "businessMeaning": "Business Meaning",
+      "telecomInterpretation": "Operational Impact",
+      "acceptableRange": "Target Range"
+    },
+    "drift": {
+      "title": "Subscriber Base Shift Monitor",
+      "subtitle": "How much the subscriber base has changed since the last model training — determines whether the intelligence engine still reflects current conditions",
+      "psiExplanation": "PSI (Population Stability Index) measures how much each customer signal's distribution has shifted since training. PSI below 0.10 is stable — no action needed. 0.10–0.25 indicates a moderate shift worth monitoring. Above 0.25 signals significant drift that may degrade prediction accuracy and requires retraining. Operational impact: drifting signals mean the retention plays may become less effective over time.",
+      "feature": "Customer Signal",
+      "psi": "Shift (PSI)",
+      "status": "Status",
+      "interpretation": "Operational Impact",
+      "interpretStable": "Minor population shift — intelligence engine remains accurate, no action needed",
+      "interpretMonitor": "Moderate shift detected — review on next refresh cycle to maintain play effectiveness",
+      "interpretRetrain": "Significant shift — retraining recommended to maintain prediction quality and retention play accuracy",
+      "stable": "Stable",
+      "monitor": "Monitor",
+      "retrain": "Retraining Recommended",
+      "unknown": "No Data",
+      "noData": "No shift data available — run a new training cycle to establish baseline."
+    },
+    "stability": {
+      "subtitle": "Training consistency assessment — how reliably each architecture variant performed across development rounds. Lower variation means more predictable production behaviour.",
+      "stable": "Stable",
+      "monitor": "Monitor",
+      "unstable": "Unstable",
+      "stableOverall": "Performance is consistent across all architecture variants — high confidence the selected engine will perform reliably in production",
+      "monitorOverall": "Moderate variation detected in some variants — monitor production performance as new subscriber data arrives",
+      "unstableOverall": "High variation detected — the architecture may not generalise reliably. Review recommended before continued deployment.",
+      "stability": "Stability",
+      "interpretation": "Interpretation",
+      "interpretStable": "Low variation across development rounds — reliable expectations for production behaviour",
+      "interpretMonitor": "Moderate variation — acceptable but warrants production monitoring",
+      "interpretUnstable": "High variation across rounds — deployment confidence is reduced, architecture review recommended"
+    },
+    "exec": {
+      "healthStatus": "System Health Status",
+      "compatible": "All systems operational",
+      "hasWarnings": "{count} operational note(s)",
+      "hasErrors": "System alignment issues detected",
+      "performanceSummary": "PR-AUC: {auc} — ECE: {ece} — Brier: {brier}",
+      "thresholdPolicy": "Operating at {threshold} threshold under {policy} strategy"
+    }
+  },
+  "governance": {
+    "title": "Governance",
+    "description": "System alignment, operational intelligence validation, and probability reliability — ensuring the retention intelligence engine is trustworthy and well-governed",
+    "modelSchema": "Operational Modeling Pipeline",
+    "recommendationsSchema": "Retention Decision Specification",
+    "shapSchema": "Risk Driver Specification",
+    "status": "Status",
+    "features": "Customer Signals",
+    "bundle": "Component",
+    "modelingSchema": "Modeling pipeline specification",
+    "featureContract": "Customer Signal Framework",
+    "columns": "Columns",
+    "calibrationHealth": "Probability Reliability Health",
+    "method": "Method",
+    "summary": "Summary",
+    "thresholdPolicies": "Retention Intervention Policies",
+    "noThresholds": "No retention intervention policies configured",
+    "productionCautions": "Operational Cautions",
+    "artifactFreshness": "Operational Intelligence Freshness",
+    "lastChecked": "Last checked: {date}",
+    "schemaCompatibility": "System Alignment Status",
+    "validation": "Validation",
+    "test": "Test",
+    "businessInterpretation": "Business Interpretation",
+    "modelSchemaDescription": "Production modeling pipeline version currently in use. Defines the signal transformation and model architecture for risk scoring.",
+    "featureContractDescription": "The engineered telecom customer signal framework used by the churn risk intelligence engine to predict churn risk.",
+    "recommendationsSchemaDescription": "The specification used to produce retention actions, plays, and recommended interventions.",
+    "shapSchemaDescription": "The specification used to generate per-customer risk driver analysis for driver-level intelligence.",
+    "schemaWhyThisMatters": "The current model, recommendations, and risk driver analysis are aligned on the same customer signal framework and version specifications. This ensures the system can safely score customers and explain decisions without mismatch or data drift.",
+    "whyThisMatters": "Why This Matters",
+    "explanation": {
+      "referenceBaseline": "This strategy is maintained as a benchmarking reference rather than an actively optimized operational threshold. It provides a consistent statistical baseline across governance review cycles.",
+      "primaryOperatingPolicy": "The active policy for retention operations. Designed to minimize missed churners, accepting a higher false positive rate to ensure churners are identified for intervention.",
+      "referenceOnly": "This policy exists to compare conservative and aggressive retention approaches during governance reviews without affecting live operations.",
+      "contactBudgetProxy": "This threshold is designed for CRM workload planning rather than frontline deployment. It optimizes for operational capacity constraints."
+    },
+    "missingMetric": {
+      "referenceBaseline": "This strategy is maintained as a benchmarking reference — validation metrics reflect the baseline distribution only",
+      "referenceOnly": "This policy exists for strategy comparison during governance reviews — standalone metrics are not applicable by design",
+      "default": "Operational metrics not generated for this strategy — it serves a governance or planning role"
+    },
+    "exec": {
+      "healthStatus": "Governance Health",
+      "compatible": "All checks passed — deployment is healthy",
+      "warnings": "{count} warning(s) — review recommended",
+      "errors": "{count} error(s) — action required",
+      "lastChecked": "Last checked: {date}"
+    },
+    "summary": {
+      "title": "Governance Status",
+      "healthy": "All systems aligned — retention intelligence is operating with full governance coverage",
+      "issuesDetected": "Governance issues detected — review recommended before relying on system outputs for operational decisions",
+      "calibration": "Probability Reliability",
+      "featureContract": "Customer Signal Framework",
+      "recommendationSchema": "Retention Decision Specification",
+      "explainability": "Risk Driver Intelligence",
+      "artifactFreshness": "Operational Intelligence Freshness",
+      "staleArtifactWarning": "One or more components have not been refreshed recently — stale intelligence may affect decision quality. Schedule a refresh cycle.",
+      "modelSchema": "Operational Modeling Pipeline",
+      "policy": "Active Retention Strategy"
+    },
+    "thresholds": {
+      "title": "Retention Intervention Policies",
+      "recommended": "Recommended",
+      "thresholdLabel": "Risk Threshold",
+      "explanation": "Retention intervention policies define the risk score cutoffs used to determine retention actions. Each policy serves a different operational purpose — from frontline CRM deployment to governance benchmarking."
+    },
+    "comparison": {
+      "title": "Retention Strategy Comparison",
+      "description": "Side-by-side metrics across all configured retention intervention strategies",
+      "policy": "Strategy",
+      "threshold": "Threshold",
+      "recall": "Recall",
+      "precision": "Precision",
+      "f1": "F1",
+      "intendedUse": "Intended Use",
+      "valRecall": "Val Recall",
+      "valPrecision": "Val Precision",
+      "valF1": "Val F1",
+      "testRecall": "Test Recall",
+      "testPrecision": "Test Precision",
+      "testF1": "Test F1",
+      "missingReason": "Why metrics are not generated"
+    },
+    "calibration": {
+      "health": "Probability Reliability Health",
+      "method": "Method",
+      "selectedMethod": "Selected Method",
+      "candidates": "Candidate Methods",
+      "validationPrAuc": "Validation PR-AUC Ceiling",
+      "toleranceBand": "Tolerance Band",
+      "overfitRisk": "Overfit Risk",
+      "overfitLow": "Low — validation and test metrics are consistent, indicating reliable probability estimates",
+      "overfitMedium": "Moderate — some divergence between validation and test performance; monitoring recommended",
+      "overfitHigh": "High — significant gap between validation and test metrics; recalibration may be needed",
+      "tradeoff": "Probability Reliability Tradeoff",
+      "tradeoffText": "Isotonic was selected because it stayed within the validation PR-AUC tolerance band while providing the strongest probability reliability for CRM decisioning, as reflected by Brier score and ECE. The tradeoff is a small ranking-performance change in exchange for better probability trustworthiness.",
+      "methodComparison": "Method Comparison",
+      "valPrAuc": "Val PR-AUC",
+      "valBrier": "Val Brier",
+      "valEce": "Val ECE",
+      "testPrAuc": "Test PR-AUC",
+      "testBrier": "Test Brier",
+      "testEce": "Test ECE",
+      "selectionRationale": "Selection Rationale",
+      "preferredForCrm": "Preferred for CRM risk bands because it delivers the most reliable probability estimates for retention decisioning.",
+      "monitoringRecommended": "Overfit risk is moderate — positive class sample is limited, so ongoing monitoring is recommended."
+    },
+    "freshness": {
+      "title": "Operational Intelligence Freshness",
+      "explanation": "Fresher operational intelligence means the dashboard reflects the latest model training, risk driver analysis, and governance configuration.",
+      "fresh": "Fresh — synchronized with latest production scoring cycle",
+      "recent": "Recent — governance outputs aligned with current model generation",
+      "aging": "Aging — monitoring review recommended",
+      "stale": "Stale — operational review required"
+    },
+    "businessImpact": {
+      "captured": "Churners Captured",
+      "missed": "Churners Missed",
+      "falseAlarms": "False Alarms",
+      "aggressiveness": "Strategy Aggressiveness",
+      "workload": "Campaign Workload",
+      "staffing": "CRM Staffing"
+    },
+    "positioning": {
+      "title": "Retention Strategy Positioning",
+      "description": "Each strategy's recall vs precision tradeoff visualized. Move closer to top-right for better overall performance.",
+      "recallAxis": "Recall (%) — Churners Caught",
+      "precisionAxis": "Precision (%) — Accuracy of Alerts"
+    },
+    "confusionMatrix": {
+      "title": "Executive Confusion Matrix",
+      "description": "Business interpretation of classification outcomes at this threshold",
+      "tpLabel": "Correctly Identified Churners",
+      "tpDesc": "Subscribers correctly flagged for churn — retention action warranted",
+      "fpLabel": "Incorrectly Flagged Loyal Customers",
+      "fpDesc": "Subscribers flagged as churn risk who were actually stable — outreach cost incurred without need",
+      "fnLabel": "Missed Churners",
+      "fnDesc": "Churners the model did not flag — lost retention opportunity",
+      "tnLabel": "Correctly Ignored Stable Customers",
+      "tnDesc": "Stable subscribers correctly left uncontacted — efficient use of CRM capacity",
+      "costInterpretation": "Business Cost Impact",
+      "costTp": "Correctly identified churners can be targeted with retention offers, reducing overall churn rate",
+      "costFp": "Incorrectly flagged customers receive unnecessary contacts — some outreach budget is wasted",
+      "costFn": "Missed churners churn without intervention — each represents lost monthly recurring revenue",
+      "costTn": "Correctly ignored customers preserve CRM capacity for high-value interventions"
+    },
+    "calibrationEduc": {
+      "title": "Understanding Calibration",
+      "subtitle": "Why calibrated probabilities matter for CRM retention decisioning",
+      "whyCalibrate": "Why Calibration Matters",
+      "whyCalibrateDetail": "Raw model scores rank customers by relative churn risk, but the numerical values themselves are not reliable as probabilities. For example, a subscriber with a raw score of 0.70 does not necessarily have a 70% chance of churning. Calibration adjusts these scores so that a prediction of 70% means roughly 70 out of 100 such subscribers actually churn. This is critical for CRM operations because it allows retention teams to set meaningful risk thresholds, prioritize outreach budgets, and estimate how many churners will be captured at each threshold.",
+      "businessExample": "Telecom Business Example",
+      "businessExampleDetail": "If the model predicts a subscriber has 70% churn risk, an uncalibrated model might mean only 40% actually churn — leading CRM teams to waste outreach on lower-risk customers. With proper calibration, a 70% prediction means approximately 70% of those subscribers will churn without intervention. This enables accurate ROI calculations for retention campaigns, since you can estimate exactly how many churners you will save per dollar spent on offers.",
+      "tableMethod": "Method",
+      "tableReliability": "Reliability",
+      "tablePrAucImpact": "PR-AUC Δ",
+      "tableOverfit": "Overfit Risk",
+      "tableUse": "Recommended Use",
+      "reliabilityHigh": "High — Probabilities match observed rates",
+      "reliabilityMedium": "Medium — Some deviation from observed rates",
+      "reliabilityLow": "Low — Probabilities may not match observed rates",
+      "selectedUse": "Selected for CRM decisioning",
+      "availableAlternative": "Available as alternative",
+      "ceilingNote": "Validation PR-AUC ceiling: {ceiling}. This is the maximum achievable PR-AUC for any calibration method.",
+      "monitoringWarnings": "Calibration Monitoring Warnings",
+      "warningEce": "ECE exceeds 0.05 — probability calibration may be degrading. Monitor closely.",
+      "warningDegradation": "PR-AUC degradation detected between validation and test sets. Consider recalibration.",
+      "warningOverfit": "Overfit risk is elevated. Validation performance does not reflect expected production performance."
+    },
+    "technical": {
+      "title": "Technical Details",
+      "rawCompatibility": "System Alignment Metadata",
+      "rawPolicies": "Retention Strategy Configuration",
+      "rawCalibration": "Probability Reliability Data",
+      "rawFreshness": "Intelligence Freshness Timestamps",
+      "rawCalibrationCurve": "Calibration Curve (Technical)",
+      "rawConfusionMatrix": "Confusion Matrix (Technical)",
+      "rawSummary": "Calibration Summary (Technical)"
+    },
+    "trust": {
+      "title": "Why Executives Can Trust This System",
+      "subtitle": "10 safeguards built into the retention AI platform",
+      "factors": {
+        "calibrated": {
+          "label": "Calibrated Probabilities",
+          "description": "Risk scores are calibrated so a 70% prediction means ~70% observed churn rate — reliable for campaign planning."
+        },
+        "explainability": {
+          "label": "Explainability Enabled",
+          "description": "Every decision is accompanied by both rule-based and SHAP driver analysis showing why a subscriber was flagged."
+        },
+        "governance": {
+          "label": "Governance Alignment",
+          "description": "Operational governance validates system alignment, intelligence freshness, and probability reliability on every check."
+        },
+        "schemaValidation": {
+          "label": "System Alignment Validation",
+          "description": "All data pipelines are validated against versioned specifications to prevent silent data drift or mismatch."
+        },
+        "driftMonitoring": {
+          "label": "Drift Monitoring",
+          "description": "Population stability index (PSI) and monitoring notes flag when subscriber patterns shift significantly."
+        },
+        "shap": {
+          "label": "Risk Driver Intelligence",
+          "description": "Per-subscriber driver analysis identifies the specific signals of churn risk — not just a black-box score."
+        },
+        "auditability": {
+          "label": "Full Audit Trail",
+          "description": "All model versions, retention strategies, probability reliability methods, and system alignment checks are timestamped and traceable."
+        },
+        "deterministic": {
+          "label": "Deterministic Recommendation Engine",
+          "description": "Retention plays are rule-based — no hidden ML logic. Rules are explicit, documented, and testable."
+        },
+        "telecomSpecific": {
+          "label": "Telecom-Specific Design",
+          "description": "All metrics, narratives, and recommendations are built for telecom CRM campaigns, not generic ML pipelines."
+        },
+        "businessLabels": {
+          "label": "Business Labels Throughout",
+          "description": "Every technical metric has a plain-English business interpretation. No unexplained numbers."
+        }
+      }
+    }
+  },
+  "evidence": {
+    "title": "Evidence & Insights",
+    "description": "Interactive validation of key churn intelligence questions — plain-language answers with evidence, confidence assessment, and retention actions",
+    "summaryTitle": "Churn Intelligence Summary",
+    "summaryItems": {
+      "overallChurn": "Overall churn rate: 26.5% across 7,043 subscribers",
+      "prepaidDominant": "Prepaid churn (42.7%) is 6.3× higher than postpaid (6.8%)",
+      "topDriver": "Strongest churn signal: Prepaid SIM type (SHAP 0.093)",
+      "ecosystemAssociation": "VoLTE adoption associated with −13.7% lower churn risk",
+      "modelPerformance": "Model PR-AUC: 0.659 — reliable churn ranking"
+    },
+    "confidence": {
+      "strong": "Strong — supported by multiple independent outputs",
+      "moderate": "Moderate — present in some layers but not all",
+      "mixed": "Mixed / Confounded — effect cannot be isolated",
+      "weak": "Weak — not a meaningful signal"
+    },
+    "edaInsights": {
+      "title": "EDA Churn Landscape",
+      "desc": "Key churn rate patterns observed directly from the subscriber data (exploratory analysis)",
+      "i1": {
+        "label": "Base churn rate",
+        "value": "26.5% overall across 7,043 subscribers",
+        "insight": "Approximately 1 in 4 subscribers is at risk of churning. This is the baseline against which all segment comparisons are measured."
+      },
+      "i2": {
+        "label": "Prepaid churn rate",
+        "value": "42.7% (1.61× lift)",
+        "insight": "Prepaid subscribers churn at 1.61× the base rate. This is the single strongest churn signal in the dataset, consistent across EDA, SHAP, and model output."
+      },
+      "i3": {
+        "label": "Postpaid churn rate",
+        "value": "6.8% (0.25× lift)",
+        "insight": "Postpaid subscribers churn at one-quarter the base rate. The prepaid–postpaid gap (6.3×) is the most impactful dimension for retention strategy."
+      },
+      "i4": {
+        "label": "Early-tenure churn rate",
+        "value": "52.9% for 0–6 months (2.0× lift)",
+        "insight": "New subscribers in their first 6 months churn at double the base rate. Early-lifecycle retention is critical — tenure-driven churn is the second-strongest signal."
+      },
+      "i5": {
+        "label": "VoLTE protective effect",
+        "value": "−13.7% lower mean calibrated risk for adopters",
+        "insight": "VoLTE adoption shows a consistent protective association across EDA (15.2% vs 41.6% churn), SHAP (top-5 feature), and the rules engine (dedicated play). The most actionable engagement signal."
+      },
+      "i6": {
+        "label": "Generation effect",
+        "value": "5G: 41.9% overall, but 54.6% for prepaid only",
+        "insight": "Generation effects are confounded with SIM type. Prepaid-on-5G is the highest-risk combination (Cramér's V 0.41). Postpaid churn is stable across all generations. Do not target '5G users' broadly."
+      }
+    },
+    "freshness": {
+      "title": "Analysis Freshness",
+      "modelGeneration": "Based on champion model generation",
+      "lastRefreshed": "Last refreshed upon page load — check Operations Health for latest artifact timestamps"
+    },
+    "glossaryTitle": "Glossary of Terms",
+    "glossary": {
+      "shap": "SHAP: A score that shows how strongly each factor influences the model's churn prediction. Higher absolute values = more influence. Think of it as the 'microphone volume' of each feature in the model's decision.",
+      "calibratedRisk": "Calibrated Risk: The model's adjusted churn probability. A calibrated risk of 70% means approximately 70 out of 100 similar subscribers are expected to churn without intervention. This is the number CRM teams should use for prioritization.",
+      "churnRate": "Churn Rate: The percentage of subscribers who actually stopped using the service. Calculated from historical data. Different from predicted risk — this is what actually happened.",
+      "lift": "Lift: How much more (or less) common churn is in a specific group compared to the average subscriber. A lift of 1.61 means this group churns 61% more than average.",
+      "riskTier": "Risk Tier: A category label (Critical, At Risk, Watchlist, Stable) that groups subscribers by their predicted churn probability ranges, making it easier to prioritize retention actions.",
+      "retentionPlay": "Retention Play: A specific action or offer designed to prevent churn for a known risk pattern. Each play has a target segment, recommended channel, and expected outcome.",
+      "ecosystemSegment": "Ecosystem Segment: A group of subscribers classified by how many and which digital products they use (e.g., Legacy Voice Only, Partial Ecosystem, Digitally Embedded).",
+      "confidence": "Confidence: Our assessment of how reliable an answer is, based on whether the evidence is consistent across exploratory analysis, model outputs, and business rules."
+    },
+    "questions": {
+      "q1": {
+        "question": "Which subscriber features have the greatest impact on churn probability?",
+        "answer": "The most impactful features are SIM card type (prepaid vs postpaid), SIM tenure (how long the subscriber has been active), and mobile network generation (2G/3G/4G/5G). Prepaid status alone is the single strongest churn signal in the dataset.",
+        "numbersExplain": "The model's SHAP analysis ranks features by how much they influence predictions. The top features are: 'is_prepaid' (SHAP 0.093 — the strongest), 'prepaid_5g_risk_flag' (0.069 — a combined prepaid+5G signal), 'sim_tenure_months' (0.053), 'mobile_gen_ordinal' (0.031 — network generation), and 'volte_non_adopter_capable' (0.022). Together these five features dominate the model's decisions. The 'Predictive Core' feature group (14 features including these) has an average SHAP of 0.020, which is 5× stronger than the next group.",
+        "trustWhy": "SHAP values are a well-established method for explaining model predictions. The ranking is consistent with EDA findings: the features SHAP identifies as most important also show the largest churn rate differences in the raw data. The model's strong PR-AUC (0.659) confirms these features are genuinely predictive, not noise.",
+        "retentionAction": "Design retention strategies around the top features. Prioritise prepaid subscribers, especially those on 5G. Focus early-lifecycle retention on new subscribers (short tenure). Promote VoLTE adoption as a protective measure. Ignore demographic features — they carry no meaningful signal.",
+        "caveat": "SHAP measures feature influence on the model, not causal impact on churn. The ranking reflects the model's learned patterns, which could change if the subscriber base or market conditions shift. Feature importance is descriptive of this dataset at this point in time.",
+        "sources": "outputs/explainability/global_shap_importance.csv | outputs/explainability/group_shap_importance.csv | outputs/eda/churn_by_sim_type.csv | outputs/eda/churn_by_tenure_band.csv"
+      },
+      "q2": {
+        "question": "Is there a relationship between SIM card type (prepaid and postpaid) and subscriber churn behavior?",
+        "answer": "Yes — this is the strongest relationship in the entire dataset. Prepaid subscribers churn at 6.3× the rate of postpaid subscribers. The relationship is consistent, large, and appears in every analysis layer.",
+        "numbersExplain": "Prepaid subscribers (3,875 individuals, 55% of the base) have a churn rate of 42.7% compared to 6.8% for postpaid (3,168 individuals). The model's mean calibrated risk for prepaid is 0.428 vs 0.075 for postpaid — a gap of 0.353. The SHAP value of 0.093 for the 'is_prepaid' feature makes it the #1 most influential feature in the model. The recommendation engine has 5 separate rules targeting prepaid churn patterns (R01, R02, R07, R08, R13).",
+        "trustWhy": "This conclusion is supported by every independent analysis layer: exploratory data analysis shows the raw churn rate difference; SHAP analysis ranks prepaid status as the most important model feature; calibrated risk scores show a wide separation between the two groups; and the recommendation engine operationalizes this through multiple rules. All evidence points in the same direction without contradiction.",
+        "retentionAction": "Prioritize prepaid subscribers for retention campaigns. Allocate more CRM resources and offer budget to prepaid channels. Consider prepaid-specific loyalty programmes, auto-renewal incentives, and migration paths to postpaid for high-value prepaid users.",
+        "caveat": "The relationship is strongly associative, not causal. Prepaid subscribers may differ from postpaid on many unmeasured confounders (income, usage patterns, contract flexibility). The 6.3× gap is descriptive of this dataset — not necessarily a universal telecom truth, though consistent with industry patterns.",
+        "sources": "outputs/eda/churn_by_sim_type.csv | outputs/explainability/global_shap_importance.csv | recommendation/rules.py | outputs/analytics/executive_summary.json"
+      },
+      "q3": {
+        "question": "Does an increase in monthly costs or the total amount paid (in tomans) increase churn probability?",
+        "answer": "No — spending and cost features are the weakest signal in the model. There is no meaningful relationship between how much a subscriber pays and their churn probability in this dataset.",
+        "numbersExplain": "The 'Spend Revenue' feature group (covering monthly spend, total spend, and related cost features) has a mean absolute SHAP of only 0.0004 — the weakest of all 5 feature groups and over 49× weaker than the 'Predictive Core' group (0.020). The R05_BILL_SHOCK rule covers only 582 subscribers (8.3% of the base), and none of them are classified as high-risk. Their average calibrated risk is 0.141, well below the overall mean of 0.269. Spending simply does not drive churn predictions in this population.",
+        "trustWhy": "The evidence is clear and consistent: spend features are at the bottom of the SHAP importance ranking by a wide margin. The bill shock rule covers a small population with below-average risk. However, this finding may be specific to this dataset — in other telecom populations with wider spending variation, cost could be a stronger signal.",
+        "retentionAction": "Do not focus retention campaigns on cost or bill-shock concerns. There is no evidence that high spenders are at elevated churn risk. Instead, allocate retention resources to the factors that actually drive churn: SIM type, tenure, and network generation. Maintain the R05_BILL_SHOCK rule as a goodwill monitoring play for the small affected population.",
+        "caveat": "This finding may be specific to this dataset with its limited spending variation. In other telecom markets with wider revenue dispersion or more premium/postpaid-heavy subscriber bases, spend could be a meaningful churn signal. The Bill Shock rule still has operational value for customer goodwill even if it does not target high-risk subscribers.",
+        "sources": "outputs/explainability/group_shap_importance.csv | outputs/analytics/rule_precision_summary.json | outputs/analytics/executive_summary.json"
+      },
+      "q4": {
+        "question": "What effect does mobile internet generation have on subscriber loyalty, and what is the churn pattern among users without data service?",
+        "answer": "Mobile generation has a strong but indirect effect. Higher generations (5G, 4G) appear to have higher churn, but this is because prepaid subscribers are concentrated on these networks. Users without data service (legacy 2G voice-only) have the lowest churn rate of any group at 7.4%.",
+        "numbersExplain": "Overall churn by generation: 2G (7.4%), 3G (17.4%), 4G (19.6%), 5G (41.9%). But this is misleading without stratification. When split by SIM type: prepaid on 5G churn at 54.6% (2.06× lift), while postpaid on 5G churn at only 13.9% (0.53× lift). Users without data service — the 1,526 legacy 2G subscribers (mostly postpaid) — have the lowest churn rate in the entire dataset. The SHAP feature 'mobile_gen_ordinal' (0.031) confirms generation matters, but the 'prepaid_5g_risk_flag' interaction feature (SHAP 0.069) is actually stronger.",
+        "trustWhy": "The stratified analysis (SIM type × generation) directly reveals the confounding effect. The SHAP interaction feature 'prepaid_5g_risk_flag' confirms the model treats 'prepaid on 5G' as a combined risk signal, not pure generation. Users without data service (2G legacy) show low churn, but this group is predominantly postpaid and older — their low churn is driven by tenure and SIM type, not by the absence of data. Caveat: generation effects should always be interpreted alongside SIM type.",
+        "retentionAction": "Do not target '5G users' broadly. Target prepaid subscribers on 5G specifically — this is the highest-risk combination. Do not assume 2G users need retention attention — their low churn rate suggests standard engagement is sufficient. For 3G and 4G users, focus on the prepaid subset rather than the entire generation cohort.",
+        "caveat": "The confounding between generation and SIM type is clear in this data, but could differ in other operator datasets with different subscriber mixes. 2G users' low churn is partly explained by their long tenure and postpaid status — as these users age, their risk profile may change. Generation effects should always be interpreted alongside SIM type.",
+        "sources": "outputs/eda/churn_by_sim_and_generation.csv | outputs/explainability/global_shap_importance.csv | outputs/eda/churn_by_generation.csv | outputs/analytics/executive_summary.json"
+      },
+      "q5": {
+        "question": "What role do the operator's value-added and digital services play in reducing or increasing churn?",
+        "answer": "The digital services (Rubika, EWANO, Hamrah Man) appear to be associated with higher churn, but this is misleading. They are 'segment markers' — they identify prepaid-heavy, younger subscriber segments that already have higher baseline churn risk. The services themselves are not causing churn.",
+        "numbersExplain": "The calibrated risk differences for active vs inactive users are: Hamrah Man +0.150 (higher risk for active users), Rubika +0.051, EWANO +0.048. These positive associations exist because these products are disproportionately adopted by prepaid subscribers who already churn at higher rates. When we control for SIM type, the risk differences shrink substantially. The SHAP group importance for 'Ecosystem Semantic' features (which includes these products) is only 0.004 — much weaker than the core predictive features (0.020). The model does not rely on these features as primary churn signals.",
+        "trustWhy": "The project documentation explicitly flags these as 'segment markers' rather than causal factors. The evidence across EDA, SHAP, and model output consistently shows these features carry weak, confounded signals. The risk difference for active vs inactive users within each product is small when controlling for SIM type. This is an important honesty check — the answer is honest about the limitation.",
+        "retentionAction": "Do not penalize digital service adopters or assume adoption causes churn. Use ecosystem engagement as a retention lever within segments, not across them. For prepaid subscribers active on these platforms, offer integrated ecosystem retention offers. For non-adopters, selective onboarding may help, but do not expect dramatic churn reduction from adoption alone.",
+        "caveat": "This is purely an associative finding. Digital services are strongly correlated with prepaid status, making it impossible to isolate their independent effect on churn without controlled experimentation. The evidence strongly suggests these are segment markers, but the project's wording policy correctly avoids causal claims. Any ecosystem adoption strategy should be evaluated via A/B testing rather than assumed from this descriptive analysis.",
+        "sources": "outputs/eda/churn_volte_data_capable.csv | outputs/explainability/global_shap_importance.csv | outputs/analytics/ecosystem_demographic_analytics.json | outputs/analytics/executive_summary.json"
+      },
+      "q6": {
+        "question": "Does the use of a specific operator app and advanced calling services (such as VoLTE) as customer engagement tools have a meaningful effect on retention?",
+        "answer": "VoLTE adoption shows a meaningful protective association with retention. The operator app (Hamrah Man) shows a mixed, confounded pattern — active users are at higher risk, but this is because the app attracts prepaid-heavy subscribers, not because it causes churn.",
+        "numbersExplain": "VoLTE adopters have a 15.2% churn rate vs 41.6% for capable non-adopters — a calibrated risk difference of −0.137 (lower risk for adopters). The SHAP feature 'volte_non_adopter_capable' (0.022) ranks 5th most important, and there is a dedicated recommendation play 'R03_VOLTE_ENABLE'. For the operator app (Hamrah Man), active users show +0.150 higher calibrated risk, but this is confounded with prepaid status — the app's user base is disproportionately prepaid, younger, and shorter-tenure. The HAMRAHMAN_LOW_ENGAGEMENT rule (R11) exists for this segment.",
+        "trustWhy": "VoLTE evidence is consistent across EDA (raw rate difference), SHAP (top-5 feature), and the recommendation engine (dedicated play). However, it is an associative finding — we cannot prove VoLTE adoption causes lower churn. The operator app evidence is confounded: the association disappears when controlling for SIM type. Caveat: The protective effect of VoLTE and the negative association of the operator app may both reflect the same underlying driver — subscriber engagement level — rather than a direct product effect.",
+        "retentionAction": "Run targeted VoLTE migration campaigns for 3,473 capable non-adopters. Educate subscribers about VoLTE benefits. For the operator app (Hamrah Man), do not assume app engagement signals loyalty — it may simply identify prepaid power users who need different retention approaches. Use app engagement as a segmentation tool, not a retention signal.",
+        "caveat": "VoLTE's protective association is consistent but remains associative — we cannot prove causation without experimental data. The operator app evidence is fully confounded by SIM type. Both effects may reflect subscriber engagement level rather than direct product impact. The 3,473 capable non-adopters figure comes from the recommendation engine's target population calculation.",
+        "sources": "outputs/eda/churn_volte_data_capable.csv | outputs/explainability/global_shap_importance.csv | recommendation/rules.py (R03_VOLTE_ENABLE) | outputs/analytics/executive_summary.json"
+      },
+      "q7": {
+        "question": "Can specific behavioral patterns or risk factors be discovered based on demographic features (gender, age, birth month)?",
+        "answer": "No. Demographic features (gender, age, birth month) provide no meaningful churn signal in this dataset. All demographic groups show nearly identical churn rates. These features do not help identify churn risk.",
+        "numbersExplain": "Female churn rate: 27.1%, Male churn rate: 26.7% — essentially identical. All age cohorts cluster tightly between 26.2% and 27.5%. Birth month is not a significant predictor in any analysis. The SHAP group importance for 'Demographic' features (6 features including gender, age, birth month) is only 0.001 — 20× weaker than the 'Predictive Core' group (0.020). None of the 6 demographic features rank in the top-20 SHAP features. The model effectively ignores them.",
+        "trustWhy": "The conclusion is strongly supported by both EDA (raw churn rates by gender and age cohort are nearly identical) and model analysis (SHAP importance for demographic features is negligible at 0.001). No recommendation rules are based on age, gender, or birth month. The evidence is consistent and unambiguous across all analysis layers.",
+        "retentionAction": "Do not use age, gender, or birth month to segment retention campaigns. There are no demographic-specific churn patterns to act on. Focus retention resources on the factors that actually matter: SIM type, tenure, network generation, VoLTE adoption, and prepaid/5G interaction.",
+        "caveat": "Demographics may be relevant in other operator datasets with different population characteristics. In this dataset, the near-zero SHAP values and near-identical cohort churn rates provide strong evidence that demographics carry no predictive signal. However, this does not mean demographics are irrelevant for marketing personalization — just that they do not help predict churn risk.",
+        "sources": "outputs/explainability/global_shap_importance.csv | outputs/analytics/gender_analytics.json | outputs/analytics/age_cohort_summary.json | outputs/analytics/ecosystem_demographic_analytics.json"
+      },
+      "q8": {
+        "question": "How can targeted actions be designed based on model output to reduce churn?",
+        "answer": "The system is designed end-to-end for this. Model output (risk scores + SHAP explanations) feeds 14 deterministic retention rules, which map to 4 campaign priorities (P1–P4) with specific channels, offers, and expected outcomes. The CRM Action Queue surfaces ranked, actionable recommendations for every at-risk subscriber.",
+        "numbersExplain": "The model produces two outputs per subscriber: a calibrated risk score (0–1 probability of churn) and a SHAP driver analysis (which features most influenced the score). These feed 14 deterministic rules (R00–R13) that each target a specific churn pattern. Each rule has a recommended channel (digital, human-touch, or hybrid), a campaign priority (P1–P4, with 42.1% of actions at P1 urgent level), and a specific retention offer. The rules cover prepaid early-lifecycle (R01, R03), 5G prepaid (R02), VoLTE migration (R03_VOLTE_ENABLE), bill shock (R05), legacy network (R07, R08), ecosystem engagement (R09–R13), and general monitoring (R00).",
+        "trustWhy": "The recommendation engine is deterministic and rule-based — no hidden ML logic. Every rule is documented in the Retention Playbook with explicit triggers, target segments, channel configurations, and success signals. The system is governance-checked for schema compatibility. The executive summary shows measurable retention impact: the realistic simulation estimates 428 retained subscribers with 138.7M Toman in preserved revenue.",
+        "retentionAction": "Use the CRM Action Queue as the primary operational tool. Prioritize P1 actions first. For each subscriber, read the recommended play, check the SHAP driver for context, and apply the suggested channel and offer. Monitor the retention playbook for rule volume and priority mix to plan campaign capacity. Track actual retention outcomes to measure ROI.",
+        "caveat": "Retention simulation uses assumed parameters (save rate, conversion rate, campaign reach), not causal uplift estimates. The realistic estimate of 428 retained subscribers and 138.7M Toman preserved revenue is illustrative — actual results depend on campaign execution quality, market conditions, and subscriber responsiveness. Rules are deterministic and may miss novel churn patterns not covered by the current rule set.",
+        "sources": "recommendation/rules.py | recommendation/config.py | outputs/analytics/retention_simulation_summary.json | outputs/analytics/campaign_saturation_summary.json | outputs/analytics/rule_precision_summary.json"
+      }
+    },
+    "patternsTitle": "Cross-Cutting Patterns",
+    "patterns": {
+      "p1": {
+        "title": "Prepaid is the dominant churn signal",
+        "desc": "Every major churn pattern in this dataset is either a prepaid issue or interacts with prepaid status. SIM type is the single most informative piece of information for churn prediction."
+      },
+      "p2": {
+        "title": "Generation effects are confounded with SIM type",
+        "desc": "Higher network generations (4G, 5G) appear riskier only because prepaid subscribers are concentrated there. When stratified, postpaid churn is low across all generations."
+      },
+      "p3": {
+        "title": "Digital services and apps are segment markers, not causal factors",
+        "desc": "Products like Rubika, Hamrah Man, and EWANO are adopted by prepaid-heavy segments. Their positive association with churn reflects the underlying prepaid risk, not a harmful product effect."
+      },
+      "p4": {
+        "title": "VoLTE is the most actionable protective signal among engagement tools",
+        "desc": "Unlike other digital services, VoLTE adoption shows a consistent negative association with churn that persists even when controlling for SIM type."
+      },
+      "p5": {
+        "title": "Demographics and spend carry no useful signal",
+        "desc": "Age, gender, birth month, and spending levels are not meaningful churn predictors. Retention strategies should not be segmented by these attributes."
+      }
+    },
+    "actionsTitle": "Operational Recommendations Summary",
+    "actions": {
+      "a1": "Prioritise prepaid subscribers — they account for 55% of the base and 88% of churn",
+      "a2": "Target prepaid-on-5G specifically — the highest risk combination (54.6% churn)",
+      "a3": "Launch VoLTE migration campaigns for 3,473 capable non-adopters",
+      "a4": "Use the CRM Action Queue for daily triage — 42.1% of actions are P1 urgent",
+      "a5": "Stop demographic-based and spend-based retention segmentation — these carry no signal"
+    },
+    "references": {
+      "title": "Source References",
+      "desc": "Each answer is backed by project artifacts. The following files contain the evidence shown above:",
+      "item1": "EDA: outputs/eda/churn_by_sim_type.csv, churn_by_generation.csv, churn_by_sim_and_generation.csv, churn_volte_data_capable.csv, churn_by_tenure_band.csv",
+      "item2": "SHAP: outputs/explainability/global_shap_importance.csv, group_shap_importance.csv, explainability_manifest.json",
+      "item3": "Model: outputs/baselines/baseline_results.json, outputs/champion/calibration_summary.json",
+      "item4": "Executive Summary: outputs/analytics/executive_summary.json, outputs/analytics/ecosystem_demographic_analytics.json",
+      "item5": "Rules: outputs/analytics/rule_precision_summary.json, outputs/analytics/campaign_saturation_summary.json, outputs/dashboard/model_health_overview.json"
+    }
+  }
+}

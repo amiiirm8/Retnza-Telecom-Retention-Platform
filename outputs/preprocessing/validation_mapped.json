@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {},
+  "unknown_token_summary": {},
+  "policy": {
+    "duplicate_subscriber_id": "fail_fast",
+    "null_handling": "strict_fail",
+    "null_allowed_columns": [],
+    "float_as_int_policy": "fail",
+    "validation_version": "validators-v2"
+  }
+}

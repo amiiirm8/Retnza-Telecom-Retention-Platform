@@ -1,0 +1,60 @@
+# Executive Intelligence Summary
+
+*Generated: 2026-05-29T11:32:01.734419+00:00*
+*Base: 7043 subscribers, mean calibrated risk: 0.269*
+
+---
+## Churn Landscape
+
+- Base churn probability averages 0.269 across 7043 subscribers (observed in this snapshot).
+- High-risk segments (Very High + High) represent 2490 subscribers (35.4%), with Very High alone at 664 (9.4%).
+- Medium-risk tier includes 1664 subscribers (23.6%); Low-risk represents 2889 (41.0%).
+
+---
+## Ecosystem Observations
+
+- Rubika adoption is associated with higher mean churn probability (difference of 0.051) compared to non-adopters (observed association, not causal).
+- EWANO adoption is associated with higher mean churn probability (difference of 0.048) compared to non-adopters (observed association, not causal).
+- Hamrah Man adoption is associated with higher mean churn probability (difference of 0.150) compared to non-adopters (observed association, not causal).
+- VoLTE adoption is associated with lower mean churn probability (difference of 0.137) compared to non-adopters (observed association, not causal).
+- The 'partial_ecosystem' segment includes 2045 subscribers (mean risk 0.365).
+- The 'legacy_voice_only' segment includes 1526 subscribers (mean risk 0.076).
+- The 'digitally_embedded' segment includes 1247 subscribers (mean risk 0.327).
+
+---
+## Prepaid Volatility
+
+- Prepaid subscribers (3875) show higher mean churn probability (0.428) compared to postpaid (0.075); a difference of 0.353 (observed association).
+- Prepaid represents 55.0% of the base.
+
+---
+## Tenure Stability
+
+- Early-lifecycle subscribers (tenure <= 12 months, n=2186) show mean churn probability 0.465 vs 0.181 for tenured subscribers (n=4857). Early lifecycle is associated with elevated churn risk.
+
+---
+## Campaign Operations
+
+- Rule R02_PREPAID_5G covers 1509 subscribers (21.4%) — the most frequently assigned action.
+- Rule R01_PREPAID_INFANT covers 1413 subscribers (20.1%) — the most frequently assigned action.
+- Rule R07_LEGACY_2G covers 1101 subscribers (15.6%) — the most frequently assigned action.
+- Rule R05_BILL_SHOCK covers 582 subscribers (8.3%) — the most frequently assigned action.
+- Rule R00_MONITOR covers 552 subscribers (7.8%) — the most frequently assigned action.
+- P1 (urgent) campaigns represent 42.1% of all actions, requiring immediate operational attention.
+- 1 saturation risk(s) detected — review campaign_saturation_summary.json for details.
+
+---
+## Model Health / Calibration / Stability
+
+- Champion bundle schema: task8-recommendations-v4. Fallback rule share: 0.0%.
+- Risk tier distribution — Low: 2889 (41.0%), High: 1826 (25.9%), Medium: 1664 (23.6%), Very High: 664 (9.4%).
+- SHAP schema: task7-shap-v4. SHAP values explain the ranking (base model) layer only; calibration is monotonic and not explained.
+- Top SHAP drivers: is_prepaid, prepaid_5g_risk_flag, sim_tenure_months. These features show the strongest association with churn predictions in the current model (associative, not causal).
+- Model health metrics (calibration, stability, drift) are monitored separately via the model monitoring dashboard and drift reports.
+
+---
+## Methodological Note
+
+All narratives use associative wording ('associated with', 'observed relationship'). No causal claims are made. SHAP narratives inform but never override rule-based actions.
+
+*SHAP explains the ranking (base model) layer only. Calibration is monotonic and not explained. Recommendations are rule-based decisions; SHAP narratives enrich explanations for high-risk tiers only.*

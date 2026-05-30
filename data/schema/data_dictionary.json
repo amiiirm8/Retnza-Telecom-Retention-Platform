@@ -1,0 +1,256 @@
+{
+  "schema_version": "task1-v2",
+  "dataset": "MCI_Challenge_FinalDataset.csv",
+  "n_rows": 7043,
+  "n_columns": 17,
+  "encoding": "utf-8",
+  "naming_convention": {
+    "raw_headers": "Persian business labels as provided in CSV (ZWNJ normalized on load)",
+    "standardized_names": "English snake_case business names (see columns[].standard_name)",
+    "rule": "All downstream code uses English standard_name; raw Persian retained only in raw snapshot"
+  },
+  "target": {
+    "standard_name": "churn_label",
+    "raw_name": "ریزش",
+    "positive_class": "بله",
+    "negative_class": "خیر",
+    "encoding_for_modeling": {"خیر": 0, "بله": 1},
+    "prevalence_churn": 0.2654
+  },
+  "structural_missingness": {
+    "applies_when": "mobile_data_generation == '2G'",
+    "n_rows": 1526,
+    "sentinel_value": "فاقد سرویس دیتا",
+    "meaning": "not_applicable_no_data_service",
+    "affected_columns_raw": [
+      "بسته_رومینگ_بین‌الملل",
+      "فضای_ابری_اپراتور",
+      "بسته_اینترنت_شبانه",
+      "سرویس_تماس_VoLTE",
+      "سوپراپ_شبکه اجتماعی",
+      "سوپراپ_خدمات_مالی"
+    ],
+    "must_not_map_to": "simple_no_without_not_applicable_flag"
+  },
+  "leakage_warnings": [
+    {
+      "column": "cumulative_spend_toman",
+      "risk": "May include spend outside pre-churn observation window if label horizon is forward-looking",
+      "action": "Confirm label definition with business before using cumulative in modeling; prefer tenure-normalized ARPU with documented assumption"
+    },
+    {
+      "column": "monthly_spend_toman",
+      "risk": "Ambiguous when sim_tenure_months == 0",
+      "action": "Resolve definition before deriving spend ratios"
+    }
+  ],
+  "known_ambiguities": [
+    {
+      "id": "TENURE_ZERO_SPEND",
+      "severity": "high",
+      "description": "11 rows: sim_tenure_months=0, cumulative_spend_toman=0, monthly_spend_toman>0",
+      "task2_action": "Add tenure_zero_flag and billing_definition_ambiguous_flag; do not impute cumulative spend"
+    },
+    {
+      "id": "SPEND_IDENTITY",
+      "severity": "medium",
+      "description": "Only 8.87% of rows satisfy cumulative == monthly * tenure",
+      "task2_action": "Treat as separate fields; no deterministic derived lifetime spend without business formula"
+    }
+  ],
+  "columns": [
+    {
+      "standard_name": "subscriber_id",
+      "raw_name": "شناسه_مشترک",
+      "role": "id",
+      "dtype": "int64",
+      "allowed_values": null,
+      "missing_rate": 0,
+      "n_unique": 7043,
+      "min": 1,
+      "max": 7043
+    },
+    {
+      "standard_name": "gender",
+      "raw_name": "جنسیت",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["مرد", "زن"],
+      "missing_rate": 0,
+      "n_unique": 2,
+      "value_counts": {"مرد": 3555, "زن": 3488}
+    },
+    {
+      "standard_name": "age",
+      "raw_name": "سن",
+      "role": "feature",
+      "dtype": "int64",
+      "allowed_values": null,
+      "missing_rate": 0,
+      "n_unique": 58,
+      "min": 18,
+      "max": 75,
+      "mean": 40.07,
+      "median": 40
+    },
+    {
+      "standard_name": "birth_month_persian",
+      "raw_name": "ماه_تولد",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"],
+      "missing_rate": 0,
+      "n_unique": 12
+    },
+    {
+      "standard_name": "sim_tenure_months",
+      "raw_name": "سابقه_سیم‌کارت_ماه",
+      "role": "feature",
+      "dtype": "int64",
+      "allowed_values": null,
+      "missing_rate": 0,
+      "n_unique": 73,
+      "min": 0,
+      "max": 72,
+      "mean": 32.37,
+      "median": 29,
+      "quality_flag": "TENURE_ZERO_SPEND on 11 rows"
+    },
+    {
+      "standard_name": "mobile_data_generation",
+      "raw_name": "نسل_اینترنت_همراه",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["2G", "3G", "4G", "5G"],
+      "missing_rate": 0,
+      "value_counts": {"5G": 3096, "4G": 1695, "2G": 1526, "3G": 726}
+    },
+    {
+      "standard_name": "intl_roaming_package",
+      "raw_name": "بسته_رومینگ_بین‌الملل",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر", "فاقد سرویس دیتا"],
+      "missing_rate": 0,
+      "structural_na_when": "2G"
+    },
+    {
+      "standard_name": "operator_cloud_storage",
+      "raw_name": "فضای_ابری_اپراتور",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر", "فاقد سرویس دیتا"],
+      "missing_rate": 0,
+      "structural_na_when": "2G"
+    },
+    {
+      "standard_name": "night_data_package",
+      "raw_name": "بسته_اینترنت_شبانه",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر", "فاقد سرویس دیتا"],
+      "missing_rate": 0,
+      "structural_na_when": "2G"
+    },
+    {
+      "standard_name": "volte_service",
+      "raw_name": "سرویس_تماس_VoLTE",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر", "فاقد سرویس دیتا"],
+      "missing_rate": 0,
+      "structural_na_when": "2G"
+    },
+    {
+      "standard_name": "superapp_social",
+      "raw_name": "سوپراپ_شبکه اجتماعی",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر", "فاقد سرویس دیتا"],
+      "missing_rate": 0,
+      "structural_na_when": "2G"
+    },
+    {
+      "standard_name": "superapp_financial",
+      "raw_name": "سوپراپ_خدمات_مالی",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر", "فاقد سرویس دیتا"],
+      "missing_rate": 0,
+      "structural_na_when": "2G"
+    },
+    {
+      "standard_name": "sim_card_type",
+      "raw_name": "نوع_سیم‌کارت",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["اعتباری", "دائمی"],
+      "missing_rate": 0,
+      "value_counts": {"اعتباری": 3875, "دائمی": 3168},
+      "business_labels": {"اعتباری": "prepaid", "دائمی": "postpaid"}
+    },
+    {
+      "standard_name": "operator_app_usage",
+      "raw_name": "استفاده_اپلیکیشن_اپراتور",
+      "role": "feature",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر"],
+      "missing_rate": 0,
+      "value_counts": {"بله": 4171, "خیر": 2872}
+    },
+    {
+      "standard_name": "monthly_spend_toman",
+      "raw_name": "هزینه_ماهیانه_تومان",
+      "role": "feature",
+      "dtype": "int64",
+      "missing_rate": 0,
+      "min": 2737500,
+      "max": 17812500,
+      "mean": 9714254,
+      "median": 10552500
+    },
+    {
+      "standard_name": "cumulative_spend_toman",
+      "raw_name": "هزینه_کل_تومان",
+      "role": "feature",
+      "dtype": "int64",
+      "missing_rate": 0,
+      "min": 0,
+      "max": 1302720000,
+      "mean": 341960144,
+      "median": 209182500,
+      "leakage_review": true
+    },
+    {
+      "standard_name": "churn_label",
+      "raw_name": "ریزش",
+      "role": "target",
+      "dtype": "string",
+      "allowed_values": ["بله", "خیر"],
+      "missing_rate": 0,
+      "value_counts": {"خیر": 5174, "بله": 1869}
+    }
+  ],
+  "data_quality_gates": {
+    "must_pass_before_task2": [
+      "row_count == 7043",
+      "subscriber_id unique",
+      "zero full-row duplicates",
+      "churn_label in {بله, خیر} only",
+      "no pandas NaN in any column",
+      "no blank or placeholder strings in categoricals (verified)",
+      "all categoricals subset of allowed_values",
+      "numeric dtypes parse as int64 without coercion errors"
+    ],
+    "allowed_unresolved_into_task2": [
+      "TENURE_ZERO_SPEND business definition (document interim rule)",
+      "SPEND_IDENTITY formula (do not auto-derive)",
+      "churn label observation horizon (document assumption)"
+    ],
+    "block_task2_if": [
+      "unexpected category values appear",
+      "duplicate subscriber_id > 0",
+      "missing_nan > 0 in any column"
+    ]
+  }
+}

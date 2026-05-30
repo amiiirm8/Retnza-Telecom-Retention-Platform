@@ -1,0 +1,17 @@
+# Retnza ML Pipeline Dependencies
+# This file covers the training/inference pipeline (preprocessing → modeling → analytics).
+# Backend API dependencies are in backend/requirements.txt.
+#
+# IMPORTANT: numpy>=2.0 is required because the champion model artifact was pickled
+# with numpy 2.x (PCG64 bit generator). scipy>=1.14 and pandas>=2.2.3 are needed
+# for numpy 2.x binary compatibility.
+
+pandas>=2.2.3
+numpy>=2.0,<3
+scipy>=1.14
+scikit-learn>=1.6
+pyarrow>=18.0
+imbalanced-learn>=0.14
+joblib>=1.4
+shap>=0.46
+matplotlib>=3.8

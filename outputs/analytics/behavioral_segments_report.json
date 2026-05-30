@@ -1,0 +1,149 @@
+{
+  "artifact_type": "behavioral_segmentation_report",
+  "schema_version": "report-v1",
+  "generated_at": "2026-05-29T10:40:21.450632+00:00",
+  "objective": "Objective 3 \u2014 Analyze subscriber behavior and extract meaningful patterns",
+  "approach": "unsupervised_clustering",
+  "method": "kmeans",
+  "k": 3,
+  "random_seed": 42,
+  "n_features": 9,
+  "features": [
+    "sim_tenure_months",
+    "lifetime_arpu_toman",
+    "log_monthly_spend_toman",
+    "spend_intensity_score",
+    "digital_engagement_score",
+    "ecosystem_service_count",
+    "vas_adoption_count",
+    "mobile_gen_ordinal",
+    "age"
+  ],
+  "feature_labels": {
+    "sim_tenure_months": "Tenure (months)",
+    "lifetime_arpu_toman": "Lifetime ARPU",
+    "log_monthly_spend_toman": "Log Monthly Spend",
+    "spend_intensity_score": "Spend Intensity",
+    "digital_engagement_score": "Digital Engagement",
+    "ecosystem_service_count": "Ecosystem Services",
+    "vas_adoption_count": "VAS Adoption",
+    "mobile_gen_ordinal": "Network Gen",
+    "age": "Age"
+  },
+  "quality_metrics": {
+    "silhouette_score": 0.32983389057626217,
+    "davies_bouldin": 1.1847167369934657,
+    "calinski_harabasz": 5748.182541982634
+  },
+  "stability": {
+    "mean_ari": 0.9990956620147999,
+    "std_ari": 0.0005447910445421461,
+    "n_seeds": 5
+  },
+  "method_comparison": {
+    "kmeans": {
+      "best_k": 3,
+      "silhouette_score": 0.32983389057626217,
+      "davies_bouldin": 1.1847167369934657,
+      "calinski_harabasz": 5748.182541982634
+    },
+    "gmm": {
+      "best_k": 3,
+      "silhouette_score": 0.2500769456642535,
+      "davies_bouldin": 1.6893871465038954,
+      "calinski_harabasz": 4036.6908433646413
+    },
+    "agglomerative": {
+      "best_k": 3,
+      "silhouette_score": 0.2883257253822802,
+      "davies_bouldin": 1.2439492163930777,
+      "calinski_harabasz": 4823.720901815518
+    }
+  },
+  "n_segments": 3,
+  "segments": [
+    {
+      "cluster_id": 0,
+      "name": "Digital VIP Subscribers",
+      "size": 2630,
+      "size_pct": 0.37342041743575183,
+      "mean_calibrated_risk": 0.2556277946768061,
+      "churn_rate": 0.25133079847908746,
+      "priority_level": "high",
+      "primary_channel": "Hybrid (digital + agent)",
+      "top_distinguishing_features": [
+        {
+          "label": "Digital Engagement",
+          "z_score": 1.0340220250437222,
+          "direction": "above"
+        },
+        {
+          "label": "VAS Adoption",
+          "z_score": 0.9920153884070129,
+          "direction": "above"
+        },
+        {
+          "label": "Ecosystem Services",
+          "z_score": 0.9559688358628374,
+          "direction": "above"
+        }
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "name": "Early-Life Basic Users",
+      "size": 2745,
+      "size_pct": 0.38974868663921625,
+      "mean_calibrated_risk": 0.3846330054644809,
+      "churn_rate": 0.37923497267759565,
+      "priority_level": "high",
+      "primary_channel": "Digital + SMS",
+      "top_distinguishing_features": [
+        {
+          "label": "Tenure (months)",
+          "z_score": -0.50311374246467,
+          "direction": "below"
+        },
+        {
+          "label": "Network Gen",
+          "z_score": 0.3592259661110593,
+          "direction": "above"
+        },
+        {
+          "label": "Digital Engagement",
+          "z_score": -0.3563786019272553,
+          "direction": "below"
+        }
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "name": "Minimal Engagement",
+      "size": 1668,
+      "size_pct": 0.23683089592503195,
+      "mean_calibrated_risk": 0.10025023980815348,
+      "churn_rate": 0.10011990407673861,
+      "priority_level": "low",
+      "primary_channel": "Digital (app)",
+      "top_distinguishing_features": [
+        {
+          "label": "Log Monthly Spend",
+          "z_score": -1.6049457451563258,
+          "direction": "below"
+        },
+        {
+          "label": "Network Gen",
+          "z_score": -1.4908299766489894,
+          "direction": "below"
+        },
+        {
+          "label": "Spend Intensity",
+          "z_score": -1.467659360854906,
+          "direction": "below"
+        }
+      ]
+    }
+  ],
+  "narrative": "Behavioral segmentation identified 3 distinct subscriber groups using kmeans clustering on 9 behavioral features. The solution achieves a silhouette score of 0.330, Davies-Bouldin index of 1.185, and Calinski-Harabasz score of 5748. The highest-risk segment ('Early-Life Basic Users') has a mean churn risk of 38.5%, while the lowest-risk segment ('Minimal Engagement') has 10.0%. These segments are descriptive behavioral profiles discovered from the data, not causal groupings. They are designed to inform retention strategy by identifying which behavioral patterns are associated with higher churn risk.",
+  "note": "This is a descriptive behavioral discovery, not causal inference. Segments reflect observed patterns in the current data snapshot."
+}

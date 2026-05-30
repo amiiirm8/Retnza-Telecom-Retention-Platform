@@ -1,0 +1,34 @@
+{
+  "female": {
+    "n": 3488,
+    "share_of_base": 0.495243504188556,
+    "churn_rate": 0.27131077981651375,
+    "mean_calibrated_risk": 0.27131077981651375,
+    "prepaid_ratio": 0.5518922018348624,
+    "ecosystem_penetration": 0.7345183486238532,
+    "rubika_adoption": 0.3884747706422018,
+    "ewano_adoption": 0.3930619266055046,
+    "hamrah_man_adoption": 0.5980504587155964,
+    "volte_adoption": 0.2944380733944954,
+    "mean_arpu": 9772189.653380949,
+    "mean_tenure_months": 32.24455275229358,
+    "bill_shock_frequency": 0.0014334862385321102,
+    "mean_digital_engagement": 1.6740252293577982
+  },
+  "male": {
+    "n": 3555,
+    "share_of_base": 0.504756495811444,
+    "churn_rate": 0.2669491139240506,
+    "mean_calibrated_risk": 0.2669491139240506,
+    "prepaid_ratio": 0.5485232067510548,
+    "ecosystem_penetration": 0.730239099859353,
+    "rubika_adoption": 0.38030942334739803,
+    "ewano_adoption": 0.3828410689170183,
+    "hamrah_man_adoption": 0.5864978902953587,
+    "volte_adoption": 0.28607594936708863,
+    "mean_arpu": 9638546.960529234,
+    "mean_tenure_months": 32.49535864978903,
+    "bill_shock_frequency": 0.0016877637130801688,
+    "mean_digital_engagement": 1.6357243319268635
+  }
+}

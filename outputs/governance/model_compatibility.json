@@ -1,0 +1,38 @@
+{
+  "generated_at_utc": "2026-05-28T20:06:34.347939+00:00",
+  "expected_n_features": 47,
+  "expected_bundle_schema": "champion-bundle-v4",
+  "artifacts": [
+    {
+      "type": "champion",
+      "path": "/Users/amirmahdi/hacketon/outputs/champion/champion_model.joblib",
+      "compatible": true,
+      "warnings": [],
+      "errors": [],
+      "checked_at_utc": "2026-05-28T20:06:34.658940+00:00",
+      "n_stored_features": 47,
+      "n_expected_features": 47,
+      "feature_engineering_schema": "task4-v2",
+      "expected_fe_schema": "task4-v2",
+      "expected_modeling_schema": "modeling-v4"
+    },
+    {
+      "type": "shap",
+      "name": "subscriber_shap_values.parquet",
+      "path": "/Users/amirmahdi/hacketon/outputs/explainability/subscriber_shap_values.parquet",
+      "compatible": true,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "type": "shap",
+      "name": "subscriber_shap_test.parquet",
+      "path": "/Users/amirmahdi/hacketon/outputs/explainability/subscriber_shap_test.parquet",
+      "compatible": true,
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "stale_warnings": [],
+  "action_required": []
+}

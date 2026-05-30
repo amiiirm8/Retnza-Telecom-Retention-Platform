@@ -1,0 +1,435 @@
+{
+  "schema_version": "behavioral-segments-v2",
+  "governance_schema": "behavioral-segments-governance-v1",
+  "generated_at": "2026-05-29T11:32:43.251436+00:00",
+  "random_state": 42,
+  "n_clusters": 3,
+  "selected_method": "kmeans",
+  "selected_k": 3,
+  "method_selection_rationale": "kmeans was selected because it achieved the highest silhouette score (0.330) with a clear margin (+0.042) over the next best method. This indicates better-defined cluster boundaries for the given feature space.",
+  "scientific_context": "A silhouette score of 0.330 is within the expected range for behavioural telecom data, where clusters reflect natural variation in continuous engagement dimensions rather than discrete, well-separated categories. More important than absolute silhouette is the strong cluster stability (ARI = 0.999) and the clear churn-risk differentiation across segments \u2014 both confirm the segmentation is robust and operationally meaningful.",
+  "features_used": [
+    "sim_tenure_months",
+    "lifetime_arpu_toman",
+    "log_monthly_spend_toman",
+    "spend_intensity_score",
+    "digital_engagement_score",
+    "ecosystem_service_count",
+    "vas_adoption_count",
+    "mobile_gen_ordinal",
+    "age"
+  ],
+  "feature_labels": {
+    "sim_tenure_months": "Tenure (months)",
+    "lifetime_arpu_toman": "Lifetime ARPU",
+    "log_monthly_spend_toman": "Log Monthly Spend",
+    "spend_intensity_score": "Spend Intensity",
+    "digital_engagement_score": "Digital Engagement",
+    "ecosystem_service_count": "Ecosystem Services",
+    "vas_adoption_count": "VAS Adoption",
+    "mobile_gen_ordinal": "Network Gen",
+    "age": "Age"
+  },
+  "overall_mean_risk": 0.26910920062473376,
+  "winsor_percentile": 99.0,
+  "metrics": {
+    "silhouette_score": 0.32983389057626217,
+    "davies_bouldin": 1.1847167369934657,
+    "calinski_harabasz": 5748.182541982634
+  },
+  "stability": {
+    "mean_ari": 0.9990956620147999,
+    "std_ari": 0.0005447910445421461,
+    "n_seeds": 5
+  },
+  "method_comparison": {
+    "kmeans": {
+      "best_k": 3,
+      "silhouette_score": 0.32983389057626217,
+      "davies_bouldin": 1.1847167369934657,
+      "calinski_harabasz": 5748.182541982634
+    },
+    "gmm": {
+      "best_k": 3,
+      "silhouette_score": 0.2500769456642535,
+      "davies_bouldin": 1.6893871465038954,
+      "calinski_harabasz": 4036.6908433646413
+    },
+    "agglomerative": {
+      "best_k": 3,
+      "silhouette_score": 0.2883257253822802,
+      "davies_bouldin": 1.2439492163930777,
+      "calinski_harabasz": 4823.720901815518
+    }
+  },
+  "limitations": [
+    "Descriptive, not causal: segments describe observed associations between behavioral patterns and churn risk. Changing a subscriber's behavioral profile does not guarantee changed churn outcomes.",
+    "Snapshot in time: segments reflect the current data snapshot. As the subscriber base evolves, composition and characteristics may shift. Periodic re-clustering is recommended.",
+    "Feature-dependent: discovered segments depend on the selected feature set. Alternative feature engineering would yield different groupings.",
+    "Moderate silhouette score (0.33): typical for behavioral telecom data where clusters reflect continuous engagement gradients rather than discrete categories. Stability (ARI > 0.99) and clear risk differentiation compensate.",
+    "No temporal dimension: segmentation does not account for behavioral trajectory or seasonal patterns. A subscriber's segment may change as their behavior evolves."
+  ],
+  "pca": {
+    "n_components": 5,
+    "total_explained_variance": 0.9649978860569375,
+    "components": [
+      {
+        "component": 0,
+        "explained_variance_ratio": 0.6443839029928428,
+        "cumulative_variance": 0.6443839029928428,
+        "top_features": [
+          {
+            "feature": "log_monthly_spend_toman",
+            "label": "Log Monthly Spend",
+            "weight": 0.39969185786531725
+          },
+          {
+            "feature": "lifetime_arpu_toman",
+            "label": "Lifetime ARPU",
+            "weight": 0.39939892234199975
+          },
+          {
+            "feature": "ecosystem_service_count",
+            "label": "Ecosystem Services",
+            "weight": 0.384850772774354
+          }
+        ]
+      },
+      {
+        "component": 1,
+        "explained_variance_ratio": 0.12552840874440763,
+        "cumulative_variance": 0.7699123117372504,
+        "top_features": [
+          {
+            "feature": "sim_tenure_months",
+            "label": "Tenure (months)",
+            "weight": 0.8164236294481936
+          },
+          {
+            "feature": "mobile_gen_ordinal",
+            "label": "Network Gen",
+            "weight": -0.36715522757801655
+          },
+          {
+            "feature": "vas_adoption_count",
+            "label": "VAS Adoption",
+            "weight": 0.28042937922810174
+          }
+        ]
+      },
+      {
+        "component": 2,
+        "explained_variance_ratio": 0.1111258393527913,
+        "cumulative_variance": 0.8810381510900417,
+        "top_features": [
+          {
+            "feature": "age",
+            "label": "Age",
+            "weight": 0.9998382967292321
+          },
+          {
+            "feature": "vas_adoption_count",
+            "label": "VAS Adoption",
+            "weight": 0.011372738407307325
+          },
+          {
+            "feature": "mobile_gen_ordinal",
+            "label": "Network Gen",
+            "weight": -0.010131874037447043
+          }
+        ]
+      },
+      {
+        "component": 3,
+        "explained_variance_ratio": 0.0631661469432125,
+        "cumulative_variance": 0.9442042980332542,
+        "top_features": [
+          {
+            "feature": "digital_engagement_score",
+            "label": "Digital Engagement",
+            "weight": 0.5735427814729046
+          },
+          {
+            "feature": "sim_tenure_months",
+            "label": "Tenure (months)",
+            "weight": -0.49255352703837124
+          },
+          {
+            "feature": "ecosystem_service_count",
+            "label": "Ecosystem Services",
+            "weight": 0.38541406744504425
+          }
+        ]
+      },
+      {
+        "component": 4,
+        "explained_variance_ratio": 0.020793588023683307,
+        "cumulative_variance": 0.9649978860569375,
+        "top_features": [
+          {
+            "feature": "vas_adoption_count",
+            "label": "VAS Adoption",
+            "weight": 0.630117269044153
+          },
+          {
+            "feature": "mobile_gen_ordinal",
+            "label": "Network Gen",
+            "weight": -0.4396967569504473
+          },
+          {
+            "feature": "spend_intensity_score",
+            "label": "Spend Intensity",
+            "weight": 0.4232599670657488
+          }
+        ]
+      }
+    ],
+    "cluster_positions": [
+      {
+        "cluster_id": 0,
+        "pca_centroid": [
+          2.3211857351953724,
+          0.48431964953359197,
+          -0.0018560912295032374
+        ],
+        "pca_spread": [
+          0.8113640970164558,
+          0.9137444926718008,
+          0.9813731199314549
+        ]
+      },
+      {
+        "cluster_id": 1,
+        "pca_centroid": [
+          -0.0013816118979895757,
+          -0.7429461779199941,
+          -0.0044331282414317805
+        ],
+        "pca_spread": [
+          0.8732562365334559,
+          0.8807923248753056,
+          0.9992759261288625
+        ]
+      },
+      {
+        "cluster_id": 2,
+        "pca_centroid": [
+          -3.6576294717648934,
+          0.45900874107735934,
+          0.010222096496596951
+        ],
+        "pca_spread": [
+          0.5667722950754823,
+          0.8295923670934721,
+          1.0300447272226312
+        ]
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "cluster_id": 0,
+      "name": "Premium Digital Engaged",
+      "short_summary": "Digital Engagement (higher), VAS Adoption (higher), and Ecosystem Services (higher)",
+      "size": 2630,
+      "size_pct": 0.37342041743575183,
+      "mean_calibrated_risk": 0.2556277946768061,
+      "churn_risk_ratio": 0.949903585917424,
+      "high_risk_pct": 0.28479087452471485,
+      "churn_rate": 0.25133079847908746,
+      "risk_vs_average": "below",
+      "operational_interpretation": "Low-priority retention segment. Churn risk is below the base average. Standard stewardship with periodic monitoring is sufficient; avoid unnecessary outreach.",
+      "retention_posture": "Proactive premium retention \u2014 these subscribers have high lifetime value but show moderate risk indicators. Strengthen loyalty bonds with exclusive perks and early-access benefits before risk escalates.",
+      "priority_level": "high",
+      "treatment": "Proactive engagement with personalized premium offers, loyalty programme enrolment, and early-access perks",
+      "primary_channel": "Hybrid (digital + agent)",
+      "features": {
+        "sim_tenure_months": 47.33231939163498,
+        "lifetime_arpu_toman": 13767561.774677979,
+        "log_monthly_spend_toman": 16.420920127539173,
+        "spend_intensity_score": 32.842160684094125,
+        "digital_engagement_score": 2.981368821292776,
+        "ecosystem_service_count": 2.4418250950570344,
+        "vas_adoption_count": 3.91787072243346,
+        "mobile_gen_ordinal": 2.5783269961977187,
+        "age": 39.978326996197715
+      },
+      "top_distinguishing_features": [
+        {
+          "feature": "digital_engagement_score",
+          "label": "Digital Engagement",
+          "z_score": 1.0340220250437222,
+          "deviation": 1.3266762187086498,
+          "direction": "above"
+        },
+        {
+          "feature": "vas_adoption_count",
+          "label": "VAS Adoption",
+          "z_score": 0.9920153884070129,
+          "deviation": 2.0966297739739965,
+          "direction": "above"
+        },
+        {
+          "feature": "ecosystem_service_count",
+          "label": "Ecosystem Services",
+          "z_score": 0.9559688358628374,
+          "deviation": 1.3573440500478053,
+          "direction": "above"
+        },
+        {
+          "feature": "lifetime_arpu_toman",
+          "label": "Lifetime ARPU",
+          "z_score": 0.8965493389771482,
+          "deviation": 4065993.5039506424,
+          "direction": "above"
+        },
+        {
+          "feature": "log_monthly_spend_toman",
+          "label": "Log Monthly Spend",
+          "z_score": 0.808943038970108,
+          "deviation": 0.4807341222047512,
+          "direction": "above"
+        }
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "name": "Early-Life At-Risk Users",
+      "short_summary": "Tenure (months) (lower), Network Gen (higher), and Digital Engagement (lower)",
+      "size": 2745,
+      "size_pct": 0.38974868663921625,
+      "mean_calibrated_risk": 0.3846330054644809,
+      "churn_risk_ratio": 1.429282256316618,
+      "high_risk_pct": 0.5828779599271403,
+      "churn_rate": 0.37923497267759565,
+      "risk_vs_average": "above",
+      "operational_interpretation": "High-priority retention segment. Subscribers in this group show churn risk substantially above the base average (1.4x). Early intervention through targeted outreach and ecosystem onboarding is recommended.",
+      "retention_posture": "High-priority onboarding acceleration \u2014 the segment's short tenure and low adoption signal an active churn risk. Deploy automated welcome sequences, VAS trial offers, and ecosystem discovery campaigns via digital channels.",
+      "priority_level": "high",
+      "treatment": "Accelerate ecosystem onboarding: welcome campaigns, VAS discovery, and digital habit formation within first 90 days",
+      "primary_channel": "Digital + SMS",
+      "features": {
+        "sim_tenure_months": 20.01493624772313,
+        "lifetime_arpu_toman": 9745187.08175365,
+        "log_monthly_spend_toman": 16.059155473366577,
+        "spend_intensity_score": 32.11663741167946,
+        "digital_engagement_score": 1.1974499089253188,
+        "ecosystem_service_count": 0.9752276867030966,
+        "vas_adoption_count": 1.44408014571949,
+        "mobile_gen_ordinal": 2.3282331511839707,
+        "age": 40.08306010928962
+      },
+      "top_distinguishing_features": [
+        {
+          "feature": "sim_tenure_months",
+          "label": "Tenure (months)",
+          "z_score": -0.50311374246467,
+          "deviation": -12.356212410519095,
+          "direction": "below"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "label": "Network Gen",
+          "z_score": 0.3592259661110593,
+          "deviation": 0.42506688680799454,
+          "direction": "above"
+        },
+        {
+          "feature": "digital_engagement_score",
+          "label": "Digital Engagement",
+          "z_score": -0.3563786019272553,
+          "deviation": -0.4572426936588072,
+          "direction": "below"
+        },
+        {
+          "feature": "log_monthly_spend_toman",
+          "label": "Log Monthly Spend",
+          "z_score": 0.20019282711452502,
+          "deviation": 0.11896946803215513,
+          "direction": "above"
+        },
+        {
+          "feature": "spend_intensity_score",
+          "label": "Spend Intensity",
+          "z_score": 0.19319246767426607,
+          "deviation": 0.26150929521619304,
+          "direction": "above"
+        }
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "name": "Low-Engagement Stable",
+      "short_summary": "Log Monthly Spend (lower), Network Gen (lower), and Spend Intensity (lower)",
+      "size": 1668,
+      "size_pct": 0.23683089592503195,
+      "mean_calibrated_risk": 0.10025023980815348,
+      "churn_risk_ratio": 0.37252624427341674,
+      "high_risk_pct": 0.08453237410071943,
+      "churn_rate": 0.10011990407673861,
+      "risk_vs_average": "below",
+      "operational_interpretation": "Low-priority retention segment. Churn risk is below the base average. Standard stewardship with periodic monitoring is sufficient; avoid unnecessary outreach.",
+      "retention_posture": "Standard stewardship \u2014 this segment shows low churn risk with current patterns. Maintain light-touch engagement and monitor for early risk signals. Avoid unnecessary outreach.",
+      "priority_level": "low",
+      "treatment": "Standard retention engagement and periodic risk monitoring",
+      "primary_channel": "Digital (app)",
+      "features": {
+        "sim_tenure_months": 29.11570743405276,
+        "lifetime_arpu_toman": 3218776.573090987,
+        "log_monthly_spend_toman": 14.98640786915531,
+        "spend_intensity_score": 29.868474238622984,
+        "digital_engagement_score": 0.31534772182254195,
+        "ecosystem_service_count": -0.8758992805755396,
+        "vas_adoption_count": -0.8639088729016786,
+        "mobile_gen_ordinal": 0.13908872901678657,
+        "age": 40.05395683453237
+      },
+      "top_distinguishing_features": [
+        {
+          "feature": "log_monthly_spend_toman",
+          "label": "Log Monthly Spend",
+          "z_score": -1.6049457451563258,
+          "deviation": -0.9537781361791122,
+          "direction": "below"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "label": "Network Gen",
+          "z_score": -1.4908299766489894,
+          "deviation": -1.7640775353591895,
+          "direction": "below"
+        },
+        {
+          "feature": "spend_intensity_score",
+          "label": "Spend Intensity",
+          "z_score": -1.467659360854906,
+          "deviation": -1.9866538778402862,
+          "direction": "below"
+        },
+        {
+          "feature": "lifetime_arpu_toman",
+          "label": "Lifetime ARPU",
+          "z_score": -1.4294520159944082,
+          "deviation": -6482791.697636349,
+          "direction": "below"
+        },
+        {
+          "feature": "ecosystem_service_count",
+          "label": "Ecosystem Services",
+          "z_score": -1.3806834734580946,
+          "deviation": -1.9603803255847687,
+          "direction": "below"
+        }
+      ]
+    }
+  ],
+  "highest_risk_segment": {
+    "name": "Early-Life At-Risk Users",
+    "mean_calibrated_risk": 0.3846330054644809
+  },
+  "lowest_risk_segment": {
+    "name": "Low-Engagement Stable",
+    "mean_calibrated_risk": 0.10025023980815348
+  },
+  "narrative": "Retnza's behavioral intelligence layer identifies 3 distinct subscriber groups discovered from usage, engagement, and lifecycle patterns across 9 behavioral dimensions. The solution applies kmeans clustering \u2014 selected after comparing three algorithms (K-Means, GMM, Agglomerative) across k=3\u20138 candidates. The optimal configuration (k=3) was chosen by maximising silhouette score (primary) with Davies-Bouldin index as tie-breaker, then validated for cluster stability across 5 random seeds (mean ARI: 0.999). Segments are well-separated on churn risk: the highest-risk group ('Early-Life At-Risk Users') shows 38.5% mean predicted risk \u2014 3.8\u00d7 the lowest-risk group \u2014 indicating meaningful behavioral differentiation. These are descriptive behavioral profiles discovered from subscriber data, not causal groupings. They are designed to guide retention prioritisation by surfacing which behavioral patterns are associated with above- or below-average churn risk."
+}

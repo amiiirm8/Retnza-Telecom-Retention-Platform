@@ -1,0 +1,128 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:32:00.668718+00:00",
+  "n_pairs": 8,
+  "interactions": {
+    "prepaid_5g": {
+      "pair": [
+        "is_prepaid",
+        "mobile_gen_ordinal"
+      ],
+      "pair_label": "prepaid & 5g",
+      "mean_interaction_shap": 0.0008913217279231789,
+      "std_interaction_shap": 0.0027048810442855064,
+      "direction": "neutral",
+      "affected_population": 7043,
+      "affected_population_pct": 100.0,
+      "churn_probability_delta_high_vs_low_interaction": 0.2691,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between prepaid / 5g shows a amplifying pattern (mean interaction SHAP: 0.0009). This affects 100.0% of the population and is associated with a churn probability delta of +0.269 (associative, not causal)."
+    },
+    "tenure_ecosystem": {
+      "pair": [
+        "sim_tenure_months",
+        "ecosystem_service_count"
+      ],
+      "pair_label": "tenure & ecosystem",
+      "mean_interaction_shap": -8.275201372578327e-05,
+      "std_interaction_shap": 0.0006894830962485876,
+      "direction": "neutral",
+      "affected_population": 7022,
+      "affected_population_pct": 99.7,
+      "churn_probability_delta_high_vs_low_interaction": -0.0071,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between tenure / ecosystem shows a dampening pattern (mean interaction SHAP: -0.0001). This affects 99.7% of the population and is associated with a churn probability delta of -0.007 (associative, not causal)."
+    },
+    "volte_data_capable": {
+      "pair": [
+        "volte_user_flag",
+        "is_data_capable"
+      ],
+      "pair_label": "volte & data & capable",
+      "mean_interaction_shap": 2.590006905285716e-06,
+      "std_interaction_shap": 6.510667914642353e-06,
+      "direction": "neutral",
+      "affected_population": 6680,
+      "affected_population_pct": 94.85,
+      "churn_probability_delta_high_vs_low_interaction": 0.1969,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between volte / data / capable shows a amplifying pattern (mean interaction SHAP: 0.0000). This affects 94.8% of the population and is associated with a churn probability delta of +0.197 (associative, not causal)."
+    },
+    "age_digital_engagement": {
+      "pair": [
+        "age",
+        "digital_engagement_score"
+      ],
+      "pair_label": "age & digital & engagement",
+      "mean_interaction_shap": -5.511112488427744e-07,
+      "std_interaction_shap": 2.8606634239627465e-05,
+      "direction": "neutral",
+      "affected_population": 6224,
+      "affected_population_pct": 88.37,
+      "churn_probability_delta_high_vs_low_interaction": -0.2208,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between age / digital / engagement shows a dampening pattern (mean interaction SHAP: -0.0000). This affects 88.4% of the population and is associated with a churn probability delta of -0.221 (associative, not causal)."
+    },
+    "ecosystem_prepaid": {
+      "pair": [
+        "ecosystem_service_count",
+        "is_prepaid"
+      ],
+      "pair_label": "ecosystem & prepaid",
+      "mean_interaction_shap": 0.00032059356283949293,
+      "std_interaction_shap": 0.0010611794442154517,
+      "direction": "neutral",
+      "affected_population": 7038,
+      "affected_population_pct": 99.93,
+      "churn_probability_delta_high_vs_low_interaction": 0.0518,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between ecosystem / prepaid shows a amplifying pattern (mean interaction SHAP: 0.0003). This affects 99.9% of the population and is associated with a churn probability delta of +0.052 (associative, not causal)."
+    },
+    "bill_shock_arpu": {
+      "pair": [
+        "possible_bill_shock_flag",
+        "lifetime_arpu_toman"
+      ],
+      "pair_label": "bill & shock & arpu",
+      "mean_interaction_shap": 0.0,
+      "std_interaction_shap": 0.0,
+      "direction": "neutral",
+      "affected_population": 0,
+      "affected_population_pct": 0.0,
+      "churn_probability_delta_high_vs_low_interaction": -0.2691,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between bill / shock / arpu shows a dampening pattern (mean interaction SHAP: 0.0000). This affects 0.0% of the population and is associated with a churn probability delta of -0.269 (associative, not causal)."
+    },
+    "gender_ecosystem": {
+      "pair": [
+        "gender_female",
+        "ecosystem_service_count"
+      ],
+      "pair_label": "gender & ecosystem",
+      "mean_interaction_shap": 4.274957146738771e-06,
+      "std_interaction_shap": 1.6295062508378406e-05,
+      "direction": "neutral",
+      "affected_population": 5844,
+      "affected_population_pct": 82.98,
+      "churn_probability_delta_high_vs_low_interaction": 0.0696,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between gender / ecosystem shows a amplifying pattern (mean interaction SHAP: 0.0000). This affects 83.0% of the population and is associated with a churn probability delta of +0.070 (associative, not causal)."
+    },
+    "prepaid_rubika": {
+      "pair": [
+        "is_prepaid",
+        "rubika_user_flag"
+      ],
+      "pair_label": "prepaid & rubika",
+      "mean_interaction_shap": 0.00010279843645634555,
+      "std_interaction_shap": 0.00021040066725799467,
+      "direction": "neutral",
+      "affected_population": 7013,
+      "affected_population_pct": 99.57,
+      "churn_probability_delta_high_vs_low_interaction": 0.0243,
+      "population_mean_risk": 0.26910920062473376,
+      "narrative": "The observed interaction between prepaid / rubika shows a amplifying pattern (mean interaction SHAP: 0.0001). This affects 99.6% of the population and is associated with a churn probability delta of +0.024 (associative, not causal)."
+    }
+  },
+  "disclaimer": "Interaction SHAP values are associative summaries, not causal interaction effects. They describe observed second-order relationships in model predictions."
+}

@@ -1,0 +1,7 @@
+flag,value,count
+billing_definition_ambiguous_flag,0,7032
+billing_definition_ambiguous_flag,1,11
+is_data_capable,1,5517
+is_data_capable,0,1526
+tenure_zero_flag,0,7032
+tenure_zero_flag,1,11

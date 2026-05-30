@@ -1,0 +1,115 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:32:01.475232+00:00",
+  "n_high_risk": 2490,
+  "n_digital_only": 7043,
+  "n_human_touch": 0,
+  "base_churn_rate": 0.2691,
+  "scenarios": {
+    "optimistic": {
+      "scenario": "optimistic",
+      "assumptions": {
+        "save_rate": 0.35,
+        "conversion_rate": 0.25,
+        "campaign_reach": 0.9,
+        "campaign_cost_per_subscriber": 2.0,
+        "arpu_monthly": 85000,
+        "avg_retention_months": 6,
+        "ecosystem_uplift_factor": 0.15
+      },
+      "inputs": {
+        "n_high_risk_subscribers": 2490,
+        "n_digital_only": 7043,
+        "n_human_touch": 0,
+        "base_churn_rate": 0.26910920062473376
+      },
+      "outputs": {
+        "reached_subscribers": 2241,
+        "saved_subscribers": 784,
+        "converted_subscribers": 196,
+        "retained_subscribers": 980,
+        "retained_revenue_toman": 574770000.0,
+        "churn_reduction_estimate": 0.0847,
+        "protected_arpu_toman": 97750.0,
+        "total_campaign_cost_toman": 7651.0,
+        "roi": 75119.08,
+        "digital_channel_efficiency": 0.25,
+        "human_touch_efficiency": 0,
+        "digital_cost_toman": 3169.0,
+        "human_touch_cost_toman": 0.0
+      },
+      "disclaimer": "Optimistic scenario \u2014 estimates are illustrative and based on assumed parameters, not causal uplift modeling. Actual results depend on campaign execution and market conditions."
+    },
+    "realistic": {
+      "scenario": "realistic",
+      "assumptions": {
+        "save_rate": 0.2,
+        "conversion_rate": 0.15,
+        "campaign_reach": 0.75,
+        "campaign_cost_per_subscriber": 3.5,
+        "arpu_monthly": 75000,
+        "avg_retention_months": 4,
+        "ecosystem_uplift_factor": 0.08
+      },
+      "inputs": {
+        "n_high_risk_subscribers": 2490,
+        "n_digital_only": 7043,
+        "n_human_touch": 0,
+        "base_churn_rate": 0.26910920062473376
+      },
+      "outputs": {
+        "reached_subscribers": 1867,
+        "saved_subscribers": 373,
+        "converted_subscribers": 55,
+        "retained_subscribers": 428,
+        "retained_revenue_toman": 138672000.0,
+        "churn_reduction_estimate": 0.0403,
+        "protected_arpu_toman": 81000.0,
+        "total_campaign_cost_toman": 9176.0,
+        "roi": 15112.08,
+        "digital_channel_efficiency": 0.14,
+        "human_touch_efficiency": 0,
+        "digital_cost_toman": 2641.0,
+        "human_touch_cost_toman": 0.0
+      },
+      "disclaimer": "Realistic scenario \u2014 estimates are illustrative and based on assumed parameters, not causal uplift modeling. Actual results depend on campaign execution and market conditions."
+    },
+    "conservative": {
+      "scenario": "conservative",
+      "assumptions": {
+        "save_rate": 0.1,
+        "conversion_rate": 0.08,
+        "campaign_reach": 0.6,
+        "campaign_cost_per_subscriber": 5.0,
+        "arpu_monthly": 65000,
+        "avg_retention_months": 3,
+        "ecosystem_uplift_factor": 0.04
+      },
+      "inputs": {
+        "n_high_risk_subscribers": 2490,
+        "n_digital_only": 7043,
+        "n_human_touch": 0,
+        "base_churn_rate": 0.26910920062473376
+      },
+      "outputs": {
+        "reached_subscribers": 1494,
+        "saved_subscribers": 149,
+        "converted_subscribers": 11,
+        "retained_subscribers": 160,
+        "retained_revenue_toman": 32448000.0,
+        "churn_reduction_estimate": 0.0161,
+        "protected_arpu_toman": 67600.0,
+        "total_campaign_cost_toman": 9583.0,
+        "roi": 3385.03,
+        "digital_channel_efficiency": 0.07,
+        "human_touch_efficiency": 0,
+        "digital_cost_toman": 2113.0,
+        "human_touch_cost_toman": 0.0
+      },
+      "disclaimer": "Conservative scenario \u2014 estimates are illustrative and based on assumed parameters, not causal uplift modeling. Actual results depend on campaign execution and market conditions."
+    }
+  },
+  "recommended_scenario": "realistic",
+  "recommendation_rationale": "Realistic scenario uses mid-range assumptions consistent with observed industry retention campaign benchmarks. Optimistic assumes above-average conversion; conservative assumes minimum guaranteed performance.",
+  "disclaimer": "These are illustrative KPI projections, not causal estimates. Retention simulation does not use uplift modeling or treatment effect estimation. All figures are based on assumed scenario parameters and observed base rates."
+}

@@ -1,0 +1,74 @@
+{
+  "mean_calibrated_risk": 0.26910920062473376,
+  "risk_tier_counts": {
+    "Low": 2889,
+    "High": 1826,
+    "Medium": 1664,
+    "Very High": 664
+  },
+  "rule_id_counts": {
+    "R02_PREPAID_5G": 1509,
+    "R01_PREPAID_INFANT": 1413,
+    "R07_LEGACY_2G": 1101,
+    "R05_BILL_SHOCK": 582,
+    "R00_MONITOR": 552,
+    "R12_ECOSYSTEM_POWER_USER": 525,
+    "R03_VOLTE_ENABLE": 491,
+    "R09_RUBIKA_INACTIVE": 487,
+    "R08_POSTPAID_EARLY": 132,
+    "R06_VAS_PARTIAL": 124,
+    "R10_EWANO_NON_ADOPTER": 90,
+    "R11_HAMRAHMAN_LOW_ENGAGEMENT": 37
+  },
+  "simulation_scenarios": {
+    "optimistic": {
+      "retained": 980,
+      "revenue_toman": 574770000.0,
+      "roi": 75119.08
+    },
+    "realistic": {
+      "retained": 428,
+      "revenue_toman": 138672000.0,
+      "roi": 15112.08
+    },
+    "conservative": {
+      "retained": 160,
+      "revenue_toman": 32448000.0,
+      "roi": 3385.03
+    }
+  },
+  "rule_anomalies": [
+    {
+      "rule_id": "R01_PREPAID_INFANT",
+      "anomaly_type": "broad",
+      "detail": "Rule covers 20.1% of base; monitor specificity.",
+      "population_share": 0.2006
+    },
+    {
+      "rule_id": "R02_PREPAID_5G",
+      "anomaly_type": "broad",
+      "detail": "Rule covers 21.4% of base; monitor specificity.",
+      "population_share": 0.2143
+    },
+    {
+      "rule_id": "R12_ECOSYSTEM_POWER_USER",
+      "anomaly_type": "low_precision",
+      "detail": "Only 1 high-risk subscribers in 7.4% population; rule may be capturing low-risk base."
+    },
+    {
+      "rule_id": "R05_BILL_SHOCK",
+      "anomaly_type": "low_precision",
+      "detail": "Only 0 high-risk subscribers in 8.3% population; rule may be capturing low-risk base."
+    },
+    {
+      "rule_id": "R07_LEGACY_2G",
+      "anomaly_type": "low_precision",
+      "detail": "Only 0 high-risk subscribers in 15.6% population; rule may be capturing low-risk base."
+    },
+    {
+      "rule_id": "R00_MONITOR",
+      "anomaly_type": "low_precision",
+      "detail": "Only 0 high-risk subscribers in 7.8% population; rule may be capturing low-risk base."
+    }
+  ]
+}

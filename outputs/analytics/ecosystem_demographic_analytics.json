@@ -1,0 +1,66 @@
+{
+  "gender_ecosystem": {
+    "female": {
+      "n": 3488,
+      "ecosystem_adopted_n": 2562,
+      "ecosystem_adopted_rate": 0.7345183486238532,
+      "mean_calibrated_risk_eco_adopted": 0.309388056206089,
+      "mean_calibrated_risk_eco_non_adopted": 0.1659609071274298,
+      "mean_arpu_eco_adopted": 11314292.00229192
+    },
+    "male": {
+      "n": 3555,
+      "ecosystem_adopted_n": 2596,
+      "ecosystem_adopted_rate": 0.730239099859353,
+      "mean_calibrated_risk_eco_adopted": 0.3076937596302003,
+      "mean_calibrated_risk_eco_non_adopted": 0.15665391032325338,
+      "mean_arpu_eco_adopted": 11216766.775451455
+    }
+  },
+  "age_ecosystem": {
+    "18-24": {
+      "n": 709,
+      "ecosystem_adopted_rate": 0.7165021156558533,
+      "mean_calibrated_risk_eco_adopted": 0.3142100393700788,
+      "mean_calibrated_risk_eco_non_adopted": 0.1564363184079602
+    },
+    "25-34": {
+      "n": 1609,
+      "ecosystem_adopted_rate": 0.7315102548166563,
+      "mean_calibrated_risk_eco_adopted": 0.3127415463041631,
+      "mean_calibrated_risk_eco_non_adopted": 0.16416296296296298
+    },
+    "35-44": {
+      "n": 2244,
+      "ecosystem_adopted_rate": 0.7312834224598931,
+      "mean_calibrated_risk_eco_adopted": 0.30524923826934797,
+      "mean_calibrated_risk_eco_non_adopted": 0.15200016583747927
+    },
+    "45-54": {
+      "n": 1697,
+      "ecosystem_adopted_rate": 0.7395403653506187,
+      "mean_calibrated_risk_eco_adopted": 0.3100662151394422,
+      "mean_calibrated_risk_eco_non_adopted": 0.17625475113122174
+    },
+    "55+": {
+      "n": 784,
+      "ecosystem_adopted_rate": 0.735969387755102,
+      "mean_calibrated_risk_eco_adopted": 0.3009750433275563,
+      "mean_calibrated_risk_eco_non_adopted": 0.15453188405797103
+    }
+  },
+  "prepaid_ecosystem": {
+    "prepaid": {
+      "n": 3875,
+      "ecosystem_adopted_rate": 0.7643870967741936,
+      "mean_calibrated_risk_eco_adopted": 0.4664524307900067,
+      "mean_calibrated_risk_eco_non_adopted": 0.3021143483023001
+    },
+    "postpaid": {
+      "n": 3168,
+      "ecosystem_adopted_rate": 0.6931818181818182,
+      "mean_calibrated_risk_eco_adopted": 0.0955341985428051,
+      "mean_calibrated_risk_eco_non_adopted": 0.028889403292181065
+    }
+  }
+}

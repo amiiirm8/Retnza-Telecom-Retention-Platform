@@ -1,0 +1,672 @@
+{
+  "schema_version": "task4-v2",
+  "generated_at_utc": "2026-05-28T20:04:38.845871+00:00",
+  "source_cleaned": "/Users/amirmahdi/hacketon/data/cleaned/subscribers_cleaned.parquet",
+  "output": "/Users/amirmahdi/hacketon/data/features/subscribers_featured.parquet",
+  "n_rows": 7043,
+  "thresholds_fit_on": "train_split_70pct_stratified",
+  "monthly_spend_q75": 13507500.0,
+  "lifetime_arpu_q75": 13582500.0,
+  "random_state": 42,
+  "model_feature_columns_ordered": [
+    "lifetime_arpu_toman",
+    "monthly_to_lifetime_arpu_ratio",
+    "log_monthly_spend_toman",
+    "spend_intensity_score",
+    "tenure_bucket",
+    "early_lifecycle_flag",
+    "is_data_capable",
+    "mobile_gen_ordinal",
+    "vas_adoption_count",
+    "zero_vas_capable_flag",
+    "volte_non_adopter_capable",
+    "is_prepaid",
+    "rubika_user_flag",
+    "ewano_user_flag",
+    "hamrahman_user_flag",
+    "volte_user_flag",
+    "roaming_user_flag",
+    "cloud_storage_user_flag",
+    "night_package_user_flag",
+    "digital_engagement_score",
+    "ecosystem_service_count",
+    "communication_service_count",
+    "financial_engagement_flag",
+    "entertainment_social_engagement_flag",
+    "advanced_service_adopter_flag",
+    "prepaid_5g_risk_flag",
+    "prepaid_low_tenure_flag",
+    "prepaid_high_spend_flag",
+    "app_and_volte_user",
+    "high_value_low_engagement_flag",
+    "advanced_network_low_engagement_flag",
+    "young_prepaid_user_flag",
+    "high_spend_postpaid_flag",
+    "birth_month_ordinal",
+    "age_bucket",
+    "young_user_flag",
+    "senior_user_flag",
+    "gender_female",
+    "gender_male",
+    "high_monthly_spend_flag",
+    "possible_bill_shock_flag",
+    "high_value_customer_flag",
+    "low_spend_low_engagement_flag",
+    "revenue_risk_segment",
+    "operator_app_user",
+    "age",
+    "sim_tenure_months"
+  ],
+  "model_feature_groups": {
+    "predictive_core": [
+      "age",
+      "sim_tenure_months",
+      "lifetime_arpu_toman",
+      "monthly_to_lifetime_arpu_ratio",
+      "log_monthly_spend_toman",
+      "spend_intensity_score",
+      "tenure_bucket",
+      "early_lifecycle_flag",
+      "is_data_capable",
+      "mobile_gen_ordinal",
+      "vas_adoption_count",
+      "zero_vas_capable_flag",
+      "volte_non_adopter_capable",
+      "is_prepaid"
+    ],
+    "ecosystem_semantic": [
+      "rubika_user_flag",
+      "ewano_user_flag",
+      "hamrahman_user_flag",
+      "volte_user_flag",
+      "roaming_user_flag",
+      "cloud_storage_user_flag",
+      "night_package_user_flag",
+      "digital_engagement_score",
+      "ecosystem_service_count",
+      "communication_service_count",
+      "financial_engagement_flag",
+      "entertainment_social_engagement_flag",
+      "advanced_service_adopter_flag",
+      "operator_app_user"
+    ],
+    "interactions": [
+      "prepaid_5g_risk_flag",
+      "prepaid_low_tenure_flag",
+      "prepaid_high_spend_flag",
+      "app_and_volte_user",
+      "high_value_low_engagement_flag",
+      "advanced_network_low_engagement_flag",
+      "young_prepaid_user_flag",
+      "high_spend_postpaid_flag"
+    ],
+    "demographic": [
+      "birth_month_ordinal",
+      "age_bucket",
+      "young_user_flag",
+      "senior_user_flag",
+      "gender_female",
+      "gender_male"
+    ],
+    "spend_revenue": [
+      "high_monthly_spend_flag",
+      "possible_bill_shock_flag",
+      "high_value_customer_flag",
+      "low_spend_low_engagement_flag",
+      "revenue_risk_segment"
+    ]
+  },
+  "n_model_features": 47,
+  "feature_registry": {
+    "schema_version": "task4-v2-registry",
+    "n_features": 47,
+    "n_model_features": 47,
+    "groups": {
+      "predictive_core": [
+        "age",
+        "sim_tenure_months",
+        "lifetime_arpu_toman",
+        "monthly_to_lifetime_arpu_ratio",
+        "log_monthly_spend_toman",
+        "spend_intensity_score",
+        "tenure_bucket",
+        "early_lifecycle_flag",
+        "is_data_capable",
+        "mobile_gen_ordinal",
+        "vas_adoption_count",
+        "zero_vas_capable_flag",
+        "volte_non_adopter_capable",
+        "is_prepaid"
+      ],
+      "ecosystem_semantic": [
+        "rubika_user_flag",
+        "ewano_user_flag",
+        "hamrahman_user_flag",
+        "volte_user_flag",
+        "roaming_user_flag",
+        "cloud_storage_user_flag",
+        "night_package_user_flag",
+        "digital_engagement_score",
+        "ecosystem_service_count",
+        "communication_service_count",
+        "financial_engagement_flag",
+        "entertainment_social_engagement_flag",
+        "advanced_service_adopter_flag",
+        "operator_app_user"
+      ],
+      "interactions": [
+        "prepaid_5g_risk_flag",
+        "prepaid_low_tenure_flag",
+        "prepaid_high_spend_flag",
+        "app_and_volte_user",
+        "high_value_low_engagement_flag",
+        "advanced_network_low_engagement_flag",
+        "young_prepaid_user_flag",
+        "high_spend_postpaid_flag"
+      ],
+      "demographic": [
+        "birth_month_ordinal",
+        "age_bucket",
+        "young_user_flag",
+        "senior_user_flag",
+        "gender_female",
+        "gender_male"
+      ],
+      "spend_revenue": [
+        "high_monthly_spend_flag",
+        "possible_bill_shock_flag",
+        "high_value_customer_flag",
+        "low_spend_low_engagement_flag",
+        "revenue_risk_segment"
+      ]
+    },
+    "features": [
+      {
+        "name": "lifetime_arpu_toman",
+        "layer": "predictive",
+        "family": "spend",
+        "dtype": "float64",
+        "description": "Cumulative spend per month of tenure",
+        "business_question": "Do spend patterns affect churn?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "monthly_to_lifetime_arpu_ratio",
+        "layer": "predictive",
+        "family": "spend",
+        "dtype": "float64",
+        "description": "Monthly bill vs lifetime ARPU",
+        "business_question": "Does bill shock vs history raise risk?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "log_monthly_spend_toman",
+        "layer": "predictive",
+        "family": "spend",
+        "dtype": "float64",
+        "description": "log1p(monthly spend)",
+        "business_question": "Monthly spend level vs churn",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "spend_intensity_score",
+        "layer": "predictive",
+        "family": "spend",
+        "dtype": "float64",
+        "description": "Normalized monthly + lifetime ARPU blend",
+        "business_question": "Spend intensity vs peers",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "tenure_bucket",
+        "layer": "predictive",
+        "family": "lifecycle",
+        "dtype": "int8",
+        "description": "Tenure stage 0=new … 4=loyal",
+        "business_question": "How does tenure affect churn?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "early_lifecycle_flag",
+        "layer": "predictive",
+        "family": "lifecycle",
+        "dtype": "int8",
+        "description": "Tenure ≤ 12 months",
+        "business_question": "Early lifecycle churn risk",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "is_data_capable",
+        "layer": "predictive",
+        "family": "network",
+        "dtype": "int8",
+        "description": "Non-2G (data/VAS eligible)",
+        "business_question": "Churn among users without data services?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "mobile_gen_ordinal",
+        "layer": "predictive",
+        "family": "network",
+        "dtype": "int8",
+        "description": "2G=0 … 5G=3",
+        "business_question": "How does network generation affect churn?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "vas_adoption_count",
+        "layer": "predictive",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "# VAS yes among capable; -1 if 2G",
+        "business_question": "VAS adoption vs churn",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "zero_vas_capable_flag",
+        "layer": "predictive",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "Capable but zero VAS",
+        "business_question": "Low engagement on capable network",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "volte_non_adopter_capable",
+        "layer": "predictive",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "Capable, VoLTE=no",
+        "business_question": "VoLTE non-adoption risk",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "is_prepaid",
+        "layer": "predictive",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "Prepaid SIM",
+        "business_question": "Does SIM type affect churn?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "rubika_user_flag",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Rubika (superapp_social) 1/0/-1",
+        "business_question": "Does Rubika reduce churn?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "ewano_user_flag",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "EWANO (superapp_financial) 1/0/-1",
+        "business_question": "Does EWANO reduce churn?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "hamrahman_user_flag",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Hamrah Man app 1/0",
+        "business_question": "Does Hamrah Man improve retention?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "volte_user_flag",
+        "layer": "business_semantic",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "VoLTE adoption 1/0/-1",
+        "business_question": "Does VoLTE improve retention?",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "roaming_user_flag",
+        "layer": "business_semantic",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "Intl roaming 1/0/-1",
+        "business_question": "Roaming pack adoption",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "cloud_storage_user_flag",
+        "layer": "business_semantic",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "Cloud storage 1/0/-1",
+        "business_question": "Cloud product adoption",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "night_package_user_flag",
+        "layer": "business_semantic",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "Night data pack 1/0/-1",
+        "business_question": "Night pack adoption",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "digital_engagement_score",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Sum Hamrah Man+Rubika+EWANO+VoLTE yes",
+        "business_question": "Digital ecosystem engagement",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "ecosystem_service_count",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Count ecosystem yes (capable)",
+        "business_question": "Ecosystem breadth",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "communication_service_count",
+        "layer": "business_semantic",
+        "family": "vas",
+        "dtype": "int8",
+        "description": "Count comms/network VAS yes",
+        "business_question": "Comms service breadth",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "financial_engagement_flag",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "EWANO yes on capable",
+        "business_question": "Financial superapp engagement",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "entertainment_social_engagement_flag",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Rubika yes on capable",
+        "business_question": "Social superapp engagement",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "advanced_service_adopter_flag",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "≥2 ecosystem + modern network",
+        "business_question": "Advanced digital adopter",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "prepaid_5g_risk_flag",
+        "layer": "interaction",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "Prepaid on 5G",
+        "business_question": "High-risk prepaid 5G segment",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "prepaid_low_tenure_flag",
+        "layer": "interaction",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "Prepaid & tenure ≤6m",
+        "business_question": "New prepaid churn risk",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "prepaid_high_spend_flag",
+        "layer": "interaction",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "Prepaid & high monthly spend",
+        "business_question": "High-spend prepaid",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "app_and_volte_user",
+        "layer": "interaction",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Hamrah Man + VoLTE yes",
+        "business_question": "App × VoLTE interaction",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "high_value_low_engagement_flag",
+        "layer": "interaction",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "High value, low digital score",
+        "business_question": "Revenue at risk — low engagement",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "advanced_network_low_engagement_flag",
+        "layer": "interaction",
+        "family": "network",
+        "dtype": "int8",
+        "description": "4G/5G but low ecosystem count",
+        "business_question": "Modern network, low digital uptake",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "young_prepaid_user_flag",
+        "layer": "interaction",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Prepaid & age ≤30",
+        "business_question": "Young prepaid segment",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "high_spend_postpaid_flag",
+        "layer": "interaction",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "Postpaid & high monthly tier",
+        "business_question": "High-value postpaid",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "birth_month_ordinal",
+        "layer": "demographic",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Persian birth month 1–12",
+        "business_question": "Birth month / seasonality segments",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "age_bucket",
+        "layer": "demographic",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Age band ordinal",
+        "business_question": "Demographic churn patterns",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "young_user_flag",
+        "layer": "demographic",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Age ≤30",
+        "business_question": "Young user churn",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "senior_user_flag",
+        "layer": "demographic",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Age ≥56",
+        "business_question": "Senior user churn",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "gender_female",
+        "layer": "demographic",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Gender female",
+        "business_question": "Gender churn patterns",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "gender_male",
+        "layer": "demographic",
+        "family": "demographic",
+        "dtype": "int8",
+        "description": "Gender male",
+        "business_question": "Gender churn patterns",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "high_monthly_spend_flag",
+        "layer": "spend",
+        "family": "spend",
+        "dtype": "int8",
+        "description": "Monthly ≥ train Q75",
+        "business_question": "High monthly spend tier",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "possible_bill_shock_flag",
+        "layer": "spend",
+        "family": "spend",
+        "dtype": "int8",
+        "description": "Monthly >> lifetime ARPU",
+        "business_question": "Bill shock approximation",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "high_value_customer_flag",
+        "layer": "spend",
+        "family": "spend",
+        "dtype": "int8",
+        "description": "High lifetime ARPU tier",
+        "business_question": "High-value customer",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "low_spend_low_engagement_flag",
+        "layer": "spend",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Low spend & low digital score",
+        "business_question": "Low value + low engagement",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "revenue_risk_segment",
+        "layer": "spend",
+        "family": "segment",
+        "dtype": "int8",
+        "description": "0=low … 3=premium revenue band",
+        "business_question": "Revenue risk segmentation",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "operator_app_user",
+        "layer": "business_semantic",
+        "family": "ecosystem",
+        "dtype": "int8",
+        "description": "Hamrah Man yes (legacy name)",
+        "business_question": "Hamrah Man engagement",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "age",
+        "layer": "predictive",
+        "family": "demographic",
+        "dtype": "int64",
+        "description": "Customer age",
+        "business_question": "Age vs churn",
+        "in_model": true,
+        "leakage_safe": true
+      },
+      {
+        "name": "sim_tenure_months",
+        "layer": "predictive",
+        "family": "lifecycle",
+        "dtype": "int64",
+        "description": "SIM tenure months",
+        "business_question": "Tenure vs churn",
+        "in_model": true,
+        "leakage_safe": true
+      }
+    ]
+  },
+  "validation": {
+    "n_rows": 7043,
+    "n_columns": 64,
+    "model_feature_count": 47,
+    "validation_version": "fe-validators-v1"
+  },
+  "qc": {
+    "feature_qc_index": "/Users/amirmahdi/hacketon/outputs/features/feature_qc_index.json",
+    "n_artifacts": 14
+  },
+  "notes": [
+    "Three-layer FE: predictive, business_semantic, interaction.",
+    "Tri-state service flags use -1 for 2G structural N/A.",
+    "Train-fitted Q75 thresholds for spend tier flags only.",
+    "Canonical cleaned columns preserved unchanged."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-05-19T13:39:15.616341+00:00",
+  "source": "/Users/amirmahdi/hacketon/data/cleaned/subscribers_cleaned.parquet",
+  "n_rows": 7043,
+  "overall_churn_rate": 0.2653698707936959,
+  "ambiguous_billing_rows": 11,
+  "outputs": [
+    "churn_by_sim_type.csv",
+    "churn_by_generation.csv",
+    "churn_by_tenure_band.csv",
+    "churn_by_sim_and_generation.csv",
+    "churn_volte_data_capable.csv"
+  ],
+  "docs": "docs/EXPLORATORY_ANALYSIS.md"
+}

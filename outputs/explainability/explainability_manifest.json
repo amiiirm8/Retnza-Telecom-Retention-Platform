@@ -1,0 +1,1155 @@
+{
+  "schema_version": "task7-shap-v4",
+  "feature_schema": "task4-v2",
+  "generated_at_utc": "2026-05-22T13:17:09.738546+00:00",
+  "model_explained": "random_forest base model (47-feature contract)",
+  "n_features": 47,
+  "shap_target": "base model probability \u2014 not calibrator",
+  "scores_for_risk_bands": "calibrated probability from champion bundle",
+  "outputs": {
+    "global_importance": "/Users/amirmahdi/hacketon/outputs/explainability/global_shap_importance.csv",
+    "group_importance": "/Users/amirmahdi/hacketon/outputs/explainability/group_shap_importance.csv",
+    "cohort_summary": "/Users/amirmahdi/hacketon/outputs/explainability/cohort_shap_summary.csv",
+    "test_shap_parquet": "/Users/amirmahdi/hacketon/outputs/explainability/subscriber_shap_test.parquet",
+    "population_shap": "/Users/amirmahdi/hacketon/outputs/explainability/subscriber_shap_values.parquet"
+  },
+  "cohort_summaries": [
+    {
+      "cohort": "churners",
+      "n": 280,
+      "top_features": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.0915760207098571,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.08855350358386167,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.06342077250094562,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.03644786272675187,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "tenure_bucket",
+          "mean_abs_shap": 0.02632026141385767,
+          "business_label": "Tenure stage 0=new \u2026 4=loyal"
+        }
+      ]
+    },
+    {
+      "cohort": "retainers",
+      "n": 777,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.0941125250594229,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.06048880789042252,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.049017920281774034,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.02892340943346392,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.021620955195265974,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    },
+    {
+      "cohort": "prepaid",
+      "n": 583,
+      "top_features": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.0879744736013707,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.0803378289072302,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.057232775109110255,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.036701991858024,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.024343183150384137,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    },
+    {
+      "cohort": "postpaid",
+      "n": 474,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.10777100996147171,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.04742200943162856,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.04504635320679162,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.02380090599169627,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.019627599187515832,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    },
+    {
+      "cohort": "age_bucket_0",
+      "n": 138,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.08274285506663301,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.06842544971872301,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.0536144645154491,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.03181215037574323,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "tenure_bucket",
+          "mean_abs_shap": 0.020877328493761425,
+          "business_label": "Tenure stage 0=new \u2026 4=loyal"
+        }
+      ]
+    },
+    {
+      "cohort": "age_bucket_1",
+      "n": 252,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.08834972810715454,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.07423983577156595,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.0530520930785206,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.03270427639669676,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.021839662564212776,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    },
+    {
+      "cohort": "age_bucket_2",
+      "n": 577,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.09662285875310093,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.06695861807794903,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.05283063814601284,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.030132988710546548,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.022530580830486386,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    },
+    {
+      "cohort": "age_bucket_3",
+      "n": 90,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.09429308879905854,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.06505351358914796,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.051039317667051914,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.029562242260961498,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.02346871422783977,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    },
+    {
+      "cohort": "rubika_active",
+      "n": 392,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.0852277167767344,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.07298531426187366,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.056466386031790446,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.03239192192519764,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "tenure_bucket",
+          "mean_abs_shap": 0.021112500653986243,
+          "business_label": "Tenure stage 0=new \u2026 4=loyal"
+        }
+      ]
+    },
+    {
+      "cohort": "ewano_active",
+      "n": 403,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.08296667730565321,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.07319440069217181,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.05761987134926278,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.0325619242683794,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "tenure_bucket",
+          "mean_abs_shap": 0.021544097504249134,
+          "business_label": "Tenure stage 0=new \u2026 4=loyal"
+        }
+      ]
+    },
+    {
+      "cohort": "hamrahman_active",
+      "n": 632,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.08759780964422191,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.0766486229110049,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.055943077682408006,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.03309366239511961,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "tenure_bucket",
+          "mean_abs_shap": 0.022249929212619736,
+          "business_label": "Tenure stage 0=new \u2026 4=loyal"
+        }
+      ]
+    },
+    {
+      "cohort": "high_digital_engagement",
+      "n": 283,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.08116639206088805,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.06921401361673071,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.05894210696218402,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.032635450511040345,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "tenure_bucket",
+          "mean_abs_shap": 0.020979998324655278,
+          "business_label": "Tenure stage 0=new \u2026 4=loyal"
+        }
+      ]
+    },
+    {
+      "cohort": "low_digital_engagement",
+      "n": 522,
+      "top_features": [
+        {
+          "feature": "is_prepaid",
+          "mean_abs_shap": 0.1000038249702614,
+          "business_label": "Prepaid SIM"
+        },
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "mean_abs_shap": 0.06492531178019752,
+          "business_label": "Prepaid on 5G"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "mean_abs_shap": 0.04929028881384898,
+          "business_label": "SIM tenure months"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "mean_abs_shap": 0.030072673731494984,
+          "business_label": "2G=0 \u2026 5G=3"
+        },
+        {
+          "feature": "volte_non_adopter_capable",
+          "mean_abs_shap": 0.02490819342733026,
+          "business_label": "Capable, VoLTE=no"
+        }
+      ]
+    }
+  ],
+  "top_global_drivers": [
+    {
+      "feature": "is_prepaid",
+      "business_label": "Prepaid SIM",
+      "mean_abs_shap": 0.0926399365890754,
+      "mean_shap_all": -0.00401750659302027,
+      "direction_overall": "decreases_risk",
+      "mean_shap_churners": 0.06381217784874743,
+      "mean_shap_retainers": -0.02846063612158518
+    },
+    {
+      "feature": "prepaid_5g_risk_flag",
+      "business_label": "Prepaid on 5G",
+      "mean_abs_shap": 0.06872383115384888,
+      "mean_shap_all": 0.006782569859951121,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.05900881097568775,
+      "mean_shap_retainers": -0.0120376972087828
+    },
+    {
+      "feature": "sim_tenure_months",
+      "business_label": "SIM tenure months",
+      "mean_abs_shap": 0.05283324537294533,
+      "mean_shap_all": -0.0051539400944769515,
+      "direction_overall": "decreases_risk",
+      "mean_shap_churners": 0.038982395554980294,
+      "mean_shap_retainers": -0.02105892591410115
+    },
+    {
+      "feature": "mobile_gen_ordinal",
+      "business_label": "2G=0 \u2026 5G=3",
+      "mean_abs_shap": 0.030916642093937564,
+      "mean_shap_all": 0.0035913239157387656,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.0215294276009888,
+      "mean_shap_retainers": -0.0028728575924594447
+    },
+    {
+      "feature": "volte_non_adopter_capable",
+      "business_label": "Capable, VoLTE=no",
+      "mean_abs_shap": 0.022228531496269084,
+      "mean_shap_all": 0.0029652032378170833,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.015511048755729053,
+      "mean_shap_retainers": -0.0015558221740430878
+    },
+    {
+      "feature": "tenure_bucket",
+      "business_label": "Tenure stage 0=new \u2026 4=loyal",
+      "mean_abs_shap": 0.02081193361099581,
+      "mean_shap_all": -0.0013573546784761137,
+      "direction_overall": "decreases_risk",
+      "mean_shap_churners": 0.014154268087306902,
+      "mean_shap_retainers": -0.006947128648127652
+    },
+    {
+      "feature": "prepaid_low_tenure_flag",
+      "business_label": "Prepaid & tenure \u22646m",
+      "mean_abs_shap": 0.011632191755009439,
+      "mean_shap_all": 0.00030951291979040694,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.009883038938167239,
+      "mean_shap_retainers": -0.0031404063661111567
+    },
+    {
+      "feature": "log_monthly_spend_toman",
+      "business_label": "log1p(monthly spend)",
+      "mean_abs_shap": 0.011577448897834462,
+      "mean_shap_all": 0.0006180689051790448,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.005368183677710167,
+      "mean_shap_retainers": -0.0010936841660033403
+    },
+    {
+      "feature": "lifetime_arpu_toman",
+      "business_label": "Cumulative spend per month of tenure",
+      "mean_abs_shap": 0.011246503125426228,
+      "mean_shap_all": 0.0003773514384037816,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.0036961114824672135,
+      "mean_shap_retainers": -0.0008185981270244831
+    },
+    {
+      "feature": "spend_intensity_score",
+      "business_label": "Normalized monthly + lifetime ARPU blend",
+      "mean_abs_shap": 0.010456251025003862,
+      "mean_shap_all": 0.0005468875839446401,
+      "direction_overall": "increases_risk",
+      "mean_shap_churners": 0.004772583175769302,
+      "mean_shap_retainers": -0.0009758856022984798
+    }
+  ],
+  "local_examples": [
+    {
+      "example_rank": 1,
+      "subscriber_id": 4679,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9508456164676956,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.11825207600777503,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.118 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.09044868725626998,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.090 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.07895966339335445,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.079 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.04326928495058723,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.043 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.03406526228922644,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.034 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "zero_vas_capable_flag",
+          "business_label": "Capable but zero VAS",
+          "shap_value": -6.316220942608197e-06,
+          "effect": "decreases_risk",
+          "narrative": "Capable but zero VAS: -0.000 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "senior_user_flag",
+          "business_label": "Age \u226556",
+          "shap_value": 5.182342765692738e-06,
+          "effect": "decreases_risk",
+          "narrative": "Age \u226556: +0.000 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "high_monthly_spend_flag",
+          "business_label": "Monthly \u2265 train Q75",
+          "shap_value": 0.0001052079520661664,
+          "effect": "decreases_risk",
+          "narrative": "Monthly \u2265 train Q75: +0.000 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.118 \u2014 Prepaid on 5G \u2014 high-risk segment; Prepaid SIM: +0.090 \u2014 Prepaid segment associated with higher churn risk"
+    },
+    {
+      "example_rank": 2,
+      "subscriber_id": 681,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9418170235398723,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.11873661600462583,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.119 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.11803453178789425,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.118 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.10932965080240024,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.109 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.04156587038478051,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.042 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.041059747279749106,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.041 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "hamrahman_user_flag",
+          "business_label": "Hamrah Man app 1/0",
+          "shap_value": -0.006023822370568723,
+          "effect": "decreases_risk",
+          "narrative": "Hamrah Man app 1/0: -0.006 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "operator_app_user",
+          "business_label": "Hamrah Man yes (legacy name)",
+          "shap_value": -0.005356273551198569,
+          "effect": "decreases_risk",
+          "narrative": "Hamrah Man yes (legacy name): -0.005 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "lifetime_arpu_toman",
+          "business_label": "Cumulative spend per month of tenure",
+          "shap_value": -0.003706401946051301,
+          "effect": "decreases_risk",
+          "narrative": "Cumulative spend per month of tenure: -0.004 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "advanced_service_adopter_flag",
+          "business_label": "\u22652 ecosystem + modern network",
+          "shap_value": -0.003434342722758856,
+          "effect": "decreases_risk",
+          "narrative": "\u22652 ecosystem + modern network: -0.003 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "gender_male",
+          "business_label": "Gender male",
+          "shap_value": -0.0012844822523686615,
+          "effect": "decreases_risk",
+          "narrative": "Gender male: -0.001 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.119 \u2014 Prepaid on 5G \u2014 high-risk segment; SIM tenure months: +0.118 \u2014 Increases predicted churn risk"
+    },
+    {
+      "example_rank": 3,
+      "subscriber_id": 2798,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9261542081812485,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.12615645213458265,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.126 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.0761318289529163,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.076 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.059997884098255835,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.060 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.047345938734032415,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.047 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.027483782674205485,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.027 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "gender_male",
+          "business_label": "Gender male",
+          "shap_value": -0.0009813595054842495,
+          "effect": "decreases_risk",
+          "narrative": "Gender male: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "gender_female",
+          "business_label": "Gender female",
+          "shap_value": -0.0007963722452034006,
+          "effect": "decreases_risk",
+          "narrative": "Gender female: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "age",
+          "business_label": "Customer age",
+          "shap_value": -0.0005313152856541592,
+          "effect": "decreases_risk",
+          "narrative": "Customer age: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "young_user_flag",
+          "business_label": "Age \u226430",
+          "shap_value": -0.0004930074900113368,
+          "effect": "decreases_risk",
+          "narrative": "Age \u226430: -0.000 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "young_prepaid_user_flag",
+          "business_label": "Prepaid & age \u226430",
+          "shap_value": -0.0004341633116007415,
+          "effect": "decreases_risk",
+          "narrative": "Prepaid & age \u226430: -0.000 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.126 \u2014 Prepaid on 5G \u2014 high-risk segment; Prepaid SIM: +0.076 \u2014 Prepaid segment associated with higher churn risk"
+    },
+    {
+      "example_rank": 4,
+      "subscriber_id": 6867,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9614960677674862,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.11792506488761319,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.118 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.10161522145874897,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.102 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.089460362186245,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.089 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.04365553749686455,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.044 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.0363304319684363,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.036 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "gender_male",
+          "business_label": "Gender male",
+          "shap_value": -0.0008790191946218328,
+          "effect": "decreases_risk",
+          "narrative": "Gender male: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "gender_female",
+          "business_label": "Gender female",
+          "shap_value": -0.0005708462627865174,
+          "effect": "decreases_risk",
+          "narrative": "Gender female: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "zero_vas_capable_flag",
+          "business_label": "Capable but zero VAS",
+          "shap_value": -3.551736522240389e-05,
+          "effect": "decreases_risk",
+          "narrative": "Capable but zero VAS: -0.000 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.118 \u2014 Prepaid on 5G \u2014 high-risk segment; SIM tenure months: +0.102 \u2014 Increases predicted churn risk"
+    },
+    {
+      "example_rank": 5,
+      "subscriber_id": 2398,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9472985746752394,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.12151451230171915,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.122 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.10425346655753373,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.104 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.08823660529190988,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.088 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.04574566235179077,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.046 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.03701949385786804,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.037 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "age",
+          "business_label": "Customer age",
+          "shap_value": -0.0026494160348644867,
+          "effect": "decreases_risk",
+          "narrative": "Customer age: -0.003 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "age_bucket",
+          "business_label": "Age band ordinal",
+          "shap_value": -0.000932537995707321,
+          "effect": "decreases_risk",
+          "narrative": "Age band ordinal: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "gender_male",
+          "business_label": "Gender male",
+          "shap_value": -0.0008172805665981286,
+          "effect": "decreases_risk",
+          "narrative": "Gender male: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "gender_female",
+          "business_label": "Gender female",
+          "shap_value": -0.0006298621855674468,
+          "effect": "decreases_risk",
+          "narrative": "Gender female: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "young_user_flag",
+          "business_label": "Age \u226430",
+          "shap_value": -0.0005413993132393103,
+          "effect": "decreases_risk",
+          "narrative": "Age \u226430: -0.001 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.122 \u2014 Prepaid on 5G \u2014 high-risk segment; SIM tenure months: +0.104 \u2014 Increases predicted churn risk"
+    },
+    {
+      "example_rank": 6,
+      "subscriber_id": 934,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9160472259686976,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.122250904470784,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.122 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.08946905263679242,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.089 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.07857712419355181,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.079 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.043903557715423175,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.044 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.03821543623369848,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.038 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "birth_month_ordinal",
+          "business_label": "Persian birth month 1\u201312",
+          "shap_value": -0.00601708169345045,
+          "effect": "decreases_risk",
+          "narrative": "Persian birth month 1\u201312: -0.006 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "age",
+          "business_label": "Customer age",
+          "shap_value": -0.001551805647685569,
+          "effect": "decreases_risk",
+          "narrative": "Customer age: -0.002 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "entertainment_social_engagement_flag",
+          "business_label": "Rubika yes on capable",
+          "shap_value": -0.0011657854149041214,
+          "effect": "decreases_risk",
+          "narrative": "Rubika yes on capable: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "monthly_to_lifetime_arpu_ratio",
+          "business_label": "Monthly bill vs lifetime ARPU",
+          "shap_value": -0.0009461389564643241,
+          "effect": "decreases_risk",
+          "narrative": "Monthly bill vs lifetime ARPU: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "high_value_customer_flag",
+          "business_label": "High lifetime ARPU tier",
+          "shap_value": -0.0007243412326761244,
+          "effect": "decreases_risk",
+          "narrative": "High lifetime ARPU tier: -0.001 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.122 \u2014 Prepaid on 5G \u2014 high-risk segment; Prepaid SIM: +0.089 \u2014 Prepaid segment associated with higher churn risk"
+    },
+    {
+      "example_rank": 7,
+      "subscriber_id": 2247,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.9319497827018184,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.11952246655764612,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.120 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.09230176232031226,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.092 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.08207308839665302,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.082 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.0442323397980482,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.044 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.03243232741506347,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.032 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "roaming_user_flag",
+          "business_label": "Intl roaming 1/0/-1",
+          "shap_value": -0.007193581482733862,
+          "effect": "decreases_risk",
+          "narrative": "Intl roaming 1/0/-1: -0.007 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "age",
+          "business_label": "Customer age",
+          "shap_value": -0.001435183593432754,
+          "effect": "decreases_risk",
+          "narrative": "Customer age: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "communication_service_count",
+          "business_label": "Count comms/network VAS yes",
+          "shap_value": -0.0006703328533660624,
+          "effect": "decreases_risk",
+          "narrative": "Count comms/network VAS yes: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "age_bucket",
+          "business_label": "Age band ordinal",
+          "shap_value": -0.0005821990434901636,
+          "effect": "decreases_risk",
+          "narrative": "Age band ordinal: -0.001 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "young_user_flag",
+          "business_label": "Age \u226430",
+          "shap_value": -0.000568801333834017,
+          "effect": "decreases_risk",
+          "narrative": "Age \u226430: -0.001 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.120 \u2014 Prepaid on 5G \u2014 high-risk segment; SIM tenure months: +0.092 \u2014 Increases predicted churn risk"
+    },
+    {
+      "example_rank": 8,
+      "subscriber_id": 3907,
+      "churn_actual": 1,
+      "churn_probability_raw": 0.939610089275044,
+      "churn_probability_calibrated": 0.8,
+      "shap_top_positive": [
+        {
+          "feature": "prepaid_5g_risk_flag",
+          "business_label": "Prepaid on 5G",
+          "shap_value": 0.11701048703434935,
+          "effect": "increases_risk",
+          "narrative": "Prepaid on 5G: +0.117 \u2014 Prepaid on 5G \u2014 high-risk segment"
+        },
+        {
+          "feature": "sim_tenure_months",
+          "business_label": "SIM tenure months",
+          "shap_value": 0.11651373822444093,
+          "effect": "increases_risk",
+          "narrative": "SIM tenure months: +0.117 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "is_prepaid",
+          "business_label": "Prepaid SIM",
+          "shap_value": 0.11469515672906595,
+          "effect": "increases_risk",
+          "narrative": "Prepaid SIM: +0.115 \u2014 Prepaid segment associated with higher churn risk"
+        },
+        {
+          "feature": "tenure_bucket",
+          "business_label": "Tenure stage 0=new \u2026 4=loyal",
+          "shap_value": 0.040877479619989575,
+          "effect": "increases_risk",
+          "narrative": "Tenure stage 0=new \u2026 4=loyal: +0.041 \u2014 Increases predicted churn risk"
+        },
+        {
+          "feature": "mobile_gen_ordinal",
+          "business_label": "2G=0 \u2026 5G=3",
+          "shap_value": 0.03985442804648073,
+          "effect": "increases_risk",
+          "narrative": "2G=0 \u2026 5G=3: +0.040 \u2014 Increases predicted churn risk"
+        }
+      ],
+      "shap_top_negative": [
+        {
+          "feature": "hamrahman_user_flag",
+          "business_label": "Hamrah Man app 1/0",
+          "shap_value": -0.005907008961199836,
+          "effect": "decreases_risk",
+          "narrative": "Hamrah Man app 1/0: -0.006 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "operator_app_user",
+          "business_label": "Hamrah Man yes (legacy name)",
+          "shap_value": -0.004923303749969818,
+          "effect": "decreases_risk",
+          "narrative": "Hamrah Man yes (legacy name): -0.005 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "lifetime_arpu_toman",
+          "business_label": "Cumulative spend per month of tenure",
+          "shap_value": -0.0031397904566151168,
+          "effect": "decreases_risk",
+          "narrative": "Cumulative spend per month of tenure: -0.003 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "advanced_service_adopter_flag",
+          "business_label": "\u22652 ecosystem + modern network",
+          "shap_value": -0.003103723251323345,
+          "effect": "decreases_risk",
+          "narrative": "\u22652 ecosystem + modern network: -0.003 \u2014 Lowers predicted churn risk"
+        },
+        {
+          "feature": "advanced_network_low_engagement_flag",
+          "business_label": "4G/5G but low ecosystem count",
+          "shap_value": -0.0012224900789652793,
+          "effect": "decreases_risk",
+          "narrative": "4G/5G but low ecosystem count: -0.001 \u2014 Lowers predicted churn risk"
+        }
+      ],
+      "explanation_summary": "Prepaid on 5G: +0.117 \u2014 Prepaid on 5G \u2014 high-risk segment; SIM tenure months: +0.117 \u2014 Increases predicted churn risk"
+    }
+  ],
+  "feature_groups": [
+    "predictive_core",
+    "ecosystem_semantic",
+    "interactions",
+    "demographic",
+    "spend_revenue"
+  ],
+  "caveats": [
+    "SHAP is associative, not causal.",
+    "Explains ranking layer; calibration is monotonic post-process.",
+    "Retrain SHAP after any feature schema change."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:32:01.485571+00:00",
+  "high_risk_subscribers": 2490,
+  "base_churn_rate": 0.2691,
+  "projections": {
+    "optimistic": {
+      "retained_subscribers": 980,
+      "retained_revenue_toman": 574770000.0,
+      "roi": 75119.08,
+      "campaign_cost_toman": 7651.0
+    },
+    "realistic": {
+      "retained_subscribers": 428,
+      "retained_revenue_toman": 138672000.0,
+      "roi": 15112.08,
+      "campaign_cost_toman": 9176.0
+    },
+    "conservative": {
+      "retained_subscribers": 160,
+      "retained_revenue_toman": 32448000.0,
+      "roi": 3385.03,
+      "campaign_cost_toman": 9583.0
+    }
+  }
+}

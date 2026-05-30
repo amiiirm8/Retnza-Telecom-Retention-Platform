@@ -1,0 +1,91 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:31:47.968738+00:00",
+  "pipeline_order": [
+    "customer_intelligence",
+    "shap_interactions",
+    "rule_diagnostics",
+    "retention_simulation",
+    "campaign_saturation",
+    "executive_storytelling",
+    "behavioral_segmentation",
+    "dashboard_artifacts",
+    "governance_validations"
+  ],
+  "modules": {
+    "customer_intelligence": {
+      "status": "completed",
+      "n_cohorts": 5,
+      "n_genders": 2
+    },
+    "shap_interactions": {
+      "status": "completed",
+      "n_pairs": 8
+    },
+    "rule_diagnostics": {
+      "status": "completed",
+      "n_rules": 14,
+      "n_anomalies": 6
+    },
+    "retention_simulation": {
+      "status": "completed",
+      "scenarios": [
+        "optimistic",
+        "realistic",
+        "conservative"
+      ]
+    },
+    "campaign_saturation": {
+      "status": "completed",
+      "n_overload_risks": 1
+    },
+    "executive_storytelling": {
+      "status": "completed",
+      "n_narrative_sections": 6
+    },
+    "behavioral_segmentation": {
+      "status": "completed",
+      "n_clusters": 3
+    },
+    "dashboard_artifacts": {
+      "status": "completed"
+    },
+    "governance_validations": {
+      "status": "completed",
+      "compatible": true,
+      "n_errors": 0,
+      "n_warnings": 1,
+      "n_stale_artifacts": 0
+    }
+  },
+  "artifacts": [
+    "/Users/amirmahdi/hacketon/outputs/analytics/age_cohort_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/gender_analytics.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/seasonality_analytics.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/ecosystem_demographic_analytics.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/age_risk_distribution.parquet",
+    "/Users/amirmahdi/hacketon/outputs/analytics/shap_interaction_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/shap_interaction_top_pairs.parquet",
+    "/Users/amirmahdi/hacketon/outputs/analytics/rule_precision_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/rule_population_distribution.parquet",
+    "/Users/amirmahdi/hacketon/outputs/analytics/rule_overlap_matrix.parquet",
+    "/Users/amirmahdi/hacketon/outputs/analytics/retention_simulation_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/campaign_roi_table.parquet",
+    "/Users/amirmahdi/hacketon/outputs/analytics/executive_kpi_snapshot.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/campaign_saturation_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/crm_queue_loads.parquet",
+    "/Users/amirmahdi/hacketon/outputs/analytics/executive_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/executive_storytelling.md",
+    "/Users/amirmahdi/hacketon/outputs/analytics/behavioral_segments_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/analytics/governance_checks_report.json",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/demographic_overview.parquet",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/ecosystem_overview.parquet",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/campaign_overview.parquet",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/rule_overview.parquet",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/model_health_overview.json",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/executive_summary.json",
+    "/Users/amirmahdi/hacketon/outputs/dashboard/behavioral_segments.parquet"
+  ],
+  "compatible": true,
+  "governance_status": "passed"
+}

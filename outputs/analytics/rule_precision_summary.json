@@ -1,0 +1,343 @@
+{
+  "schema_version": "analytics-v1",
+  "generated_at_utc": "2026-05-29T11:32:01.396161+00:00",
+  "n_rules": 14,
+  "rules": {
+    "R01_PREPAID_INFANT": {
+      "n": 1413,
+      "population_share": 0.2006,
+      "avg_calibrated_risk": 0.53,
+      "avg_raw_risk": 0.4042,
+      "high_risk_n": 1138,
+      "high_risk_capture_rate": 0.457,
+      "saturation_estimate": 0.2006,
+      "crm_queue_distribution": {
+        "outbound_sms_call_p1": 682,
+        "retention_desk_p1": 456,
+        "digital_nurture_p2": 228,
+        "monitor_health_p4": 47
+      },
+      "ecosystem_distribution": {
+        "partial_ecosystem": 576,
+        "legacy_voice_only": 299,
+        "non_ecosystem_prepaid": 228,
+        "content_only": 143,
+        "digitally_embedded": 112,
+        "wallet_only": 39,
+        "fully_embedded": 16
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 1.0,
+      "precision_label": "broad"
+    },
+    "R02_PREPAID_5G": {
+      "n": 1509,
+      "population_share": 0.2143,
+      "avg_calibrated_risk": 0.4776,
+      "avg_raw_risk": 0.3873,
+      "high_risk_n": 1265,
+      "high_risk_capture_rate": 0.508,
+      "saturation_estimate": 0.2143,
+      "crm_queue_distribution": {
+        "outbound_sms_call_p1": 1057,
+        "digital_nurture_p2": 244,
+        "retention_desk_p1": 208
+      },
+      "ecosystem_distribution": {
+        "partial_ecosystem": 596,
+        "digitally_embedded": 410,
+        "content_only": 239,
+        "fully_embedded": 115,
+        "non_ecosystem_prepaid": 98,
+        "wallet_only": 51
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 1.0,
+      "precision_label": "broad"
+    },
+    "R12_ECOSYSTEM_POWER_USER": {
+      "n": 525,
+      "population_share": 0.0745,
+      "avg_calibrated_risk": 0.1218,
+      "avg_raw_risk": 0.4064,
+      "high_risk_n": 1,
+      "high_risk_capture_rate": 0.0004,
+      "saturation_estimate": 0.0745,
+      "crm_queue_distribution": {
+        "monitor_health_p4": 310,
+        "digital_nurture_p2": 214,
+        "outbound_sms_call_p1": 1
+      },
+      "ecosystem_distribution": {
+        "fully_embedded": 525
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.05142857142857143,
+      "precision_label": "moderate"
+    },
+    "R05_BILL_SHOCK": {
+      "n": 582,
+      "population_share": 0.0826,
+      "avg_calibrated_risk": 0.1409,
+      "avg_raw_risk": 0.3891,
+      "high_risk_n": 0,
+      "high_risk_capture_rate": 0.0,
+      "saturation_estimate": 0.0826,
+      "crm_queue_distribution": {
+        "digital_nurture_p2": 299,
+        "monitor_health_p4": 283
+      },
+      "ecosystem_distribution": {
+        "digitally_embedded": 340,
+        "partial_ecosystem": 109,
+        "content_only": 84,
+        "wallet_only": 35,
+        "legacy_voice_only": 13,
+        "non_ecosystem_capable": 1
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.0,
+      "precision_label": "moderate"
+    },
+    "R09_RUBIKA_INACTIVE": {
+      "n": 487,
+      "population_share": 0.0691,
+      "avg_calibrated_risk": 0.2302,
+      "avg_raw_risk": 0.3913,
+      "high_risk_n": 66,
+      "high_risk_capture_rate": 0.0265,
+      "saturation_estimate": 0.0691,
+      "crm_queue_distribution": {
+        "digital_nurture_p2": 421,
+        "outbound_sms_call_p1": 66
+      },
+      "ecosystem_distribution": {
+        "partial_ecosystem": 323,
+        "non_ecosystem_prepaid": 113,
+        "wallet_only": 27,
+        "digitally_embedded": 22,
+        "non_ecosystem_capable": 2
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.944558521560575,
+      "precision_label": "moderate"
+    },
+    "R10_EWANO_NON_ADOPTER": {
+      "n": 90,
+      "population_share": 0.0128,
+      "avg_calibrated_risk": 0.2259,
+      "avg_raw_risk": 0.4086,
+      "high_risk_n": 8,
+      "high_risk_capture_rate": 0.0032,
+      "saturation_estimate": 0.0128,
+      "crm_queue_distribution": {
+        "digital_nurture_p2": 82,
+        "outbound_sms_call_p1": 8
+      },
+      "ecosystem_distribution": {
+        "content_only": 90
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.9777777777777777,
+      "precision_label": "targeted"
+    },
+    "R11_HAMRAHMAN_LOW_ENGAGEMENT": {
+      "n": 37,
+      "population_share": 0.0053,
+      "avg_calibrated_risk": 0.1978,
+      "avg_raw_risk": 0.4841,
+      "high_risk_n": 2,
+      "high_risk_capture_rate": 0.0008,
+      "saturation_estimate": 0.0053,
+      "crm_queue_distribution": {
+        "digital_nurture_p2": 35,
+        "outbound_sms_call_p1": 2
+      },
+      "ecosystem_distribution": {
+        "partial_ecosystem": 18,
+        "digitally_embedded": 18,
+        "content_only": 1
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.7027027027027027,
+      "precision_label": "targeted"
+    },
+    "R03_VOLTE_ENABLE": {
+      "n": 491,
+      "population_share": 0.0697,
+      "avg_calibrated_risk": 0.103,
+      "avg_raw_risk": 0.405,
+      "high_risk_n": 10,
+      "high_risk_capture_rate": 0.004,
+      "saturation_estimate": 0.0697,
+      "crm_queue_distribution": {
+        "monitor_health_p4": 407,
+        "digital_nurture_p2": 74,
+        "outbound_sms_call_p1": 10
+      },
+      "ecosystem_distribution": {
+        "partial_ecosystem": 146,
+        "digitally_embedded": 133,
+        "non_ecosystem_capable": 95,
+        "content_only": 72,
+        "wallet_only": 40,
+        "non_ecosystem_prepaid": 5
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.1425661914460285,
+      "precision_label": "moderate"
+    },
+    "R04_VAS_ZERO": {
+      "n": 0,
+      "note": "no_subscribers_matched"
+    },
+    "R06_VAS_PARTIAL": {
+      "n": 124,
+      "population_share": 0.0176,
+      "avg_calibrated_risk": 0.0638,
+      "avg_raw_risk": 0.3761,
+      "high_risk_n": 0,
+      "high_risk_capture_rate": 0.0,
+      "saturation_estimate": 0.0176,
+      "crm_queue_distribution": {
+        "monitor_health_p4": 124
+      },
+      "ecosystem_distribution": {
+        "partial_ecosystem": 108,
+        "content_only": 10,
+        "digitally_embedded": 3,
+        "wallet_only": 3
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.12096774193548387,
+      "precision_label": "targeted"
+    },
+    "R08_POSTPAID_EARLY": {
+      "n": 132,
+      "population_share": 0.0187,
+      "avg_calibrated_risk": 0.041,
+      "avg_raw_risk": 0.4227,
+      "high_risk_n": 0,
+      "high_risk_capture_rate": 0.0,
+      "saturation_estimate": 0.0187,
+      "crm_queue_distribution": {
+        "monitor_health_p4": 132
+      },
+      "ecosystem_distribution": {
+        "legacy_voice_only": 113,
+        "wallet_only": 9,
+        "partial_ecosystem": 5,
+        "digitally_embedded": 4,
+        "content_only": 1
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.0,
+      "precision_label": "targeted"
+    },
+    "R07_LEGACY_2G": {
+      "n": 1101,
+      "population_share": 0.1563,
+      "avg_calibrated_risk": 0.0391,
+      "avg_raw_risk": 0.3938,
+      "high_risk_n": 0,
+      "high_risk_capture_rate": 0.0,
+      "saturation_estimate": 0.1563,
+      "crm_queue_distribution": {
+        "monitor_health_p4": 1037,
+        "digital_nurture_p2": 64
+      },
+      "ecosystem_distribution": {
+        "legacy_voice_only": 1101
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.20435967302452315,
+      "precision_label": "broad"
+    },
+    "R99_HIGH_RISK_SAVE": {
+      "n": 0,
+      "note": "no_subscribers_matched"
+    },
+    "R00_MONITOR": {
+      "n": 552,
+      "population_share": 0.0784,
+      "avg_calibrated_risk": 0.0597,
+      "avg_raw_risk": 0.39,
+      "high_risk_n": 0,
+      "high_risk_capture_rate": 0.0,
+      "saturation_estimate": 0.0784,
+      "crm_queue_distribution": {
+        "monitor_health_p4": 549,
+        "digital_nurture_p2": 3
+      },
+      "ecosystem_distribution": {
+        "digitally_embedded": 205,
+        "partial_ecosystem": 164,
+        "content_only": 127,
+        "wallet_only": 56
+      },
+      "digital_only_ratio": 1.0,
+      "human_touch_ratio": 0.0,
+      "is_fallback": false,
+      "prepaid_ratio": 0.07608695652173914,
+      "precision_label": "moderate"
+    }
+  },
+  "detected_anomalies": [
+    {
+      "rule_id": "R01_PREPAID_INFANT",
+      "anomaly_type": "broad",
+      "detail": "Rule covers 20.1% of base; monitor specificity.",
+      "population_share": 0.2006
+    },
+    {
+      "rule_id": "R02_PREPAID_5G",
+      "anomaly_type": "broad",
+      "detail": "Rule covers 21.4% of base; monitor specificity.",
+      "population_share": 0.2143
+    },
+    {
+      "rule_id": "R12_ECOSYSTEM_POWER_USER",
+      "anomaly_type": "low_precision",
+      "detail": "Only 1 high-risk subscribers in 7.4% population; rule may be capturing low-risk base."
+    },
+    {
+      "rule_id": "R05_BILL_SHOCK",
+      "anomaly_type": "low_precision",
+      "detail": "Only 0 high-risk subscribers in 8.3% population; rule may be capturing low-risk base."
+    },
+    {
+      "rule_id": "R07_LEGACY_2G",
+      "anomaly_type": "low_precision",
+      "detail": "Only 0 high-risk subscribers in 15.6% population; rule may be capturing low-risk base."
+    },
+    {
+      "rule_id": "R00_MONITOR",
+      "anomaly_type": "low_precision",
+      "detail": "Only 0 high-risk subscribers in 7.8% population; rule may be capturing low-risk base."
+    }
+  ],
+  "n_anomalies": 6,
+  "disclaimer": "Rule diagnostics describe observed rule assignment patterns. Overlap and precision metrics are associative, not evaluations of rule quality."
+}
