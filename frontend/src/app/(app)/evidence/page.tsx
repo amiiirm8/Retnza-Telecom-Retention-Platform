@@ -17,7 +17,7 @@ import {
 } from "recharts";
 import { api } from "@/lib/api";
 import { formatNumber, formatPercent } from "@/lib/format";
-import { getFreshnessLevel, FRESHNESS_LABELS, FRESHNESS_COLORS } from "@/lib/governance-labels";
+
 import type { ModelHealth, EDAResponse, EDAChurnRow } from "@/types/api";
 
 const questions = [
@@ -169,6 +169,7 @@ function buildInsightCards(eda: EDAResponse | null, locale: string) {
 }
 
 function buildEdaChartData(eda: EDAResponse | null, key: keyof EDAResponse, nameKey: string, colorKey: string) {
+  void colorKey;
   const rows = (eda?.[key] as EDAChurnRow[] | undefined) ?? [];
   return rows.map((r) => ({
     name: String(r[nameKey as keyof EDAChurnRow] ?? ""),
@@ -179,6 +180,7 @@ function buildEdaChartData(eda: EDAResponse | null, key: keyof EDAResponse, name
 }
 
 function formatRelativeTime(utcStr: string, locale: string): string {
+  void locale;
   if (!utcStr) return "—";
   const now = Date.now();
   const then = new Date(utcStr).getTime();
@@ -193,7 +195,7 @@ export default function EvidencePage() {
   const { t, dir, locale } = useI18n();
   const [health, setHealth] = useState<ModelHealth | null>(null);
   const [eda, setEda] = useState<EDAResponse | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
@@ -355,7 +357,7 @@ export default function EvidencePage() {
                 </ResponsiveContainer>
               </ChartWrapper>
               <p className="text-xs text-slate-500 leading-relaxed px-1">
-                The 5G churn rate ({genChartData.find(d => d.name === "5G")?.churnRate?.toFixed(1) ?? "?"}%) is confounded by prepaid mix — prepaid 5G subscribers churn at 54.6%, postpaid 5G at only 13.9%. The "prepaid 5G" interaction is the #2 SHAP driver.
+                The 5G churn rate ({genChartData.find(d => d.name === "5G")?.churnRate?.toFixed(1) ?? "?"}%) is confounded by prepaid mix &mdash; prepaid 5G subscribers churn at 54.6%, postpaid 5G at only 13.9%. The prepaid 5G interaction is the #2 SHAP driver.
               </p>
             </div>
           )}

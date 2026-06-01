@@ -19,7 +19,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import { api } from "@/lib/api";
-import { Card, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { ChartWrapper } from "@/components/ui/chart-wrapper";
 import { PageLoading } from "@/components/ui/loading";
 import { ErrorBoundary } from "@/components/ui/error-boundary";
