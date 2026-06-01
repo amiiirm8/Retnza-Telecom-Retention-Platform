@@ -47,6 +47,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r backend/requirements.txt
+      - run: pip install pytest
       - name: Run non-DB tests
         run: |
           cd backend
